@@ -12,10 +12,6 @@ const PLATFORM_OPTIONS = [
   { value: "banking", label: "Banco (SecureBank)", icon: "\u{1F3E6}" },
 ];
 
-function getPlatformInfo(platform: string) {
-  return PLATFORM_OPTIONS.find((p) => p.value === platform) ?? { value: platform, label: platform, icon: "?" };
-}
-
 export function PracticeAccountManager() {
   const { accounts, addAccount, removeAccount } = usePracticeAccountsStore();
 

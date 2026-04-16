@@ -4,8 +4,6 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/lib/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { useSession } from "next-auth/react";
-import { UserMenu } from "./UserMenu";
 
 const navLinks = [
   { href: "/courses", labelKey: "nav.courses" },
@@ -17,7 +15,6 @@ const navLinks = [
 export function Header() {
   const t = useTranslations("common");
   const pathname = usePathname();
-  const { data: session } = useSession();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (

@@ -113,6 +113,7 @@ export function SimulatorShell({ platform, platformLabel, steps, renderChrome }:
       getAccountsForPlatform,
       completeLesson,
       setCelebration,
+      t,
     ],
   );
 

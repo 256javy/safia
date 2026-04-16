@@ -6,7 +6,7 @@ import { useSessionStore } from "@/stores/session-store";
 
 function Particle({ index }: { index: number }) {
   const angle = (index / 16) * Math.PI * 2;
-  const distance = 60 + Math.random() * 50;
+  const [distance] = useState(() => 60 + Math.random() * 50);
   return (
     <motion.div
       className="absolute w-2 h-2 rounded-full bg-accent"

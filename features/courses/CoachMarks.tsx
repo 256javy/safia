@@ -80,6 +80,9 @@ export function CoachMarks() {
   }, [active, step]);
 
   useEffect(() => {
+    // DOM measurement requires render-then-measure; the synchronous setState here is
+    // intentional and bounded (runs once per step change, not in a render loop).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     updateSpotlight();
     window.addEventListener("resize", updateSpotlight);
     return () => window.removeEventListener("resize", updateSpotlight);
