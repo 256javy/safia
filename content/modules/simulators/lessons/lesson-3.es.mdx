@@ -1,0 +1,136 @@
+---
+title: "Señales de alerta en pantallas de inicio de sesión falsas"
+description: "Aprende a identificar las diferencias clave entre una pantalla de login real y una falsa."
+xp_reward: 150
+order: 3
+quiz:
+  - question: "¿Cuál es la señal más importante a revisar antes de introducir tus credenciales en cualquier web?"
+    options:
+      - "Que la página tenga el logo correcto"
+      - "La URL completa en la barra de direcciones del navegador"
+      - "Que la página cargue rápido"
+    correct: 1
+    explanation: "El logo se puede copiar fácilmente. La URL es mucho más difícil de falsificar perfectamente. Revisar la URL completa es tu primera y más importante defensa."
+  - question: "Ves un candado verde/cerrado en la barra de tu navegador. ¿Significa que la página es segura?"
+    options:
+      - "Sí, el candado garantiza que la web es legítima"
+      - "No, el candado solo significa que la conexión está cifrada, no que el sitio sea de quien dice ser"
+      - "Solo si el candado es verde, no si es gris"
+    correct: 1
+    explanation: "El candado (HTTPS) solo indica que tu conexión con esa web está cifrada. Los atacantes también pueden tener certificados HTTPS en sus páginas falsas. El candado no garantiza legitimidad."
+  - question: "Estás en lo que parece ser la página de inicio de sesión de tu banco. La URL muestra 'https://banco-seguro-es.com'. ¿Qué piensas?"
+    options:
+      - "Es seguro porque empieza con https://"
+      - "Es sospechoso porque el dominio oficial de mi banco no sería 'banco-seguro-es.com'"
+      - "Es seguro porque menciona 'seguro' en el nombre"
+    correct: 1
+    explanation: "El dominio oficial de tu banco es fijo y conocido. Cualquier variación — aunque suene oficial — es señal de fraude. Memoriza o guarda los dominios de tus servicios más importantes."
+---
+
+Tienes exactamente lo mismo ante ti: un formulario de inicio de sesión con logo, campo de email, campo de contraseña y botón de entrar. Una es real. La otra es una trampa.
+
+¿Cómo las distingues?
+
+## La regla número uno: mira la URL
+
+Antes de escribir cualquier dato, mira la barra de direcciones de tu navegador. Esta es la señal más difícil de falsificar y la más reveladora.
+
+**¿Qué buscar?**
+
+### El dominio principal (lo más importante)
+
+El dominio es la parte que va justo antes del primer `/` después del `https://`. Por ejemplo:
+
+- `https://accounts.google.com/login` → dominio: `google.com` ✓
+- `https://accounts-google.security.com/login` → dominio: `security.com` ✗
+- `https://google.accounts.login-verify.net` → dominio: `login-verify.net` ✗
+
+Lo que viene antes del dominio (subdominos) puede ser cualquier cosa. Lo importante es la parte final antes del `/`.
+
+### Errores tipográficos sutiles
+
+Los atacantes registran dominios con diferencias casi invisibles:
+- `paypa1.com` (número 1 en lugar de L)
+- `arnazon.com` (rn que parece m)
+- `bankia-online.es` (Bankia no usa ese dominio)
+- `facebook-login.com` (no es facebook.com)
+
+<TipBox type="consejo">
+En el móvil, la barra de URL muestra menos caracteres y es más difícil ver el dominio completo. Toca la barra de URL para verla completa antes de introducir cualquier dato. Es un hábito que puede ahorrarte mucho dinero.
+</TipBox>
+
+## El candado HTTPS — importante malentendido
+
+Mucha gente cree que el candado en la barra del navegador significa que la web es legítima. **No es así.**
+
+El candado solo significa que **la conexión está cifrada** — que nadie puede interceptar lo que envías. Pero lo que envías puede ir igualmente a un atacante. Los atacantes pueden (y suelen) tener certificados HTTPS en sus páginas falsas.
+
+El candado es necesario pero no suficiente. No te relajes solo porque lo veas.
+
+## Señales visuales en la página
+
+Además de la URL, hay señales visuales que delatan las páginas falsas:
+
+### Logos con baja calidad o ligeramente diferentes
+
+Las páginas falsas copian logos de las webs originales, pero a veces:
+- La proporción no es exactamente igual
+- Los colores tienen un tono ligeramente diferente
+- El logo está pixelado o borroso
+
+### Texto con errores
+
+Las páginas de phishing a veces tienen:
+- Frases que suenan raras o mal traducidas
+- Errores ortográficos sutiles
+- Mezcla de idiomas inesperada
+
+### Formularios que piden más de lo normal
+
+Si la "página de Google" te pide de repente tu fecha de nacimiento, número de teléfono Y contraseña juntos en el mismo formulario, algo no cuadra. Las páginas reales piden los datos en pasos separados y no piden datos innecesarios.
+
+### El botón de "olvidé mi contraseña" no funciona
+
+En las páginas falsas, los botones secundarios (recuperar contraseña, ayuda, registrarse) generalmente no funcionan o redirigen a páginas aleatorias.
+
+<TipBox type="analogia">
+Los billetes falsos tienen detalles que los delatan si los miras con atención: el papel no es el mismo, las líneas de seguridad están mal impresas, la tinta se corre. Las páginas de phishing también tienen sus "marcas de agua" que las delatan cuando sabes qué buscar.
+</TipBox>
+
+## El truco del gestor de contraseñas
+
+Aquí un truco poderoso: **si usas un gestor de contraseñas con autocompletado, y no autocompleta, es una señal de alerta.**
+
+Los gestores de contraseñas guardan las credenciales asociadas a dominios exactos. Si estás en `gmail-falso.com`, el gestor no reconocerá ese dominio como Gmail y no ofrecerá autocompletar. Si ves que tu gestor no te da la contraseña de forma automática en un sitio donde debería, para y verifica la URL.
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Si la página tiene mi nombre o sabe mi email, es legítima."
+
+**Realidad:** Los atacantes pueden personalizar las páginas de phishing con tu nombre y email si los obtuvieron de una filtración previa. Que una página sepa tu email no la hace auténtica.
+</TipBox>
+
+## Lista de comprobación rápida antes de hacer login
+
+Antes de introducir tus credenciales en cualquier web, 10 segundos de verificación:
+
+1. ¿La URL es exactamente la que debería ser? (revisa el dominio principal)
+2. ¿Empiezo con `https://`? (mínimo necesario)
+3. ¿Llegué aquí desde un link en un email/SMS urgente? (señal de alerta)
+4. ¿Mi gestor de contraseñas reconoce este sitio? (si no autocompleta, para)
+5. ¿El diseño se ve exactamente como siempre? (¿algo fuera de lugar?)
+
+Si alguna respuesta es dudosa, abre una nueva pestaña y ve directamente al sitio escribiendo la URL tú mismo.
+
+## Cómo navegar de forma segura
+
+La forma más segura de llegar a sitios donde iniciás sesión:
+1. Escribe la URL directamente en la barra del navegador
+2. Usa los favoritos de tu navegador (guarda los sitios importantes)
+3. Usa el gestor de contraseñas para abrir el sitio directamente desde él
+
+Lo que no debes hacer:
+- Hacer clic en links de emails urgentes
+- Buscar en Google "inicio sesión + banco" y hacer clic en el primer resultado
+- Seguir links de mensajes de WhatsApp o SMS
+
+<PromptButton prompt="Muéstrame ejemplos de URLs de phishing reales y explícame cómo detectarlas" />

@@ -1,0 +1,140 @@
+---
+title: "Permisos de aplicaciones — qué les das acceso"
+description: "Aprende a controlar qué datos de tu teléfono pueden acceder las aplicaciones y por qué importa."
+xp_reward: 100
+order: 4
+quiz:
+  - question: "Una app de linterna pide acceso a tus contactos. ¿Qué deberías hacer?"
+    options:
+      - "Dárselo, la app probablemente lo necesita para funcionar bien"
+      - "Negarlo — una linterna no tiene ninguna razón legítima para acceder a tus contactos"
+      - "Solo dárselo si la app tiene buenas reseñas"
+    correct: 1
+    explanation: "Una linterna solo necesita acceso a la luz del flash. Si pide acceso a contactos, cámara completa, micrófono o ubicación sin razón obvia, hay algo sospechoso. Nega el permiso o desinstala la app."
+  - question: "¿Con qué frecuencia deberías revisar los permisos de las apps instaladas?"
+    options:
+      - "Solo cuando instalas una app nueva"
+      - "Cada 6-12 meses, o cuando algo te parece extraño"
+      - "No hace falta, los permisos se gestionan solos"
+    correct: 1
+    explanation: "Las apps pueden pedir nuevos permisos después de actualizaciones. Además, apps que instalaste hace tiempo pueden tener permisos que ya no recuerdas haber concedido. Una revisión periódica es buena práctica."
+  - question: "¿Cuál es la configuración de permisos más segura para la ubicación de las apps?"
+    options:
+      - "Siempre — la app puede acceder a tu ubicación en cualquier momento"
+      - "Solo mientras se usa — la app solo accede cuando está abierta en primer plano"
+      - "Nunca para todas las apps"
+    correct: 1
+    explanation: "'Solo mientras se usa' es el equilibrio entre funcionalidad y privacidad. Las apps de navegación necesitan tu ubicación, pero no cuando no las estás usando activamente."
+---
+
+Cuando instalas una app en el teléfono, aparece una pantalla preguntando si le das permiso para acceder a tu cámara, micrófono, contactos, ubicación... La mayoría de personas pulsa "Aceptar" sin pensarlo mucho. Vamos a cambiar eso.
+
+## Por qué los permisos importan
+
+Las aplicaciones solo pueden acceder a datos e hardware de tu teléfono que tú les permites explícitamente. Esos permisos son literalmente las llaves que le das a la app.
+
+Cuando le das a una app permiso de:
+- **Micrófono:** Puede escuchar lo que dices en cualquier momento en que tenga el permiso activo
+- **Cámara:** Puede hacer fotos o vídeos
+- **Ubicación:** Sabe exactamente dónde estás
+- **Contactos:** Ve todos los nombres, teléfonos y emails de tus contactos
+- **Fotos:** Puede ver y descargarse todas tus fotos
+- **Almacenamiento:** Puede leer y escribir archivos en el teléfono
+
+Una app legítima solo pide los permisos que necesita para su función. Una app maliciosa o con malas prácticas pide más de lo necesario para recopilar datos que puede vender.
+
+## El principio del mínimo privilegio
+
+La regla de oro: **da a cada app solo los permisos que necesita para funcionar**.
+
+Pregúntate siempre: ¿Por qué necesita esta app este permiso?
+
+| App | Permiso razonable | Permiso sospechoso |
+|---|---|---|
+| Linterna | Cámara (para el flash) | Contactos, Micrófono, Ubicación |
+| Juego de cartas | Ninguno especial | Micrófono, Cámara, Contactos |
+| App de navegación | Ubicación | Micrófono, Contactos |
+| App de videoconferencia | Cámara, Micrófono | Todos tus archivos, Contactos completos |
+| App de banco | Cámara (para escanear documentos), Biométrica | Micrófono |
+
+<TipBox type="analogia">
+Los permisos de apps son como las llaves de tu casa. Dejas entrar a la persona de la limpieza con llave de la entrada — no le das también la llave de tu caja fuerte, el código de la alarma y acceso al garaje. Cada acceso extra que no es necesario es un riesgo innecesario.
+</TipBox>
+
+## Cómo revisar y ajustar permisos
+
+### En iPhone (iOS)
+
+**Ver todos los permisos por categoría:**
+Configuración → [Nombre del permiso] (Cámara, Micrófono, Ubicación, etc.)
+Verás la lista de todas las apps que tienen ese permiso.
+
+**Ver todos los permisos de una app específica:**
+Configuración → [desplaza hacia abajo hasta la app] → verás todos sus permisos
+
+**Permisos de ubicación:** Puedes elegir entre:
+- Nunca
+- Solo al usar la app
+- Siempre (solo para apps que lo necesitan, como apps de seguridad)
+
+### En Android
+
+**Ver todos los permisos de una app:**
+Configuración → Apps → [nombre de la app] → Permisos
+
+**Ver todas las apps con un permiso específico:**
+Configuración → Privacidad → Gestor de permisos → [tipo de permiso]
+
+**Opciones de ubicación en Android:**
+- No permitir
+- Solo mientras se usa la app
+- Preguntar siempre
+- Permitir siempre
+
+## Los permisos que más debes vigilar
+
+### Micrófono
+
+Cualquier app con permiso de micrófono puede escucharte cuando está activa. Para la mayoría de apps que no son de llamadas o grabación de voz, el micrófono debería estar en "Nunca".
+
+Excepciones legítimas: apps de videollamadas, asistentes de voz, apps de transcripción, apps de música.
+
+### Ubicación en segundo plano
+
+Cuando una app puede acceder a tu ubicación "siempre" (incluso cuando no la estás usando), tiene un mapa en tiempo real de tus movimientos. Muy pocas apps necesitan esto — quizás una app de seguridad personal o de running.
+
+Para la mayoría de apps: "Solo mientras se usa".
+
+### Acceso a todas las fotos
+
+Algunas apps piden acceso a todas tus fotos cuando en realidad solo necesitan que tú elijas una. Tanto iOS como Android permiten conceder "acceso seleccionado" a fotos específicas en lugar de toda la galería.
+
+### Contactos
+
+Una app de mensajería necesita tus contactos para saber a quién puedes llamar. Una app de juegos, un lector de noticias o una app de fitness no tienen ninguna razón legítima para ver tus contactos.
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Las apps de la App Store o Play Store son seguras porque están revisadas."
+
+**Realidad:** Apple y Google revisan las apps, pero ocasionalmente apps con comportamiento malicioso pasan el filtro. La revisión no garantiza que la app no recopile más datos de los necesarios dentro de lo que técnicamente está permitido. Los permisos siguen siendo tu responsabilidad.
+</TipBox>
+
+## Apps problemáticas que vale la pena revisar
+
+Algunas categorías de apps son conocidas por pedir permisos excesivos:
+
+- **Apps de linterna, calculadora, fondos de pantalla gratuitas** — clásicos recolectores de datos
+- **Apps de quiz, test de personalidad** — a menudo recopilan contactos y datos de uso
+- **Apps de VPN gratuitas desconocidas** — todo tu tráfico pasa por ellas
+- **Apps de juegos gratuitas** — acceso innecesario a micrófono y cámara
+
+## Plan de acción: revisión de permisos en 10 minutos
+
+1. Abre Configuración → [Privacidad o Permisos]
+2. Revisa el micrófono: ¿hay apps que no deberían tenerlo?
+3. Revisa la ubicación: ¿hay apps con "Siempre" que podrían ser "Solo al usar"?
+4. Revisa los contactos: ¿hay apps sin razón obvia para tenerlos?
+5. Revisa la cámara: ¿hay apps que no son de fotos o videoconferencia con acceso?
+6. Para cada acceso innecesario: cámbialo a "Nunca" o "Solo al usar"
+
+<PromptButton prompt="¿Qué permisos debería revisar y cambiar en mi iPhone/Android ahora mismo para mejorar mi privacidad?" />

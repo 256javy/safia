@@ -1,0 +1,130 @@
+---
+title: "Cómo funciona un ataque de robo de credenciales"
+description: "Entiende exactamente qué pasa técnicamente cuando alguien roba tu usuario y contraseña con una web falsa."
+xp_reward: 150
+order: 2
+quiz:
+  - question: "¿Qué es una página de phishing de credenciales?"
+    options:
+      - "Una página que instala virus en tu computadora"
+      - "Una copia visual de un sitio legítimo diseñada para capturar tu usuario y contraseña"
+      - "Una página que bloquea tu dispositivo hasta que pagues"
+    correct: 1
+    explanation: "Las páginas de robo de credenciales son copias casi perfectas de sitios reales (Google, bancos, etc.) que envían lo que escribes directamente al atacante."
+  - question: "¿Cuánto tarda un atacante en usar unas credenciales robadas?"
+    options:
+      - "Varios días, tienen que analizarlas primero"
+      - "Semanas, esperan a que bajes la guardia"
+      - "Minutos o incluso segundos, los ataques modernos son automatizados"
+    correct: 2
+    explanation: "Los sistemas modernos de phishing son automatizados. Cuando introduces tus credenciales en una página falsa, el atacante puede recibirlas y usarlas en segundos."
+  - question: "¿Qué protección te da el MFA incluso si caes en una página de phishing de credenciales?"
+    options:
+      - "Ninguna, si ya diste la contraseña estás perdido"
+      - "El MFA hace que la contraseña robada no sea suficiente para entrar — el atacante también necesitaría tu segundo factor"
+      - "El MFA avisa al banco automáticamente"
+    correct: 1
+    explanation: "Incluso si un atacante obtiene tu contraseña por phishing, si tienes MFA activado, no puede entrar a tu cuenta sin también tener tu segundo factor (tu teléfono, tu app, etc.)."
+---
+
+Sabes que el phishing existe. Sabes que las páginas falsas intentan robarte la contraseña. Pero ¿sabes exactamente qué pasa en los milisegundos en que escribes tus datos en una web falsa?
+
+Entender el mecanismo técnico, aunque sea de forma básica, te hará mucho más difícil de engañar.
+
+## El flujo completo de un ataque de robo de credenciales
+
+### Fase 1: Preparación (lo que el atacante hace antes)
+
+El atacante crea una copia casi perfecta de un sitio legítimo — por ejemplo, la página de inicio de sesión de Gmail. Esto es más fácil de lo que parece: el código HTML de cualquier web es público y se puede copiar con unos clicks.
+
+Luego registra un dominio que parezca legítimo a primera vista:
+- `g00gle.com` (ceros en lugar de "o")
+- `gmail-seguridad.com`
+- `accounts-google.net`
+
+Después prepara la infraestructura para recibir lo que las víctimas escriban.
+
+### Fase 2: El anzuelo
+
+Manda emails, SMS o mensajes en redes sociales con un link a su web falsa. El mensaje crea urgencia:
+
+- "Tu cuenta será suspendida"
+- "Actividad sospechosa detectada"
+- "Verifica tu identidad"
+
+### Fase 3: La víctima hace clic
+
+Llegas a la página falsa. A primera vista parece perfecta. El logo está bien, los colores son correctos, el formulario funciona. Solo hay diferencias sutiles que explicaremos en las próximas lecciones.
+
+### Fase 4: El robo
+
+Escribes tu email y tu contraseña y pulsas "Entrar". En ese momento ocurren dos cosas simultáneamente:
+
+1. El servidor del atacante **recibe tus credenciales** — inmediatamente, sin demora
+2. La página falsa te **redirige al sitio real** — para que no notes nada extraño
+
+Muchas veces ni siquiera sabes que algo pasó. La página real te pide que inicies sesión de nuevo (porque la sesión no existe), tú lo haces normalmente y piensas que fue un error técnico.
+
+<TipBox type="analogia">
+Imagina que alguien pone una máquina copiadora delante del cajero automático. Metes tu tarjeta, copian los datos, y luego te devuelven la tarjeta y te dejan completar la operación. Saliste del cajero pensando que todo fue normal, pero ya tienen tus datos.
+</TipBox>
+
+### Fase 5: El uso de las credenciales
+
+El atacante ahora tiene tu email y contraseña. Los sistemas modernos de phishing son automatizados — en cuestión de segundos, un programa prueba esas credenciales en el sitio real.
+
+Si no tienes MFA, ya está dentro. Si tienes MFA, el ataque falla aquí.
+
+### Fase 6: El daño
+
+Dependiendo de qué cuenta fue comprometida:
+
+**Cuenta de correo:** El atacante puede acceder a todos tus emails, usarlos para pedir cambios de contraseña en otros servicios, mandar emails en tu nombre, o vender el acceso.
+
+**Cuenta bancaria:** Transferencias a cuentas de terceros, cambios de datos de contacto para bloquear notificaciones de alerta.
+
+**Redes sociales:** Usar tu cuenta para estafar a tus contactos, extorsión con fotos privadas, o simplemente vender la cuenta.
+
+## Las variantes más avanzadas
+
+### Phishing en tiempo real (man-in-the-middle)
+
+Algunos ataques modernos van un paso más allá. En lugar de una simple página falsa, el atacante actúa como intermediario:
+
+1. Tú introduces tus credenciales en la página falsa
+2. El atacante las usa en tiempo real en el sitio real
+3. El sitio real pide el código MFA
+4. La página falsa te pide el código MFA "por verificación"
+5. Tú lo introduces, el atacante lo usa, y entra a tu cuenta
+
+Esta técnica bypasa el MFA estándar, por eso las **llaves físicas FIDO2** son superiores — el dispositivo verifica que está en el sitio real, no en una copia.
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Si tengo MFA, no puedo ser víctima de phishing."
+
+**Realidad:** El MFA estándar (SMS, app) reduce enormemente el riesgo pero no es 100% infalible contra ataques de phishing sofisticados en tiempo real. Las llaves físicas FIDO2 son las únicas que son prácticamente impermeables al phishing.
+</TipBox>
+
+### Credential stuffing automatizado
+
+Con las credenciales robadas, los atacantes usan programas que automáticamente prueban las mismas credenciales en cientos de otros sitios (banco, Netflix, Amazon, etc.) en busca de reutilización de contraseñas.
+
+Es el motivo por el que usar contraseñas únicas para cada cuenta es tan importante.
+
+## Qué te protege
+
+Conocer el mecanismo te ayuda a entender por qué estas protecciones importan:
+
+| Protección | Qué bloquea |
+|---|---|
+| Contraseñas únicas | Credential stuffing |
+| MFA (app/SMS) | La mayoría de ataques automatizados |
+| Llaves físicas FIDO2 | Incluso phishing en tiempo real |
+| Verificar URLs | Evita llegar a la página falsa |
+| Gestor de contraseñas | Solo autocompleta en el sitio real |
+
+<TipBox type="consejo">
+Los gestores de contraseñas buenos tienen una función de seguridad poco conocida: solo autocompletan contraseñas cuando reconocen el dominio exacto. Si estás en `gmail-falso.com`, tu gestor no rellenará la contraseña de Gmail. Esto es una protección automática contra phishing de credenciales.
+</TipBox>
+
+<PromptButton prompt="Explícame cómo funcionan los ataques de phishing en tiempo real que pueden saltarse el MFA" />

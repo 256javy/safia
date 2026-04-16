@@ -1,0 +1,84 @@
+---
+title: "URLs sospechosas y dominios falsos"
+description: "Aprende a leer una dirección web y detectar cuando algo no es lo que parece."
+xp_reward: 100
+order: 2
+quiz:
+  - question: "¿Cuál de estas URLs pertenece al sitio real del banco BBVA México?"
+    options:
+      - "bbva.com.mx.login-seguro.net"
+      - "bbva.com.mx"
+      - "secure-bbva-mexico.com"
+    correct: 1
+    explanation: "El dominio real es 'bbva.com.mx'. Todo lo que venga después de '.mx' en el primer ejemplo es el dominio real (login-seguro.net), no BBVA."
+  - question: "Recibes un SMS con un enlace acortado (bit.ly/abc123). ¿Qué haces?"
+    options:
+      - "Haces clic — si viene de tu banco debe ser seguro"
+      - "Usas un servicio para expandir el enlace antes de abrirlo"
+      - "Reenvías el SMS a tus contactos para alertarlos"
+    correct: 1
+    explanation: "Los enlaces acortados ocultan la URL real. Servicios como 'checkshorturl.com' te muestran a dónde lleva realmente antes de que hagas clic."
+  - question: "¿Qué parte de 'https://soporte.microsoft.com/es-mx/ayuda' es el dominio?"
+    options:
+      - "https://"
+      - "microsoft.com"
+      - "/es-mx/ayuda"
+    correct: 1
+    explanation: "'microsoft.com' es el dominio — la identidad del sitio. Todo antes son protocolos y todo después son páginas dentro del sitio."
+---
+
+## Cómo leer una dirección web
+
+Una URL (dirección web) tiene partes específicas, como una dirección postal. Conocerlas te ayuda a detectar fraudes.
+
+Tomemos este ejemplo:
+
+```
+https://soporte.microsoft.com/es-mx/ayuda
+```
+
+| Parte | Qué es |
+|---|---|
+| `https://` | Protocolo — cómo se conecta tu navegador |
+| `soporte` | Subdominio — una sección del sitio |
+| `microsoft.com` | **El dominio — la identidad real del sitio** |
+| `/es-mx/ayuda` | La página específica dentro del sitio |
+
+**El dominio es lo más importante.** Es la parte entre el último punto y la primera diagonal `/`.
+
+<TipBox type="analogia">
+Piénsalo como una dirección postal. "microsoft.com" es como la calle y número — la dirección real. Todo lo demás (subdominio, ruta) son detalles del edificio o departamento.
+</TipBox>
+
+## El truco del subdominio falso
+
+El truco más común del phishing con URLs:
+
+```
+microsoft.com.soporte-tecnico.net/ayuda
+```
+
+Parece que dice "microsoft.com" pero el dominio real es **soporte-tecnico.net**. Microsoft no tiene nada que ver con ese sitio.
+
+Los estafadores ponen el nombre de marca *antes* del punto que marca su dominio real.
+
+## Señales de alerta en URLs
+
+- **Dominios con guiones extras:** `banco-bbva-mexico.com` (el real es `bbva.com.mx`)
+- **TLD inusuales:** `.net`, `.info`, `.xyz` para sitios que normalmente usan `.com` o `.com.mx`
+- **Palabras adicionales:** `login`, `secure`, `account`, `verify` en el dominio
+- **Números en lugar de letras:** `paypa1.com` (con el número 1 en lugar de la letra l)
+
+## Cómo verificar un enlace sin hacer clic
+
+**En computadora:** Pasa el cursor sobre el enlace. La URL real aparece en la barra inferior del navegador.
+
+**En teléfono:** Mantén presionado el enlace. Aparece un menú con la URL completa.
+
+**Para enlaces acortados:** Usa checkshorturl.com o unshorten.it para ver el destino real.
+
+<TipBox type="consejo">
+Cuando tengas dudas sobre si un sitio es real, búscalo en Google en lugar de hacer clic en el enlace que te enviaron. Así llegas al sitio oficial.
+</TipBox>
+
+<PromptButton prompt="¿Cómo puedo verificar si una URL es segura antes de hacer clic? Dame pasos prácticos." />

@@ -1,0 +1,97 @@
+---
+title: "Qué es la autenticación de dos factores"
+description: "Entiende por qué una sola contraseña ya no es suficiente y cómo el doble factor te protege."
+xp_reward: 100
+order: 1
+quiz:
+  - question: "¿Qué es la autenticación de dos factores (2FA)?"
+    options:
+      - "Tener dos contraseñas diferentes para la misma cuenta"
+      - "Verificar tu identidad con dos cosas distintas: algo que sabes y algo que tienes"
+      - "Cambiar tu contraseña cada dos meses"
+    correct: 1
+    explanation: "El 2FA combina algo que sabes (contraseña) con algo que tienes (tu teléfono) o algo que eres (tu huella). Así, robar solo la contraseña no es suficiente."
+  - question: "Tu contraseña fue filtrada en una brecha de datos. Tienes 2FA activado. ¿Qué pasa?"
+    options:
+      - "El atacante puede entrar fácilmente con tu contraseña"
+      - "El atacante no puede entrar porque no tiene acceso a tu segundo factor"
+      - "Necesitas cambiar tu contraseña urgentemente y el 2FA no sirve de nada"
+    correct: 1
+    explanation: "Con 2FA, la contraseña sola no alcanza. El atacante también necesitaría tu teléfono o app autenticadora — algo físico que está contigo."
+  - question: "¿Cuál de estos es un ejemplo de segundo factor de autenticación?"
+    options:
+      - "Tu nombre de usuario"
+      - "La respuesta a una pregunta de seguridad"
+      - "Un código de 6 dígitos que llega a tu teléfono"
+    correct: 2
+    explanation: "El código temporal es un segundo factor porque demuestra que tienes acceso a tu teléfono en ese momento. Las preguntas de seguridad son otro tipo de contraseña — no son 2FA real."
+---
+
+## El problema con las contraseñas solas
+
+Imagina que tu casa tiene una sola llave. Si alguien hace una copia sin que te des cuenta, puede entrar cuando quiera.
+
+Las contraseñas son igual. Pueden ser robadas de muchas formas:
+- Filtraciones de datos (el sitio fue hackeado)
+- Phishing (te engañaron para que la escribieras en un sitio falso)
+- Espiar lo que escribes en lugares públicos
+- Adivinarla si es simple o común
+
+**La solución: agregar una segunda llave.**
+
+## Qué es el doble factor (2FA)
+
+La autenticación de dos factores requiere dos cosas para entrar a tu cuenta:
+
+1. **Algo que sabes** → tu contraseña
+2. **Algo que tienes** → tu teléfono (o una app, o una llave física)
+
+<TipBox type="analogia">
+Es como un cajero automático. No basta con saber el PIN — también necesitas la tarjeta física. Si alguien te espía escribir el PIN pero no tiene tu tarjeta, no puede sacar dinero.
+</TipBox>
+
+## Por qué cambia todo
+
+Con 2FA activado, aunque alguien robe tu contraseña:
+
+- Intenta entrar a tu cuenta ✓
+- Le pide el segundo factor ✓
+- No tiene tu teléfono ✗
+- **No puede entrar** ✓
+
+Esto es especialmente importante porque las filtraciones de datos son muy comunes. Empresas grandes han sido hackeadas y millones de contraseñas quedaron expuestas. Con 2FA, esas contraseñas robadas son inútiles sin el segundo factor.
+
+## Los tipos de segundo factor
+
+### Códigos por SMS 📱
+Un código de 6 dígitos llega a tu teléfono por mensaje de texto. Es el más común y el más fácil de activar.
+
+**Ventaja:** No necesitas instalar nada.  
+**Desventaja:** Los mensajes SMS pueden interceptarse en ataques avanzados.
+
+### App autenticadora 📲
+Una aplicación como Google Authenticator, Authy o Microsoft Authenticator genera códigos que cambian cada 30 segundos. No requiere conexión a internet.
+
+**Ventaja:** Más seguro que SMS, funciona sin señal.  
+**Desventaja:** Si pierdes el teléfono sin respaldo, puedes quedar fuera de tus cuentas.
+
+### Llave de seguridad física 🔑
+Un dispositivo USB pequeño que conectas a la computadora. Muy seguro, usado principalmente en entornos empresariales.
+
+**Ventaja:** El más seguro — imposible de interceptar remotamente.  
+**Desventaja:** Costo adicional, menos conveniente.
+
+<TipBox type="consejo">
+Para empezar, activa el 2FA por SMS en tus cuentas más importantes (banco, correo, redes sociales). Cualquier segundo factor es infinitamente mejor que ninguno.
+</TipBox>
+
+<PromptButton prompt="Explícame la diferencia entre autenticación por SMS y por app autenticadora, ¿cuál es más segura y por qué?" />
+
+## ¿Qué cuentas proteger primero?
+
+Prioridad alta:
+- **Correo electrónico** — si alguien entra aquí, puede resetear todas tus otras contraseñas
+- **Banco y servicios financieros**
+- **Redes sociales** — suplantación de identidad
+
+Después de esas, actívalo en todo lo que puedas.

@@ -1,0 +1,118 @@
+---
+title: "MFA en el trabajo — por qué tu empresa lo exige"
+description: "Entiende por qué las empresas implementan autenticación multifactor y cómo protege a todos."
+xp_reward: 100
+order: 5
+quiz:
+  - question: "¿Por qué las empresas exigen MFA a sus empleados?"
+    options:
+      - "Para controlar la hora de entrada y salida de los trabajadores"
+      - "Porque una sola contraseña comprometida puede dar acceso a datos de miles de clientes"
+      - "Solo es obligatorio en empresas grandes"
+    correct: 1
+    explanation: "En una empresa, las cuentas de los empleados dan acceso a datos de clientes, contratos, finanzas y más. Si una sola contraseña cae, el daño puede ser enorme. El MFA añade una barrera que protege a todos."
+  - question: "¿Qué es un ataque de 'credential stuffing'?"
+    options:
+      - "Cuando un hacker adivina tu contraseña intentando miles de combinaciones"
+      - "Cuando un hacker usa contraseñas filtradas de otras webs para intentar entrar a cuentas empresariales"
+      - "Cuando un empleado descontento roba datos de la empresa"
+    correct: 1
+    explanation: "El credential stuffing usa listas de contraseñas filtradas de brechas anteriores. Como mucha gente reutiliza contraseñas, los atacantes prueban esas mismas credenciales en sistemas empresariales."
+  - question: "Tu empresa acaba de implementar MFA y te parece un inconveniente. ¿Cuál es la actitud correcta?"
+    options:
+      - "Quejarme al departamento de IT para que lo eliminen"
+      - "Entender que ese segundo de más al iniciar sesión protege los datos de clientes y el trabajo de todos"
+      - "Buscar formas de saltarme el MFA para trabajar más cómodo"
+    correct: 1
+    explanation: "El MFA es un pequeño inconveniente con un gran beneficio: protege a la empresa, a los clientes y también a ti. Un ciberataque exitoso puede significar pérdidas millonarias o el cierre de la empresa."
+---
+
+"¿Por qué tengo que confirmar con el teléfono cada vez que entro al correo del trabajo? Antes no era así."
+
+Esta es una de las preguntas más frecuentes cuando una empresa implementa MFA. La respuesta corta: porque un solo ataque exitoso puede costarle a la empresa millones, y porque tú eres una de las puertas de entrada.
+
+## El panorama de ciberseguridad en empresas
+
+Las empresas son objetivos constantes de ataques informáticos. No porque los hackers tengan algo personal contra tu empresa, sino porque los datos tienen valor:
+
+- Datos de clientes: nombres, emails, teléfonos, tarjetas
+- Información financiera: facturas, cuentas bancarias, contratos
+- Propiedad intelectual: diseños, fórmulas, estrategias
+- Acceso a sistemas que pueden sabotear
+
+Y la puerta de entrada más fácil para un atacante no es hackear el servidor de la empresa (complicado, protegido). La puerta más fácil eres **tú**: tu contraseña.
+
+## Cómo los atacantes entran en empresas
+
+### Credential stuffing
+
+Los hackers compran en internet listas con millones de usuario + contraseña de brechas anteriores (LinkedIn, Adobe, etc.). Prueban esas mismas combinaciones en el correo corporativo de tu empresa.
+
+Si usas la misma contraseña del trabajo que en algún sitio hackeado antes... ya están dentro.
+
+### Phishing dirigido (spear phishing)
+
+Un atacante estudia tu LinkedIn, sabe que trabajas en una empresa y te manda un email personalizado que parece de tu jefe o de IT. Haces clic, introduces tus credenciales en una página falsa. El atacante ahora tiene acceso.
+
+### Contraseñas débiles
+
+El sistema de la empresa permite contraseñas como `Empresa2024` porque hay empleados que se quejan de las políticas más estrictas. Un hacker que pruebe combinaciones predecibles la encontrará rápido.
+
+<TipBox type="sabias-que">
+El 81% de las brechas de seguridad empresariales involucran contraseñas comprometidas o débiles, según el informe Verizon Data Breach. El MFA bloquea prácticamente todos estos ataques.
+</TipBox>
+
+## Por qué el MFA cambia todo
+
+Con solo contraseña, si el atacante la tiene, tiene acceso. Con MFA:
+
+1. El atacante obtiene tu contraseña (por phishing, filtración, etc.)
+2. Intenta entrar al sistema corporativo
+3. El sistema pide el segundo factor
+4. El atacante no tiene tu teléfono
+5. **El ataque falla**
+
+La mayoría de ciberataques a empresas son ataques de volumen: los atacantes prueban miles de credenciales y abandonan las que tienen MFA para ir a las más fáciles. El MFA te saca del objetivo más fácil.
+
+<TipBox type="analogia">
+Imagina que en tu calle hay casas con cerradura normal y casas con cerradura + alarma. Si eres ladrón y tienes tiempo limitado, ¿cuál atacas primero? Las empresas sin MFA son las casas con cerradura simple. Las que tienen MFA tienen alarma.
+</TipBox>
+
+## Regulaciones que obligan al MFA
+
+En muchos sectores, el MFA ya no es opcional — es un requisito legal:
+
+- **GDPR (Europa):** Exige medidas de seguridad adecuadas para datos personales. Los reguladores han multado a empresas por no tener MFA.
+- **PCI-DSS:** Para cualquier empresa que procese tarjetas de crédito, el MFA es obligatorio para el acceso a sistemas con datos de tarjetas.
+- **ISO 27001:** El estándar de gestión de seguridad de la información recomienda MFA como control esencial.
+- **Ciberseguros:** Muchas aseguradoras ya exigen MFA para asegurar a empresas contra ciberataques.
+
+## Cómo puede implementarse el MFA en tu empresa
+
+Hay diferentes formas de MFA corporativo que quizás ya uses o uses pronto:
+
+**App de autenticación:** Como Microsoft Authenticator o Google Authenticator, pero configurada con la cuenta de empresa.
+
+**Notificación push:** Recibes una notificación en tu teléfono que solo tienes que aprobar con un toque.
+
+**SSO (Single Sign-On):** Entras una vez al inicio del día con MFA, y ese acceso te da entrada a todas las aplicaciones sin tener que volver a autenticarte.
+
+**Llave de seguridad física:** Para empleados con acceso a sistemas críticos.
+
+<TipBox type="consejo">
+Si tu empresa implementa MFA y tienes dificultades con el proceso, habla con tu departamento de IT. Es su trabajo ayudarte a configurarlo correctamente. No intentes saltarte el MFA o encontrar atajos — además de ser un riesgo de seguridad, puede tener consecuencias disciplinarias.
+</TipBox>
+
+## Lo que puedes hacer como empleado
+
+Independientemente de si tu empresa exige MFA o no:
+
+1. **Activa MFA en tu correo corporativo** si tienes la opción
+2. **No reutilices** tu contraseña del trabajo en ningún sitio personal
+3. **Avisa a IT** si recibes un email sospechoso — pueden alertar a todos
+4. **No compartas tu segundo factor** con nadie, ni con IT (ellos no lo necesitan)
+5. **Actualiza la app autenticadora** cuando te lo pidan
+
+Tu seguridad individual protege a toda tu empresa y a sus clientes.
+
+<PromptButton prompt="¿Cómo puedo convencer a mi empresa de que implemente MFA? Dame argumentos concretos" />

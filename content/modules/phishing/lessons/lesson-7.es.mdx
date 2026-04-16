@@ -1,0 +1,164 @@
+---
+title: "Simulacro mental — ¿caerías en esta trampa?"
+description: "Pon a prueba lo que aprendiste con escenarios reales de phishing y analiza cada señal de alerta."
+xp_reward: 100
+order: 7
+quiz:
+  - question: "Recibes un email de 'soporte@paypa1.com' diciendo que tu cuenta fue suspendida. ¿Qué señal de alerta ves?"
+    options:
+      - "El email menciona tu cuenta"
+      - "El dominio 'paypa1.com' usa el número 1 en lugar de la letra l"
+      - "El email pide que inicies sesión"
+    correct: 1
+    explanation: "El dominio falso 'paypa1.com' usa el número 1 en lugar de la L minúscula. Esta técnica se llama 'typosquatting' y es una señal clásica de phishing."
+  - question: "Un SMS dice: 'Correos: su paquete está retenido. Pague 1,50€ de aduanas: bit.ly/correos-es'. ¿Cuántas señales de alerta hay?"
+    options:
+      - "Una: el link acortado"
+      - "Dos: el link acortado y el pago de dinero"
+      - "Tres: el link acortado, el pago de dinero, y que Correos no manda SMSs con links de pago"
+    correct: 2
+    explanation: "Hay al menos tres señales: link acortado (oculta la URL real), te piden dinero por SMS, y Correos nunca te pedirá pagar aduanas por SMS con un link de bit.ly."
+  - question: "Tu jefe te manda un email urgente pidiéndote que hagas una transferencia antes de que acabe el día. ¿Qué haces?"
+    options:
+      - "La hago porque es urgente y mi jefe lo pide"
+      - "Le llamo por teléfono para confirmar que realmente lo pidió él"
+      - "Respondo al email preguntando si es correcto"
+    correct: 1
+    explanation: "Este es el 'fraude del CEO', uno de los más costosos en empresas. Siempre confirma transferencias urgentes por teléfono. Responder al email no sirve si la cuenta fue comprometida."
+---
+
+Has aprendido mucho sobre phishing. Ahora es momento de la prueba real: ¿reconocerías estos ataques si llegaran hoy a tu bandeja de entrada?
+
+Vamos a analizar juntos escenarios reales, señal por señal.
+
+## Escenario 1: El email del banco
+
+> **De:** seguridad@banco-santander-es.com
+> **Asunto:** ⚠️ URGENTE: Actividad sospechosa detectada en su cuenta
+>
+> Estimado cliente,
+>
+> Hemos detectado un intento de acceso no autorizado a su cuenta. Para proteger sus fondos, hemos bloqueado temporalmente su acceso.
+>
+> Necesita verificar su identidad en las próximas 2 horas para evitar el bloqueo permanente.
+>
+> **[VERIFICAR CUENTA AHORA]**
+>
+> Equipo de Seguridad — Banco Santander
+
+**Señales de alerta:**
+
+- El dominio es `banco-santander-es.com`, no `bancosantander.es` (el oficial)
+- Urgencia extrema: "2 horas" y "bloqueo permanente"
+- El banco real nunca pide verificar la identidad por email con un link
+- Emoji en el asunto para llamar la atención
+- Lenguaje genérico: "Estimado cliente" sin tu nombre real
+
+**Veredicto: PHISHING. No hacer clic.**
+
+---
+
+## Escenario 2: El WhatsApp del amigo
+
+> **Contacto: Carlos 📱**
+>
+> "Oye, ¿eres tú en este video? 😳 https://bit.ly/vid-93kf2"
+
+**Señales de alerta:**
+
+- Carlos nunca escribiría así (tono inusual, solo un link)
+- Link acortado que oculta la URL real
+- El gancho emocional: "¿eres tú?" despierta curiosidad y miedo
+- No hay contexto ni conversación previa
+
+**Qué hacer:** Llama a Carlos por teléfono. Si su cuenta fue hackeada, él no sabe que lo están usando para atacar a sus contactos.
+
+**Veredicto: PHISHING. Llamar a Carlos por otro canal.**
+
+---
+
+## Escenario 3: La llamada del técnico
+
+> "Buenos días, le llamo de Movistar. Hemos detectado que su router está enviando tráfico malicioso a nuestra red. Si no lo solucionamos en los próximos 30 minutos, tendremos que cortar su servicio. Necesito que descargue una pequeña aplicación para que pueda diagnosticarlo remotamente."
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Si llaman del número oficial de Movistar, es de verdad."
+
+**Realidad:** Los estafadores falsifican números de teléfono. El nombre o número que aparece en tu pantalla puede ser falso. Cuelga y llama tú al número oficial.
+</TipBox>
+
+**Señales de alerta:**
+
+- Llamada no solicitada sobre un "problema técnico"
+- Urgencia artificial: 30 minutos para evitar corte de servicio
+- Te piden instalar una aplicación (acceso remoto)
+- Los operadores de telecomunicaciones no te llaman así
+
+**Veredicto: VISHING. Cuelga y llama tú al 1004 de Movistar para verificar.**
+
+---
+
+## Escenario 4: El email del jefe (Fraude del CEO)
+
+> **De:** javier.martinez@miempresa-corp.com
+> **Asunto:** Transferencia urgente — confidencial
+>
+> Hola,
+>
+> Estoy en una reunión importante y necesito que hagas una transferencia de 4.800€ a este IBAN antes de las 17:00: ES12 1234 5678 9012 3456 7890
+>
+> Es urgente por un contrato que estamos cerrando. Hablaremos después. No menciones esto a nadie todavía.
+>
+> Gracias,
+> Javier
+
+**Señales de alerta:**
+
+- Urgencia extrema con hora límite
+- Pide confidencialidad ("no menciones a nadie")
+- No puedes confirmar por teléfono mientras "está en reunión"
+- Una empresa real tiene procesos para transferencias, no las pide así por email
+- El dominio puede ser `miempresa-corp.com` en vez de `miempresa.com`
+
+<TipBox type="sabias-que">
+El "fraude del CEO" es responsable de pérdidas de miles de millones de euros al año en empresas de todo el mundo. Las empresas más afectadas son las medianas, donde hay menos controles formales de transferencias.
+</TipBox>
+
+**Veredicto: PHISHING. Llamar al jefe directamente por teléfono para confirmar.**
+
+---
+
+## Escenario 5: El concurso de Instagram
+
+> **Mensaje directo de @cocacola.oficial.es2024:**
+>
+> "🎉 ¡Felicidades! Has sido seleccionado entre nuestros seguidores para recibir un pack de productos valorado en 500€. Para reclamar tu premio necesitas verificar tu cuenta de Instagram. Haz clic aquí: [link]"
+
+**Señales de alerta:**
+
+- El perfil tiene "2024" en el nombre — señal de cuenta falsa o reciente
+- No participaste en ningún sorteo
+- Te piden "verificar tu cuenta" — van a por tu contraseña
+- El mensaje es genérico, no menciona tu nombre de usuario
+- Urgencia implícita en el tono
+
+**Veredicto: PHISHING. Reportar el perfil a Instagram.**
+
+---
+
+## Tu instinto como herramienta de seguridad
+
+Después de estos ejemplos, probablemente notes que hay un patrón común en todos:
+
+1. **Urgencia o consecuencias graves** si no actúas ahora
+2. **Una recompensa inesperada** o un problema que no sabías que tenías
+3. **Una acción que requiere** hacer clic, instalar algo o dar datos
+4. **Algo que no encaja:** el tono, el dominio, la situación
+
+Confía en ese instinto cuando algo te parezca raro. La pregunta que debes hacerte siempre es: **¿Por qué me piden esto, ahora, así?**
+
+<TipBox type="consejo">
+Antes de hacer cualquier acción urgente por email, SMS o llamada, tómate 60 segundos para hacer esta pregunta: "¿Podría verificar esto de otra forma?" Si la respuesta es sí, hazlo. Ese minuto puede ahorrarte mucho dinero y estrés.
+</TipBox>
+
+<PromptButton prompt="Tengo un email sospechoso. ¿Puedo pegarte el texto para que me ayudes a identificar si es phishing?" />

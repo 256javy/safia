@@ -1,0 +1,144 @@
+---
+title: "Usar el gestor en el móvil"
+description: "Configura y usa tu gestor de contraseñas en el teléfono para tener acceso seguro desde cualquier lugar."
+xp_reward: 100
+order: 5
+quiz:
+  - question: "¿Qué función debes activar en el móvil para que el gestor rellene contraseñas automáticamente en apps?"
+    options:
+      - "Notificaciones push"
+      - "Servicio de autocompletado (Autofill service)"
+      - "Modo oscuro"
+    correct: 1
+    explanation: "El servicio de autocompletado permite al gestor detectar campos de usuario y contraseña en cualquier app del móvil y ofrecerte rellenarlos automáticamente, igual que hace la extensión del navegador en el PC."
+  - question: "¿Por qué es buena idea activar la autenticación biométrica (huella/Face ID) en el gestor móvil?"
+    options:
+      - "Para que el gestor sea más rápido"
+      - "Para poder acceder al gestor rápidamente sin escribir la contraseña maestra, manteniendo la seguridad"
+      - "Porque es obligatorio"
+    correct: 1
+    explanation: "La huella dactilar o Face ID te permite desbloquear el gestor en segundos sin escribir la contraseña maestra. Es cómodo y seguro — los datos siguen cifrados y solo tú puedes abrirlos con tu biométrica."
+  - question: "¿Qué debes hacer si te roban el móvil y tienes el gestor instalado?"
+    options:
+      - "No pasa nada, las contraseñas están en la nube"
+      - "Acceder a tu cuenta del gestor desde otro dispositivo y revocar el acceso del dispositivo robado"
+      - "Crear una cuenta nueva en el gestor"
+    correct: 1
+    explanation: "Los gestores de contraseñas permiten gestionar dispositivos autorizados desde la web. Si te roban el móvil, puedes revocar su acceso remotamente para que nadie pueda usar el gestor desde ese dispositivo."
+---
+
+El ordenador es donde más usamos contraseñas para trabajar. Pero el móvil es donde más tiempo pasamos — y donde también necesitamos iniciar sesión en cientos de apps. Configurar bien el gestor en el móvil es esencial.
+
+## Instalar la app del gestor
+
+Si aún no lo has hecho:
+
+1. Abre la App Store (iOS) o Google Play (Android)
+2. Busca el nombre de tu gestor ("Bitwarden", "1Password", etc.)
+3. Descarga la app oficial (verifica que es la del desarrollador correcto)
+4. Abre la app e inicia sesión con tu email y contraseña maestra
+
+Todas tus contraseñas estarán disponibles automáticamente, sincronizadas desde la nube cifrada.
+
+## Activar la biométrica
+
+Es la configuración más importante para el uso diario.
+
+**En Bitwarden (Android):**
+1. Configuración → Seguridad
+2. Activa "Desbloquear con biometría"
+3. Sigue el proceso de verificación
+
+**En Bitwarden (iOS):**
+1. Configuración → Seguridad
+2. Activa "Desbloquear con Touch ID" o "Desbloquear con Face ID"
+
+Desde ese momento, cuando necesites el gestor, solo usa tu huella o cara en lugar de escribir la contraseña maestra.
+
+**Importante:** La contraseña maestra sigue siendo necesaria de vez en cuando (cuando reinicias el gestor, tras un período sin usar, etc.). No la olvides.
+
+## Configurar el autocompletado
+
+Esta es la función más útil del gestor en el móvil. Permite que el gestor detecte los campos de login en cualquier app y te ofrezca rellenarlos automáticamente.
+
+### En Android
+
+1. Configuración del teléfono → Gestión general → Contraseñas y autorrelleno
+2. O bien: Configuración → Accesibilidad → Servicios instalados → Bitwarden
+3. Selecciona Bitwarden como servicio de autocompletado
+
+### En iOS
+
+1. Configuración (del iPhone) → Contraseñas → Contraseñas y cuentas
+2. "Autorrellenar contraseñas" → Selecciona tu gestor (Bitwarden, 1Password)
+3. Desactiva "iCloud Keychain" si quieres usar solo tu gestor
+
+Una vez activado, cuando abres cualquier app y ves campos de login, aparecerá una sugerencia del gestor encima del teclado.
+
+<TipBox type="consejo">
+Si el autocompletado no aparece en una app específica, puedes abrir el gestor manualmente, buscar las credenciales y copiarlas al portapapeles. Luego pégalas en la app. No es tan cómodo, pero funciona en cualquier caso.
+</TipBox>
+
+## Cómo funciona en la práctica
+
+Cuando abres cualquier app donde tienes cuenta:
+
+1. Tocas el campo de email o usuario
+2. Aparece una barra sobre el teclado con el icono del gestor
+3. El gestor muestra las credenciales que coinciden con esa app
+4. Tocas la opción correcta
+5. Se solicita tu huella o Face ID
+6. Los campos se rellenan automáticamente
+
+Todo el proceso tarda 3-5 segundos. Más rápido que escribir tu contraseña.
+
+## Para apps que el gestor no reconoce automáticamente
+
+A veces el gestor no detecta automáticamente qué credenciales usar en una app. En ese caso:
+
+1. Abre el gestor directamente
+2. Busca el nombre de la app o web
+3. Toca "Copiar contraseña"
+4. Ve a la app y pégala
+
+Si esto ocurre con frecuencia en una app específica, puedes añadir la URL de la app a la entrada del gestor:
+1. Edita la entrada en el gestor
+2. Añade la URL o identificador de la app
+3. La próxima vez el gestor la reconocerá
+
+## Añadir nuevas contraseñas desde el móvil
+
+Cuando te registras en una nueva app:
+
+1. En el campo de contraseña, toca el icono del gestor
+2. Selecciona "Generar contraseña"
+3. El gestor genera una contraseña aleatoria fuerte
+4. Se introduce en el campo y se guarda automáticamente
+
+O manualmente:
+1. Abre el gestor
+2. Toca el "+" para nueva entrada
+3. Rellena los campos y usa el generador para la contraseña
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "En el móvil el gestor de contraseñas es incómodo de usar."
+
+**Realidad:** Una vez configurado el autocompletado biométrico, el gestor en el móvil es más cómodo que escribir contraseñas manualmente. La curva de aprendizaje inicial de 15 minutos vale la pena.
+</TipBox>
+
+## Si te roban el teléfono
+
+El gestor en el móvil tiene protección en varios niveles:
+
+1. **Bloqueo de pantalla del teléfono** — sin pasar el PIN/huella, no pueden abrir ninguna app
+2. **Bloqueo del gestor** — aunque accedan al teléfono, el gestor pide biométrica o contraseña maestra
+3. **Revocación remota** — puedes acceder a tu cuenta del gestor desde otro dispositivo y revocar el acceso del teléfono robado
+
+Para revocar el acceso en Bitwarden:
+1. Ve a `vault.bitwarden.com` desde otro dispositivo
+2. Cuenta → Configuración → Sesiones activas
+3. Cierra sesión en el dispositivo robado
+
+Desde ese momento, aunque alguien tenga el teléfono físico, no podrá acceder al gestor aunque consiga desbloquearlo.
+
+<PromptButton prompt="¿Cómo activo el autocompletado de Bitwarden en mi iPhone paso a paso?" />

@@ -1,0 +1,116 @@
+---
+title: "Llaves de seguridad físicas (YubiKey y similares)"
+description: "Conoce el método de verificación más seguro del mundo: una llave física que conectas a tu dispositivo."
+xp_reward: 100
+order: 3
+quiz:
+  - question: "¿Qué es una llave de seguridad física como YubiKey?"
+    options:
+      - "Un software que genera códigos en tu teléfono"
+      - "Un dispositivo físico que se conecta por USB o NFC para verificar tu identidad"
+      - "Una tarjeta de crédito especial para compras online seguras"
+    correct: 1
+    explanation: "Una llave de seguridad física es un pequeño dispositivo (como un USB o llavero NFC) que debes tener físicamente para autenticarte. Sin la llave, nadie puede entrar a tu cuenta."
+  - question: "¿Por qué una llave física es más segura que los códigos SMS o apps de autenticación?"
+    options:
+      - "Porque es más cara y las cosas caras son más seguras"
+      - "Porque no puede ser interceptada de forma remota — un atacante necesitaría robar físicamente la llave"
+      - "Porque funciona sin internet"
+    correct: 1
+    explanation: "Los códigos SMS pueden ser interceptados y las apps de autenticación pueden ser comprometidas si hackean tu teléfono. La llave física requiere presencia física — un atacante remoto no puede robarla."
+  - question: "¿Para quién tiene más sentido usar una llave de seguridad física?"
+    options:
+      - "Solo para hackers y personas técnicas"
+      - "Para personas con cuentas de alto valor o riesgo: periodistas, activistas, ejecutivos, personas con dinero en criptomonedas"
+      - "Solo para empresas grandes"
+    correct: 1
+    explanation: "Aunque cualquiera puede usar una llave física, son especialmente recomendables para personas cuyas cuentas representan un objetivo de alto valor o que manejan información sensible."
+---
+
+Imagina que para entrar a tu banco no solo necesitas tu tarjeta y PIN, sino también tocar físicamente un pequeño dispositivo que tienes en tu llavero. Sin ese objeto en tu mano, no hay acceso posible — ni desde el otro lado del mundo.
+
+Eso es exactamente lo que hace una llave de seguridad física.
+
+## Qué es una llave de seguridad física
+
+Una llave de seguridad física (como la **YubiKey**, **Google Titan**, o **Feitian**) es un pequeño dispositivo, del tamaño de una memoria USB, que funciona como tu segundo factor de autenticación.
+
+Para entrar a una cuenta protegida con una llave física necesitas:
+
+1. Tu contraseña (algo que sabes)
+2. **La llave física en tu mano** (algo que tienes)
+
+Sin la llave, aunque alguien tenga tu contraseña, no puede entrar. Y a diferencia de los códigos SMS o las apps de autenticación, la llave no puede ser interceptada de forma remota — un atacante tendría que robarte físicamente el dispositivo.
+
+## Cómo funciona
+
+Dependiendo del modelo y del sitio web, hay diferentes formas de uso:
+
+**Por USB:** Conectas la llave al puerto USB de tu computadora y tocas un botón dorado cuando el sitio lo solicita.
+
+**Por NFC:** Acercas la llave a la parte trasera de tu teléfono (como con el pago sin contacto).
+
+**Por Bluetooth:** Algunos modelos se conectan inalámbricamente.
+
+El proceso dura menos de 2 segundos. Sin contraseñas adicionales que escribir, sin esperar un SMS.
+
+<TipBox type="analogia">
+Si la contraseña es la llave de tu casa, la llave de seguridad física es la segunda cerradura especial que solo se abre con un dispositivo único que solo tú posees. Un ladrón que copie tu llave normal todavía no puede abrir la segunda cerradura.
+</TipBox>
+
+## Por qué es el método MFA más seguro
+
+Comparando los métodos de MFA del más básico al más seguro:
+
+| Método | Seguridad | Vulnerable a |
+|---|---|---|
+| SMS con código | Básica | SIM swapping, interceptación |
+| App autenticadora | Buena | Malware en el teléfono, phishing avanzado |
+| Llave física FIDO2 | Excelente | Solo robo físico |
+
+La llave física usa el estándar **FIDO2/WebAuthn**, que además verifica que estás en el sitio real — no en una web falsa de phishing. Es prácticamente imposible de engañar con una web de imitación.
+
+<TipBox type="sabias-que">
+Google implementó llaves de seguridad físicas para todos sus empleados en 2017. Desde entonces, reportan cero cuentas comprometidas por phishing entre sus más de 85,000 empleados. La tecnología funciona.
+</TipBox>
+
+## ¿Para quién es una llave física?
+
+**Muy recomendable para:**
+- Periodistas, activistas o personas con perfiles de alto riesgo
+- Ejecutivos o personas con acceso a información empresarial crítica
+- Personas que tienen inversiones en criptomonedas
+- Cualquiera que quiera el nivel de seguridad máximo
+
+**Suficiente con apps autenticadoras para:**
+- La mayoría de usuarios normales
+- Personas que no manejan información especialmente sensible
+
+No es que las llaves sean solo para expertos — son fáciles de usar. Pero tienen un coste (20-70€ la unidad) y requieren un paso de configuración inicial.
+
+## Marcas y precios
+
+- **YubiKey 5** — la más popular y compatible, ~50€
+- **Google Titan Security Key** — buena opción para usuarios de Google, ~30€
+- **Feitian** — más económica, ~20€
+- **Nitrokey** — código abierto, para los más técnicos
+
+<TipBox type="consejo">
+Si decides comprar una llave física, compra siempre **dos** unidades y regístralas ambas en tus cuentas importantes. Guarda una de respaldo en casa. Si pierdes o rompes la principal, tendrás la de emergencia. Sin respaldo, si pierdes la llave podrías quedarte sin acceso a tus cuentas.
+</TipBox>
+
+## Compatibilidad
+
+Las llaves físicas funcionan con la mayoría de servicios importantes:
+- Google / Gmail
+- Microsoft / Outlook
+- Apple ID
+- Facebook e Instagram
+- Twitter/X
+- GitHub
+- Dropbox
+- Muchos gestores de contraseñas (1Password, Bitwarden)
+
+Si un servicio soporta "FIDO2" o "llaves de seguridad", puedes usar una llave física con él.
+
+<PromptButton prompt="¿Cómo configuro una YubiKey con mi cuenta de Google paso a paso?" />

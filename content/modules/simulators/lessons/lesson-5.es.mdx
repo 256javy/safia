@@ -1,0 +1,146 @@
+---
+title: "Practica con el simulador — Banco"
+description: "Aprende a identificar páginas bancarias falsas con los mismos criterios que usan los expertos en seguridad."
+xp_reward: 150
+order: 5
+quiz:
+  - question: "¿Cómo debes acceder a tu banca online de forma segura?"
+    options:
+      - "Buscando el nombre de tu banco en Google y haciendo clic en el primer resultado"
+      - "Haciendo clic en el link del email que te manda tu banco"
+      - "Escribiendo directamente la URL oficial en el navegador o usando un marcador guardado"
+    correct: 2
+    explanation: "Escribir la URL o usar un marcador garantiza que llegas al sitio real. Los resultados de búsqueda pueden incluir anuncios falsos, y los emails pueden ser phishing."
+  - question: "Tu banco te manda un email diciendo que tu cuenta tiene un cargo no reconocido y debes verificarlo. ¿Qué haces?"
+    options:
+      - "Hago clic en el link del email para ver el cargo cuanto antes"
+      - "Abro la app oficial de mi banco o entro a la web escribiendo la URL directamente"
+      - "Llamo al número que aparece en el email"
+    correct: 1
+    explanation: "Si hay un problema real con tu cuenta, verás la información cuando entres por tu propio acceso. Nunca uses links de emails. El número del email también puede ser falso — usa el de tu tarjeta."
+  - question: "La página de tu banco te pide que introduzcas tu contraseña completa, los 8 dígitos de tu tarjeta coordinada Y un código SMS, todo en la misma pantalla. ¿Qué piensas?"
+    options:
+      - "Es más seguro porque pide más verificaciones"
+      - "Es sospechoso — los bancos reales piden estas verificaciones en pasos separados y nunca todo junto"
+      - "Solo es sospechoso si no esperaba el SMS"
+    correct: 1
+    explanation: "Los bancos piden factores de seguridad en pasos separados según el tipo de operación. Pedir todo junto en una misma pantalla es señal de phishing — intentan obtener todos tus datos de golpe."
+---
+
+El phishing bancario es el más costoso a nivel personal. A diferencia de que te roben el email (molesto pero recuperable), que comprometan tu banca online puede significar perder dinero real, y no siempre se recupera.
+
+Esta es la razón por la que los atacantes invierten más esfuerzo en crear páginas bancarias convincentes.
+
+## Por qué las páginas bancarias falsas son especialmente peligrosas
+
+Los bancos reales hacen un esfuerzo considerable en la experiencia de usuario:
+- Diseños profesionales y consistentes
+- Mensajes de seguridad visibles
+- Logos y colores de marca impecables
+
+Los atacantes copian todo esto. Y lo hacen bien. La diferencia suele estar en detalles que requieren atención.
+
+## Cómo acceder a tu banco siempre de forma segura
+
+Antes de hablar de cómo detectar páginas falsas, lo más importante: **cómo llegar al sitio real**.
+
+**Método seguro:**
+1. Escribe la URL directamente en la barra del navegador (ej: `www.bbva.es`)
+2. Guarda la URL oficial como marcador y usa solo esa
+3. Usa la app oficial del banco en tu móvil
+
+**Métodos inseguros:**
+- Hacer clic en links de emails del "banco"
+- Buscar en Google "iniciar sesión bbva" y hacer clic
+- Seguir links de SMS
+- Usar links en páginas web de terceros
+
+<TipBox type="sabias-que">
+Los atacantes compran anuncios en Google con el nombre de bancos. Si buscas "banco santander login", el primer resultado puede ser un anuncio de una página falsa que parece oficial. Los anuncios pagados no garantizan legitimidad.
+</TipBox>
+
+## Anatomía de la banca online real
+
+### La URL
+
+Cada banco tiene su dominio oficial. Algunos ejemplos:
+- BBVA: `www.bbva.es` / `banca.bbva.es`
+- Santander: `www.bancosantander.es`
+- CaixaBank: `www.caixabank.es`
+- ING: `www.ingdirect.es`
+
+Guarda estos como marcadores en tu navegador. Si la URL no coincide exactamente, para.
+
+### El proceso de autenticación
+
+Los bancos en España han estandarizado un proceso de autenticación conforme a la normativa PSD2:
+
+1. **Usuario/DNI/NIE** — tu identificador único
+2. **Contraseña/PIN** — en una pantalla separada
+3. **Segundo factor** — solo para operaciones de riesgo, no siempre en el login simple
+
+Los bancos nunca piden los tres elementos juntos en la misma pantalla.
+
+### Lo que los bancos NUNCA harán
+
+- Pedirte tu contraseña completa por email
+- Pedirte los datos de tu tarjeta de coordenadas por email
+- Pedirte que instales una aplicación por link en un SMS
+- Pedirte que muevas dinero a una "cuenta segura"
+- Llamarte para pedirte un código SMS que acabas de recibir
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Mi banco me llamó y me pidió el código SMS que me acaba de llegar. Es para verificar mi identidad."
+
+**Realidad:** Esto es una estafa muy común. El atacante ya tiene tus datos bancarios (obtenidos de una web falsa o filtración), intenta hacer una operación, y llama para que le des el código de verificación. Tu banco NUNCA te pedirá que compartas un código SMS.
+</TipBox>
+
+## Señales de alerta en páginas bancarias
+
+### Señales en la URL
+- El dominio no es exactamente el oficial
+- Usa HTTP en lugar de HTTPS
+- Tiene palabras como "seguro", "verificacion", "cliente" en el dominio
+
+### Señales en el formulario
+- Pide demasiados datos de golpe
+- Pide la tarjeta de coordenadas completa (los bancos piden coordenadas específicas, no todas)
+- Tiene campos para datos que tu banco no usa normalmente
+
+### Señales visuales
+- El logo tiene una calidad diferente
+- Los colores no son exactamente los del banco
+- Hay errores de ortografía o frases en otros idiomas
+- Los links secundarios no funcionan
+- El diseño se ve ligeramente diferente al habitual
+
+## Escenario de práctica mental
+
+Imagina este escenario:
+
+Recibes un SMS: "BBVA: Se ha realizado un cargo de 847€ en su tarjeta. Si no reconoce esta operación pulse aquí: bit.ly/bbva-fraude"
+
+El link te lleva a una página que parece BBVA. La URL es `bbva-seguridadonline.com`. Te pide usuario, contraseña y toda tu tarjeta de coordenadas en la misma pantalla para "anular el cargo".
+
+**Señales de alerta:**
+1. URL falsa — no es `bbva.es`
+2. Link acortado en el SMS original
+3. Urgencia y miedo (cargo de 847€)
+4. Pide todos los datos de coordinadas juntos
+5. La URL incluye "online" de forma inusual
+
+**Qué harías:** Ignorar el SMS. Abrir la app de BBVA o ir a `bbva.es` directamente para comprobar si hay cargos reales.
+
+## Tu plan de acción bancario
+
+1. **Guarda hoy** la URL oficial de tu banco como marcador (o usa solo la app)
+2. **Guarda el número** de atención al cliente de tu banco en tu agenda
+3. **Activa las notificaciones** de la app para cada transacción
+4. **Nunca compartas** códigos SMS con nadie, ni con tu banco
+5. **Si hay un cargo** que no reconoces: ve directamente a la app, no sigas links
+
+<TipBox type="consejo">
+La mayoría de bancos tienen apps móviles con notificaciones de cada transacción en tiempo real. Activarlas es la forma más rápida de detectar operaciones no autorizadas. Si ves algo que no reconoces, llama al número oficial inmediatamente.
+</TipBox>
+
+<PromptButton prompt="¿Cómo puedo verificar si la web de mi banco es la oficial y no una copia falsa?" />

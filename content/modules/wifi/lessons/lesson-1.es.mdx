@@ -1,0 +1,111 @@
+---
+title: "Los peligros del WiFi público"
+description: "Entiende por qué conectarte al WiFi del café o el centro comercial puede ser más peligroso de lo que crees."
+xp_reward: 100
+order: 1
+quiz:
+  - question: "¿Por qué el WiFi público es potencialmente peligroso?"
+    options:
+      - "Porque es más lento que el WiFi de casa"
+      - "Porque cualquier persona en la misma red puede interceptar tu tráfico si no está cifrado"
+      - "Porque el WiFi público siempre tiene virus"
+    correct: 1
+    explanation: "En una red WiFi pública sin cifrado o con cifrado débil, alguien con los conocimientos técnicos puede interceptar los datos que envías y recibes — incluyendo contraseñas y datos bancarios."
+  - question: "¿Cuál de estas actividades es más peligrosa en WiFi público?"
+    options:
+      - "Ver videos de YouTube"
+      - "Leer noticias en periódicos online"
+      - "Acceder a tu banca online"
+    correct: 2
+    explanation: "Acceder a tu banca online en WiFi público expone tus credenciales bancarias a posibles interceptaciones. Ver contenido público sin login es mucho menos arriesgado."
+  - question: "¿Qué significa que una red WiFi pública pida contraseña para conectarse?"
+    options:
+      - "Que la red es completamente segura"
+      - "Que el acceso está controlado, pero no necesariamente que el tráfico esté protegido de otros usuarios de la misma red"
+      - "Que solo personas de confianza pueden conectarse"
+    correct: 1
+    explanation: "Una contraseña de WiFi controla quién puede conectarse, pero no necesariamente protege el tráfico entre los usuarios de esa red. En muchas redes públicas, otros usuarios aún pueden ver tu actividad."
+---
+
+Te sientas en una cafetería, pides un café, y lo primero que haces es conectarte al WiFi. Es automático. Es cómodo. Y puede ser peligroso de formas que no imaginas.
+
+## La naturaleza del WiFi público
+
+Cuando te conectas al WiFi de tu casa, eres prácticamente el único usuario de esa red. Tienes control sobre quién se conecta y la red tiene protecciones básicas.
+
+Cuando te conectas al WiFi del café, del aeropuerto o del centro comercial, estás compartiendo una red con decenas o cientos de personas que no conoces. Algunas de ellas pueden estar escuchando.
+
+<TipBox type="analogia">
+Imagina que estás en un café lleno de gente y tienes que llamar a tu banco para dar tu número de tarjeta en voz alta. Cualquiera cerca podría escucharte. El WiFi público sin protección es exactamente eso — una conversación en voz alta en un lugar público.
+</TipBox>
+
+## Cómo funciona el problema técnico
+
+El WiFi transmite datos a través del aire — literalmente, ondas de radio. En una red bien configurada, esas ondas están cifradas y son difíciles de interceptar. En una red pública mal configurada, están en texto casi legible para quien tenga el equipo adecuado.
+
+Esto significa que alguien sentado en la misma cafetería, con una laptop y herramientas disponibles libremente en internet, puede:
+
+- Ver a qué sitios web te conectas
+- Interceptar datos enviados por sitios sin HTTPS
+- Capturar credenciales de inicio de sesión en ciertas circunstancias
+- Ver archivos que descargas o subes
+
+## Las tres amenazas principales en WiFi público
+
+### 1. Redes WiFi falsas (Evil Twin)
+
+Alguien crea una red WiFi con el mismo nombre que la red legítima. "CafeCorner_WiFi" y "CafeCorner_WiFi" — el primero es el real, el segundo es una trampa. Tu teléfono se conecta automáticamente al más fuerte, que puede ser el falso.
+
+Una vez conectado, todo tu tráfico pasa por el dispositivo del atacante.
+
+### 2. Ataques de hombre en el medio (Man-in-the-Middle)
+
+Sin necesidad de una red falsa, en una red pública mal configurada un atacante puede posicionarse entre tú y el router, viendo todo tu tráfico. Lo explicamos en detalle en la siguiente lección.
+
+### 3. Sesiones no cifradas
+
+Aunque cada vez es menos común, algunos sitios aún usan HTTP en lugar de HTTPS. En una red pública, el contenido de esas sesiones puede ser visible para otros.
+
+## Qué datos están más en riesgo
+
+**Alto riesgo:**
+- Credenciales bancarias y de banca online
+- Contraseñas de correo electrónico
+- Datos de tarjetas de crédito
+- Acceso a redes corporativas
+
+**Riesgo moderado:**
+- Contraseñas de redes sociales
+- Credenciales de servicios de suscripción
+
+**Bajo riesgo:**
+- Navegar por sitios de noticias sin iniciar sesión
+- Ver videos en YouTube o Netflix (la transmisión está cifrada)
+- Búsquedas en Google
+
+<TipBox type="sabias-que">
+La mayoría de sitios web importantes usan HTTPS, que cifra el contenido de la comunicación. Sin embargo, incluso con HTTPS, un atacante en la misma red puede ver con qué dominio te estás comunicando (aunque no el contenido). Sabe que visitaste tu banco, aunque no sepa exactamente qué hiciste.
+</TipBox>
+
+## Señales de que una red WiFi pública puede ser peligrosa
+
+- El nombre de la red es genérico o muy similar a otra red que conozcas
+- No requiere ningún tipo de autenticación (ni siquiera una pantalla de bienvenida)
+- La red es increíblemente rápida en un lugar donde no esperas eso
+- Nadie del establecimiento sabe cuál es el nombre exacto de su WiFi
+
+## Qué puedes hacer para protegerte
+
+La protección más efectiva es una **VPN** (lo veremos en la lección 3). Pero hay medidas básicas que puedes tomar ahora mismo:
+
+1. **Evita banca y pagos** en WiFi público — espera a estar en tu red de casa o usa datos móviles
+2. **Desactiva el WiFi automático** en tu teléfono para que no se conecte solo a redes conocidas
+3. **Verifica el nombre exacto** de la red con alguien del establecimiento antes de conectarte
+4. **Usa datos móviles** cuando necesites hacer algo sensible
+5. **Cierra las sesiones** bancarias y de correo cuando termines
+
+<TipBox type="consejo">
+Los datos móviles (4G/5G) de tu operador son mucho más seguros que el WiFi público para operaciones sensibles. Si tienes tarifa de datos, úsala para acceder al banco o al correo cuando no estés en casa. El coste en datos es mínimo comparado con el riesgo.
+</TipBox>
+
+<PromptButton prompt="Estoy en un café y necesito acceder a mi banco. ¿Qué debo hacer para estar seguro?" />

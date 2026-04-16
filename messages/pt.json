@@ -1,0 +1,336 @@
+{
+  "common": {
+    "appName": "Safia",
+    "loading": "Carregando...",
+    "error": "Algo deu errado",
+    "retry": "Tentar novamente",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "start": "Começar",
+    "continue": "Continuar",
+    "complete": "Completar",
+    "learnMore": "Saiba mais",
+    "signIn": "Entrar",
+    "nav": {
+      "courses": "Cursos",
+      "simulator": "Simuladores",
+      "roadmap": "Rota",
+      "profile": "Perfil"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Aprenda a se proteger.",
+      "subtitle": "Aprenda a se proteger online. Sem jargão. Sem medo. Grátis.",
+      "cta": "Comece grátis",
+      "ctaSecondary": "Ver o caminho"
+    },
+    "trust": {
+      "noAccount": "Sem conta necessária",
+      "openSource": "Código aberto",
+      "noAds": "Sem anúncios",
+      "free": "100% grátis"
+    },
+    "modules": {
+      "heading": "Aprenda o que importa",
+      "subheading": "Módulos curtos, práticos e sem jargão técnico.",
+      "passwords": {
+        "title": "Senhas seguras",
+        "description": "Aprenda a criar e gerenciar senhas que ninguém pode adivinhar.",
+        "time": "15 min",
+        "difficulty": "Básico",
+        "xp": "100"
+      },
+      "phishing": {
+        "title": "Detecte o phishing",
+        "description": "Identifique e-mails e sites falsos antes que te enganem.",
+        "time": "20 min",
+        "difficulty": "Básico",
+        "xp": "150"
+      },
+      "mfa": {
+        "title": "Autenticação MFA",
+        "description": "Adicione uma camada extra de proteção às suas contas.",
+        "time": "10 min",
+        "difficulty": "Intermediário",
+        "xp": "120"
+      },
+      "simulators": {
+        "title": "Simuladores",
+        "description": "Pratique em ambientes seguros que imitam ataques reais.",
+        "time": "30 min",
+        "difficulty": "Avançado",
+        "xp": "200"
+      }
+    },
+    "howItWorks": {
+      "heading": "Simples assim",
+      "subheading": "Três passos. Sem cadastros complicados.",
+      "step": "Passo {n}",
+      "step1": { "title": "Escolha um tema", "description": "Escolha o módulo que mais te interessa. Sem ordem obrigatória." },
+      "step2": { "title": "Aprenda fazendo", "description": "Aulas curtas com quizzes interativos. Ganhe XP por cada resposta certa." },
+      "step3": { "title": "Pratique em simuladores", "description": "Enfrente ataques simulados em um ambiente 100% seguro. Sem riscos reais." }
+    },
+    "simulator": {
+      "heading": "Pratique sem medo",
+      "subheading": "Nada do que você digita é real. Aprenda a detectar páginas falsas em um ambiente seguro.",
+      "banner": "SIMULADOR DE TREINAMENTO — Nada é real",
+      "signIn": "Entrar",
+      "next": "Próximo",
+      "redFlags": "3 sinais suspeitos detectados"
+    },
+    "gamification": {
+      "heading": "Aprenda e desbloqueie conquistas",
+      "subheading": "Ganhe XP, suba de nível e colecione badges por cada módulo completado.",
+      "level": "Nível {level}",
+      "rank": "Aprendiz",
+      "badge1": "Primeira senha",
+      "badge2": "Anti-phishing",
+      "badge3": "MFA ativado",
+      "badge4": "Primeiro simulador"
+    },
+    "newsletter": {
+      "heading": "Fique por dentro",
+      "subheading": "Avisamos quando houver conteúdo novo. Sem spam.",
+      "placeholder": "voce@email.com",
+      "submit": "Inscrever-se",
+      "sending": "Enviando...",
+      "success": "Pronto. Avisaremos quando houver novidades.",
+      "error": "Algo deu errado. Tente novamente."
+    },
+    "footer": {
+      "tagline": "aprenda a se proteger.",
+      "github": "GitHub",
+      "privacy": "Privacidade",
+      "terms": "Termos",
+      "settings": "Configurações"
+    }
+  },
+  "courses": {
+    "title": "Cursos",
+    "explore": "Explorar cursos",
+    "progress": "Seu progresso",
+    "lessons": "Aulas",
+    "lessonsHeading": "Aulas",
+    "lessonCompleted": "Concluída",
+    "quiz": "Questionário",
+    "completed": "Concluído",
+    "locked": "Bloqueado",
+    "home": "Início",
+    "quizHeading": "Teste o que aprendeu",
+    "backToModule": "Voltar ao módulo",
+    "difficultyBasic": "Básico",
+    "difficultyIntermediate": "Intermediário",
+    "difficultyAdvanced": "Avançado",
+    "quiz": {
+      "excellent": "Excelente trabalho!",
+      "keepPracticing": "Continue praticando",
+      "score": "Você respondeu corretamente {correct} de {total} perguntas ({percent}%)",
+      "question": "Pergunta {current} de {total}",
+      "correct": "✓ Correto!",
+      "incorrect": "✗ Incorreto",
+      "next": "Próximo",
+      "seeResult": "Ver resultado"
+    }
+  },
+  "simulator": {
+    "title": "Simulador",
+    "subtitle": "Pratique em ambientes seguros. Nada do que você digitar é real.",
+    "start": "Iniciar simulação",
+    "hint": "Dica",
+    "score": "Pontuação",
+    "phishing": "Phishing",
+    "socialEngineering": "Engenharia social",
+    "banner": "Esta é uma simulação de treinamento. Nada do que você digitar aqui é real nem será salvo.",
+    "step": "Passo {current} de {total}",
+    "steps": "{count} passos",
+    "vault": "Seu cofre de treinamento",
+    "validation": {
+      "emailRequired": "Digite seu endereço de e-mail para continuar.",
+      "emailInvalid": "Digite um endereço de e-mail válido.",
+      "passwordRequired": "Digite sua senha para continuar.",
+      "mfaRequired": "Digite o código de verificação para continuar.",
+      "fieldRequired": "Este campo é obrigatório.",
+      "credentialsInvalid": "Credenciais incorretas. Tente novamente.",
+      "noAccountWarning": "Atenção! Um site real validaria suas credenciais aqui."
+    },
+    "next": "Próximo",
+    "complete": "Completar simulação",
+    "completed": "Simulação completada",
+    "completedDesc": "Você completou o simulador de {platform}.",
+    "xpEarned": "+50 XP ganhos",
+    "backToSimulators": "Voltar aos simuladores",
+    "platforms": {
+      "google": "Google Workspace",
+      "facebook": "Facebook / Instagram",
+      "x": "X (Twitter)",
+      "tiktok": "TikTok",
+      "banking": "Banco online"
+    },
+    "google": {
+      "step1": { "label": "Email", "placeholder": "voce@gmail.com", "tip": "Sempre verifique a URL. Sites falsos usam domínios semelhantes como gooogle.com ou g00gle.com." },
+      "step2": { "label": "Senha", "placeholder": "Sua senha", "tip": "Nunca reutilize senhas. Se um site vazar, todas as suas contas ficam expostas." },
+      "step3": { "label": "Código 2FA (SMS)", "placeholder": "123456", "tip": "Os códigos SMS são pessoais. Ninguém do Google vai pedir que você os compartilhe." },
+      "step4": { "label": "Verificação bem-sucedida", "tip": "Com 2FA ativado, um invasor precisa do seu telefone além da sua senha. É uma barreira enorme." }
+    },
+    "facebook": {
+      "step1": { "label": "Login", "placeholder": "E-mail ou telefone", "tip": "O Facebook nunca pedirá sua senha por mensagem. Se alguém pedir, é phishing." },
+      "step2": { "label": "Configurar 2FA", "tip": "Escolha um app autenticador em vez de SMS. Apps geram códigos offline e são mais seguros." },
+      "step3": { "label": "Código de verificação", "placeholder": "000000", "tip": "Os códigos de autenticação mudam a cada 30 segundos. Um código roubado expira rápido." },
+      "step4": { "label": "Confirmação", "tip": "Guarde seus códigos de backup em um lugar seguro. Se perder seu telefone, vai precisar deles." }
+    },
+    "x": {
+      "step1": { "label": "Usuário", "placeholder": "@seu_usuario", "tip": "Contas verificadas também podem ser hackeadas. Verificação não é sinônimo de segurança." },
+      "step2": { "label": "Senha", "placeholder": "Sua senha", "tip": "Reutilizar senhas é o erro mais comum. Um gerenciador de senhas resolve isso." },
+      "step3": { "label": "Método 2FA", "tip": "Chaves de segurança físicas (como YubiKey) são o método mais seguro. SMS é melhor que nada." },
+      "step4": { "label": "Código", "placeholder": "000000", "tip": "Se alguém pedir um código que você acabou de receber, é um ataque em tempo real. Não compartilhe." }
+    },
+    "tiktok": {
+      "step1": { "label": "Login", "placeholder": "E-mail ou telefone", "tip": "Contas com seguidores são alvos. Mais seguidores = mais valor para um invasor." },
+      "step2": { "label": "Configurações de segurança", "tip": "Verifique quais apps têm acesso à sua conta. Revogue os que não reconhecer." },
+      "step3": { "label": "Código 2FA", "placeholder": "000000", "tip": "Ative 2FA mesmo se achar que sua conta não é importante. Invasores as usam para spam." }
+    },
+    "banking": {
+      "step1": { "label": "Login bancário", "placeholder": "Seu usuário", "tip": "Seu banco nunca enviará um link por SMS para login. Digite a URL você mesmo." },
+      "step2": { "label": "Verificação de dispositivo", "tip": "Alertas de dispositivo novo são sua primeira linha de defesa. Não os ignore." },
+      "step3": { "label": "Pergunta de segurança", "placeholder": "Sua resposta", "tip": "Não use respostas reais. Invente respostas que só você conheça." },
+      "step4": { "label": "Confirmar transação", "tip": "Sempre verifique o valor e destinatário antes de confirmar. Golpistas mudam dados no último momento." },
+      "step5": { "label": "Resumo", "tip": "Revise seu extrato regularmente. Reporte qualquer transação que não reconheça." }
+    }
+  },
+  "gamification": {
+    "xp": "XP",
+    "level": "Nível",
+    "badges": "Insígnias",
+    "streak": "Sequência",
+    "streakDays": "{count, plural, one {# dia} other {# dias}}",
+    "levelUp": "Você alcançou o nível {level}!",
+    "newBadge": "Nova insígnia desbloqueada!",
+    "levels": {
+      "novice": "Novato",
+      "apprentice": "Aprendiz",
+      "explorer": "Explorador",
+      "defender": "Defensor",
+      "guardian": "Guardião",
+      "sentinel": "Sentinela",
+      "protector": "Protetor",
+      "champion": "Campeão",
+      "master": "Mestre",
+      "legend": "Lenda"
+    },
+    "badges_list": {
+      "firstLesson": "Primeira aula",
+      "firstLessonDesc": "Complete sua primeira aula",
+      "firstModule": "Primeiro módulo",
+      "firstModuleDesc": "Complete um módulo inteiro",
+      "passwordsComplete": "Senhas",
+      "passwordsCompleteDesc": "Complete o módulo de senhas",
+      "phishingComplete": "Anti-phishing",
+      "phishingCompleteDesc": "Complete o módulo de phishing",
+      "mfaComplete": "MFA ativado",
+      "mfaCompleteDesc": "Complete o módulo de MFA",
+      "socialEngComplete": "Anti-manipulação",
+      "socialEngCompleteDesc": "Complete o módulo de engenharia social",
+      "wifiComplete": "Wi-Fi seguro",
+      "wifiCompleteDesc": "Complete o módulo de segurança Wi-Fi",
+      "simulatorFirst": "Primeiro simulador",
+      "simulatorFirstDesc": "Complete seu primeiro simulador",
+      "streak7": "Sequência semanal",
+      "streak7Desc": "Mantenha uma sequência de 7 dias",
+      "streak30": "Sequência mensal",
+      "streak30Desc": "Mantenha uma sequência de 30 dias",
+      "xp500": "500 XP",
+      "xp500Desc": "Acumule 500 XP",
+      "xp1000": "1000 XP",
+      "xp1000Desc": "Acumule 1000 XP",
+      "xp2000": "2000 XP",
+      "xp2000Desc": "Acumule 2000 XP",
+      "allBasic": "Todos os básicos",
+      "allBasicDesc": "Complete todos os módulos básicos",
+      "allIntermediate": "Todos os intermediários",
+      "allIntermediateDesc": "Complete todos os módulos intermediários",
+      "completionist": "Completista",
+      "completionistDesc": "Complete todos os módulos"
+    }
+  },
+  "auth": {
+    "signIn": "Entrar",
+    "signOut": "Sair",
+    "signInWith": "Entrar com {provider}",
+    "guest": "Continuar como convidado",
+    "profile": "Meu perfil",
+    "guestBanner": "Entre para salvar seu progresso e ganhar insígnias.",
+    "signInPage": {
+      "title": "Entrar",
+      "subtitle": "Salve seu progresso e acesse de qualquer dispositivo.",
+      "continueWith": "Continuar com {provider}",
+      "privacyNote": "Usamos apenas seu ID único. Não armazenamos seu e-mail nem seu nome.",
+      "privacyLink": "Consulte nossa política de privacidade",
+      "or": "ou",
+      "guestCta": "Continuar sem conta"
+    },
+    "errorPage": {
+      "title": "Algo deu errado",
+      "subtitle": "Houve um problema ao entrar. Tente novamente.",
+      "tryAgain": "Tentar novamente",
+      "backHome": "Voltar ao início"
+    }
+  },
+  "roadmap": {
+    "title": "Rota de aprendizado",
+    "subtitle": "Visualize seu progresso e descubra o que aprender em seguida.",
+    "mandatory": "Obrigatório",
+    "recommended": "Recomendado",
+    "optional": "Opcional"
+  },
+  "profile": {
+    "title": "Meu perfil",
+    "moduleProgress": "Progresso por módulo",
+    "lessonsLabel": "aulas",
+    "deleteAccount": "Excluir minha conta",
+    "deleteTitle": "Excluir sua conta?",
+    "deleteWarning": "Esta ação é irreversível. Todos os seus dados, progresso e insígnias serão excluídos.",
+    "cancel": "Cancelar",
+    "deleteConfirm": "Sim, excluir",
+    "deleting": "Excluindo..."
+  },
+  "settings": {
+    "title": "Configurações",
+    "languageTitle": "Idioma / Language",
+    "languageDesc": "Selecione o idioma da interface.",
+    "appearanceTitle": "Aparência",
+    "appearanceDesc": "Escolha entre tema escuro, claro ou do sistema.",
+    "themeDark": "Escuro",
+    "themeLight": "Claro",
+    "themeSystem": "Sistema",
+    "accountTitle": "Conta",
+    "accountConnected": "Conectado com {provider}",
+    "deleteAccount": "Excluir conta",
+    "deleteTitle": "Excluir conta?",
+    "deleteDesc": "Esta ação é irreversível. Todos os seus dados, progresso e configurações serão excluídos permanentemente.",
+    "deleteCancel": "Cancelar",
+    "deleteConfirm": "Sim, excluir",
+    "deleting": "Excluindo…",
+    "simulatorsTitle": "Simuladores",
+    "simulatorsDesc": "Gerencie suas contas de prática para os simuladores de phishing.",
+    "goToSimulators": "Ir para simuladores",
+    "privacyTitle": "Privacidade",
+    "privacyDesc": "Informações sobre quais dados coletamos e como os usamos.",
+    "viewPrivacy": "Ver política de privacidade"
+  },
+  "coachMarks": {
+    "roadmap": "Sua rota de aprendizado",
+    "roadmapDesc": "Veja todos os módulos e a ordem recomendada aqui.",
+    "xpCounter": "Sua experiência",
+    "xpCounterDesc": "Ganhe XP completando aulas e quizzes. Suba de nível.",
+    "authArea": "Salve seu progresso",
+    "authAreaDesc": "Entre para sincronizar seu progresso em todos os seus dispositivos.",
+    "passwordsCard": "Comece aqui",
+    "passwordsCardDesc": "O módulo de senhas é o ponto de partida perfeito.",
+    "skip": "Pular tour",
+    "next": "Próximo",
+    "done": "Entendi"
+  }
+}

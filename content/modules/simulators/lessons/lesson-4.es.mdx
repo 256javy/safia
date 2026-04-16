@@ -1,0 +1,137 @@
+---
+title: "Practica con el simulador — Google"
+description: "Entrena tu ojo para distinguir la pantalla de inicio de sesión real de Google de una imitación."
+xp_reward: 150
+order: 4
+quiz:
+  - question: "¿Cuál es el dominio oficial correcto para iniciar sesión en Google?"
+    options:
+      - "google-accounts.com"
+      - "accounts.google.com"
+      - "login.google-secure.com"
+    correct: 1
+    explanation: "El único dominio oficial de Google para inicio de sesión es accounts.google.com. Cualquier variación, aunque suene oficial, es sospechosa."
+  - question: "En la pantalla de login de Google, ¿qué pide primero el formulario real?"
+    options:
+      - "Email y contraseña en la misma pantalla"
+      - "Primero el email, y la contraseña en una pantalla separada"
+      - "Número de teléfono y contraseña"
+    correct: 1
+    explanation: "Google siempre pide primero el email en una pantalla, y en la siguiente pantalla pide la contraseña. Si ves ambos campos juntos, es una señal de alerta."
+  - question: "Una página de login de Google te pide que actives 'verificación adicional' introduciendo tu contraseña actual y la nueva. ¿Qué haces?"
+    options:
+      - "Lo hago, parece un proceso de seguridad normal"
+      - "Me detengo — Google nunca pide cambiar la contraseña en el formulario de inicio de sesión"
+      - "Lo hago pero uso una contraseña diferente a la real"
+    correct: 1
+    explanation: "Google nunca pide confirmar o cambiar contraseñas en la pantalla de inicio de sesión. Cualquier paso adicional inusual es señal de phishing."
+---
+
+Es hora de poner en práctica lo aprendido. En esta lección vamos a examinar la pantalla de inicio de sesión de Google en detalle — tanto la real como las versiones falsas que usan los atacantes.
+
+Google es uno de los servicios más imitados del mundo. Con más de 1.500 millones de usuarios de Gmail, una contraseña de Google es una de las más valiosas para un atacante.
+
+## Anatomía de la pantalla real de Google
+
+Cuando accedes a Gmail o cualquier servicio de Google, el proceso de inicio de sesión tiene siempre estas características:
+
+### La URL
+
+La URL siempre comienza exactamente con `https://accounts.google.com/`
+
+Lo que viene después puede variar, pero **accounts.google.com** es fijo e inamovible.
+
+Dominios falsos que se han usado en ataques reales:
+- `accounts.google.com.login-verify.net` ← el dominio real es `login-verify.net`
+- `google-accounts-security.com`
+- `accounts-google.net`
+- `gooogle.com` (triple o)
+- `g00gle.com` (ceros)
+
+### El proceso en dos pasos
+
+Google siempre divide el inicio de sesión en dos pantallas:
+
+**Pantalla 1:** Solo pide tu email o número de teléfono. Hay un botón "Siguiente". No hay campo de contraseña visible.
+
+**Pantalla 2:** Muestra parcialmente tu email (ej: `j***@gmail.com`) y pide la contraseña. Hay un botón "Mostrar contraseña".
+
+**Si ves email y contraseña en la misma pantalla → señal de alerta.**
+
+### El diseño
+
+- Logo de Google en la parte superior (las letras coloridas conocidas)
+- Texto "Iniciar sesión" como título
+- Fondo blanco o gris muy claro
+- Sin imágenes de fondo ni elementos decorativos
+- Opciones de idioma en la parte inferior
+
+<TipBox type="consejo">
+Abre ahora mismo en una pestaña separada la página de inicio de sesión de Gmail (accounts.google.com) y estúdiala. Memoriza cómo se ve exactamente — la disposición, los textos, los colores. Ese "mapa mental" de la página real es tu mejor herramienta de detección.
+</TipBox>
+
+## Cómo los atacantes imitan la pantalla de Google
+
+Los atacantes han mejorado mucho en los últimos años. Aquí están las diferencias más sutiles que debes buscar:
+
+### El certificado HTTPS
+
+Las páginas falsas sofisticadas también tienen candado y HTTPS. No te relajes por esto. Mira la URL, no el candado.
+
+### La dirección de email parcialmente visible
+
+En la pantalla de contraseña, Google muestra tu email parcialmente oculto para confirmar que es tu cuenta. Las páginas falsas a veces muestran el email completo o uno genérico. Fíjate si el email mostrado es realmente el tuyo con los caracteres correctos ocultos.
+
+### Los links secundarios
+
+En la pantalla real de Google hay links como "¿Olvidaste tu email?", "Crear cuenta" y "Más opciones". En las páginas falsas, estos links suelen no funcionar o llevar a páginas erróneas.
+
+### El comportamiento del autocompletado
+
+Si tienes el gestor de contraseñas o el autocompletado del navegador configurado para Gmail, debería ofrecerte autocompletar en el sitio real. Si no lo hace, sospecha.
+
+## Escenario de práctica mental
+
+Imagina que recibes este email:
+
+> **De:** noreply-security@accounts-google-verification.com
+> **Asunto:** Acción requerida: Actividad inusual detectada en su cuenta
+>
+> Hemos detectado un inicio de sesión desde un dispositivo desconocido. Verifique su identidad en las próximas 24 horas o su cuenta será suspendida.
+>
+> **[Verificar ahora]**
+
+El link te lleva a una página con el logo de Google, fondo blanco, y un formulario con dos campos: email y contraseña juntos en la misma pantalla.
+
+**¿Cuántas señales de alerta ves?**
+
+1. El dominio del remitente: `accounts-google-verification.com` no es de Google
+2. Urgencia: "24 horas o suspensión"
+3. La URL de la página no es `accounts.google.com`
+4. El formulario muestra email y contraseña en la misma pantalla (Google no hace esto)
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Google me avisará si alguien intenta entrar a mi cuenta."
+
+**Realidad:** Google sí manda notificaciones de inicio de sesión inusual, pero las manda a tu email de recuperación o directamente en la app de Gmail. Nunca te piden que hagas clic en un link externo para verificar.
+</TipBox>
+
+## Lo que debes memorizar sobre Google
+
+- **URL:** siempre `accounts.google.com`
+- **Proceso:** email primero, contraseña después (pantallas separadas)
+- **Google nunca te pide verificación urgente por email con link**
+- **Si tienes MFA:** Google también pedirá un segundo factor (código, notificación, llave)
+- **Si algo se ve diferente a siempre:** para y verifica
+
+## Practica en tu vida diaria
+
+Durante los próximos 7 días, cada vez que inicies sesión en Google:
+
+1. Mira la URL conscientemente antes de escribir
+2. Nota el proceso en dos pasos
+3. Observa que el autocompletado funciona
+
+Hacer esto conscientemente durante una semana lo convierte en un hábito automático.
+
+<PromptButton prompt="Descríbeme una página de phishing de Google que sea muy convincente. ¿Qué señales podría tener?" />

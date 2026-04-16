@@ -1,0 +1,140 @@
+---
+title: "Cómo proteger tu red WiFi en casa"
+description: "Pasos concretos para asegurar el router de casa y evitar que intrusos accedan a tu red."
+xp_reward: 100
+order: 4
+quiz:
+  - question: "¿Cuál es lo primero que debes cambiar en tu router recién instalado?"
+    options:
+      - "El canal de transmisión WiFi"
+      - "La contraseña de administración por defecto del router"
+      - "El nombre del router (SSID)"
+    correct: 1
+    explanation: "Las contraseñas de administración por defecto (como 'admin/admin' o '1234') son conocidas por todos. Cambiarlas es el primer paso para asegurar el router."
+  - question: "¿Qué tipo de cifrado WiFi debes usar en casa?"
+    options:
+      - "WEP, porque es el más compatible"
+      - "WPA2 o WPA3, que son los más seguros actualmente"
+      - "Sin cifrado, para que los dispositivos se conecten más rápido"
+    correct: 1
+    explanation: "WEP está obsoleto y es fácil de hackear. WPA2 es el mínimo recomendado y WPA3 es el estándar actual más seguro. Revisa la configuración de tu router."
+  - question: "¿Para qué sirve la red WiFi para invitados?"
+    options:
+      - "Para que la conexión sea más rápida para los visitantes"
+      - "Para separar los dispositivos de los invitados de tus dispositivos personales y del hogar inteligente"
+      - "Solo para uso en hoteles y negocios"
+    correct: 1
+    explanation: "La red de invitados crea una red separada. Si un dispositivo de un invitado tiene malware, no puede propagarse a tus dispositivos ni acceder a tu red principal."
+---
+
+El router es la puerta de entrada de internet a tu casa. Si está mal configurado, es una puerta entreabierta. Vamos a cerrarla bien.
+
+## Por qué el router de casa importa
+
+Cuando el operador instala tu router, llega con configuración de fábrica: contraseñas genéricas, cifrado básico, y funciones que quizás no necesitas activas. La mayoría de personas nunca cambia nada.
+
+Un router mal configurado puede permitir que:
+- Vecinos o personas cerca se conecten sin tu permiso
+- Alguien tome control de la administración del router
+- Dispositivos infectados en tu red se comuniquen con el exterior
+
+La buena noticia: asegurar el router básicamente no requiere conocimientos técnicos avanzados.
+
+## Paso 1: Cambia la contraseña de administración del router
+
+Para entrar a la configuración del router, necesitas acceder a su panel de administración. La dirección suele ser `192.168.1.1` o `192.168.0.1` (escríbela en la barra de tu navegador).
+
+El usuario y contraseña por defecto suelen ser `admin/admin` o `admin/1234`. Están escritos en la etiqueta del router. Y son conocidos por todo el mundo.
+
+**Cómo cambiarlo:**
+1. Accede al panel del router (la IP de arriba)
+2. Busca "Contraseña de administración" o "System Password"
+3. Cámbiala por una contraseña fuerte (usa tu gestor de contraseñas)
+4. Guarda y sal
+
+Esto evita que alguien que se conecte a tu red pueda modificar la configuración del router.
+
+## Paso 2: Usa el cifrado WPA2 o WPA3
+
+En la configuración WiFi del router, busca la opción de "Seguridad" o "Encryption". Asegúrate de que esté configurado en:
+
+- **WPA3** — el mejor, si tu router lo soporta
+- **WPA2** — muy bueno, es el estándar actual mínimo
+- **WPA2/WPA3** — modo mixto para compatibilidad
+
+**Evita:**
+- WEP — obsoleto y hackeable en minutos
+- "Sin seguridad" u "Open" — cualquiera puede conectarse
+- WPA (sin el 2) — ya considerado obsoleto
+
+<TipBox type="consejo">
+Si tu router no soporta WPA2 o WPA3, probablemente tiene más de 10 años. Considera pedirle a tu operador que lo actualice — muchos lo hacen gratuitamente si el equipo es demasiado antiguo.
+</TipBox>
+
+## Paso 3: Pon una contraseña WiFi fuerte
+
+La contraseña de WiFi de casa no necesita ser tan compleja como la contraseña maestra de tu gestor, pero sí debe ser:
+
+- Al menos 12 caracteres
+- No el nombre de tu familia, dirección o nombre de mascota
+- No la contraseña que venía de fábrica en el router
+
+Una frase corta con números y algún símbolo funciona bien: `MiCasa2024-Segura`
+
+## Paso 4: Configura la red de invitados
+
+La mayoría de routers modernos tienen la opción de crear una "red de invitados" (guest network). Es una red WiFi separada que da acceso a internet pero no a tu red principal.
+
+**Por qué es útil:**
+- Los dispositivos de tus invitados no pueden acceder a tus archivos compartidos
+- Si el dispositivo de un invitado tiene malware, no se propaga a tu red
+- Puedes conectar los dispositivos del hogar inteligente (bombillas, termostatos, etc.) en la red de invitados — si uno es hackeado, no compromete tus laptops y móviles
+
+**Cómo activarla:**
+- En el panel del router, busca "Red de invitados" o "Guest Network"
+- Dale un nombre diferente a tu red principal
+- Ponle contraseña
+- Habilítala
+
+<TipBox type="sabias-que">
+Los dispositivos del hogar inteligente (SmartTVs, altavoces, termostatos, cámaras de seguridad) son a menudo los más vulnerables de una red doméstica. Tienen software con pocas actualizaciones y conectividad constante. Separarlos en la red de invitados limita el daño si alguno es comprometido.
+</TipBox>
+
+## Paso 5: Actualiza el firmware del router
+
+El router tiene su propio sistema operativo (firmware) que puede tener vulnerabilidades de seguridad. Las actualizaciones las corrigen.
+
+La mayoría de routers modernos se actualizan automáticamente, pero vale la pena verificarlo:
+
+1. Accede al panel de administración del router
+2. Busca "Actualización de firmware" o "Firmware Update"
+3. Comprueba si hay actualizaciones disponibles
+4. Si las hay, instálalas
+
+Repite esto una vez al año como mínimo.
+
+## Paso 6: Desactiva lo que no usas
+
+En el panel del router, busca y desactiva si no los usas:
+
+- **WPS (WiFi Protected Setup):** Tiene vulnerabilidades conocidas. Desactívalo si no lo necesitas.
+- **Administración remota:** Permite acceder al panel del router desde fuera de tu red. Si no la usas, desactívala.
+- **UPnP:** Protocolo que permite a los dispositivos abrir puertos automáticamente. Puede ser un riesgo.
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Si oculto el nombre de mi red WiFi (SSID), nadie la verá."
+
+**Realidad:** Ocultar el SSID es seguridad cosmética. Cualquier herramienta básica de escaneo WiFi puede detectar redes ocultas igualmente. No ofrece protección real y además complica la conexión de tus propios dispositivos.
+</TipBox>
+
+## Resumen de acciones prioritarias
+
+Si solo haces estas tres cosas, ya estarás mucho mejor protegido:
+
+1. Cambia la contraseña de administración del router
+2. Verifica que usas WPA2 o WPA3
+3. Cambia la contraseña WiFi si es débil o la de fábrica
+
+El resto de pasos son buenas prácticas adicionales.
+
+<PromptButton prompt="¿Cómo accedo al panel de administración de mi router y qué debo configurar para mayor seguridad?" />

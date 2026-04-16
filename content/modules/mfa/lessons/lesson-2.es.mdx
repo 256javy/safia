@@ -1,0 +1,88 @@
+---
+title: "Apps autenticadoras vs SMS: cuál elegir"
+description: "Compara los métodos de 2FA y aprende a configurar una app autenticadora paso a paso."
+xp_reward: 100
+order: 2
+quiz:
+  - question: "Recibes un mensaje de texto con un código de verificación que no pediste. ¿Qué haces?"
+    options:
+      - "Lo compartes con quien te lo pidió por teléfono — si dice ser de soporte técnico debe ser legítimo"
+      - "No compartes el código con nadie y revisas si alguien está intentando acceder a tu cuenta"
+      - "Lo ignoras — seguramente fue un error del sistema"
+    correct: 1
+    explanation: "Los códigos de verificación son personales e intransferibles. Si llegó uno sin que lo pidieras, alguien está intentando entrar a tu cuenta con tu contraseña. Cambia tu contraseña inmediatamente."
+  - question: "¿Qué ventaja principal tienen las apps autenticadoras sobre los SMS?"
+    options:
+      - "Son más fáciles de configurar"
+      - "Los códigos funcionan sin conexión a internet y no pueden interceptarse como los SMS"
+      - "Generan contraseñas más largas"
+    correct: 1
+    explanation: "Las apps autenticadoras generan códigos localmente en tu teléfono usando criptografía. No dependen de la red telefónica, que puede ser vulnerable a ataques de intercepción de SMS."
+  - question: "Vas a cambiar de teléfono. ¿Qué debes hacer ANTES de borrar el antiguo?"
+    options:
+      - "Nada — la app autenticadora se sincroniza automáticamente"
+      - "Guardar los códigos de respaldo de cada servicio y transferir la app al nuevo teléfono"
+      - "Desactivar el 2FA temporalmente hasta tener el nuevo teléfono"
+    correct: 1
+    explanation: "Si borras el teléfono sin transferir la app o guardar los códigos de respaldo, puedes quedar bloqueado fuera de tus cuentas permanentemente. Siempre migra primero."
+---
+
+## SMS vs App autenticadora: la comparación honesta
+
+Ambos son mejor que no tener 2FA. Pero hay diferencias importantes:
+
+| | SMS | App autenticadora |
+|---|---|---|
+| **Facilidad de configuración** | ⭐⭐⭐ Muy fácil | ⭐⭐ Requiere instalar app |
+| **Funciona sin internet** | ❌ No | ✅ Sí |
+| **Seguridad** | ⭐⭐ Buena | ⭐⭐⭐ Mejor |
+| **Riesgo de intercepción** | Bajo pero existe | Casi nulo |
+| **Qué pasa si pierdes el teléfono** | Recuperas con nueva SIM | Necesitas códigos de respaldo |
+
+### ¿Cuándo es vulnerable el SMS?
+
+Los SMS pueden interceptarse en un tipo de ataque llamado "SIM swapping" — donde alguien convence a tu operadora de transferir tu número a otra tarjeta SIM. Es raro pero ocurre.
+
+Para la mayoría de las personas, **SMS es más que suficiente**. Si eres una persona con información muy sensible (periodista, activista, ejecutivo), considera las apps autenticadoras.
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "El 2FA por SMS es tan inseguro que mejor no usarlo."  
+**Realidad:** El 2FA por SMS bloquea el 99% de los ataques automatizados. Es infinitamente mejor que ningún segundo factor.
+</TipBox>
+
+## Cómo configurar Google Authenticator
+
+1. **Descarga la app** — "Google Authenticator" en App Store o Google Play (es gratuita)
+2. **Ve a la configuración de seguridad** de la cuenta que quieres proteger (por ejemplo, Gmail)
+3. **Busca "Verificación en dos pasos"** o "Autenticación de dos factores"
+4. **Elige "App autenticadora"** como método
+5. **Escanea el código QR** que aparece con la app
+6. **Ingresa el código de 6 dígitos** que muestra la app para confirmar
+7. **Guarda los códigos de respaldo** en un lugar seguro (¡este paso es crítico!)
+
+<TipBox type="consejo">
+Los **códigos de respaldo** son como una llave maestra. Si pierdes el teléfono, te permiten entrar a tu cuenta y configurar un nuevo autenticador. Guárdalos impresos o en un lugar seguro, no en el mismo teléfono.
+</TipBox>
+
+## Antes de cambiar de teléfono
+
+Este es el error más común con las apps autenticadoras:
+
+1. Consigues un teléfono nuevo
+2. Transfieres tus fotos y aplicaciones
+3. Borras el teléfono viejo
+4. Abres la app autenticadora en el teléfono nuevo — **está vacía**
+5. No puedes entrar a tus cuentas
+
+**Cómo evitarlo:**
+- Usa la función "Transferir cuentas" de Google Authenticator antes de cambiar de teléfono
+- O guarda los códigos de respaldo de cada servicio desde el principio
+- Authy (otra app autenticadora) tiene respaldo en la nube — más cómodo pero con diferente modelo de seguridad
+
+<PromptButton prompt="¿Cómo transfiero mis cuentas de Google Authenticator a un teléfono nuevo de forma segura?" />
+
+## El código que nunca debes compartir
+
+Si alguien te llama o escribe diciendo ser de soporte técnico y te pide el código de verificación que llegó a tu teléfono — **es una estafa**.
+
+Los códigos de 2FA son como las contraseñas: **nunca se comparten con nadie**, ni con soporte técnico, ni con el banco, ni con nadie.

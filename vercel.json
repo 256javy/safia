@@ -1,0 +1,10 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "pnpm generate-manifest && pnpm build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "outputDirectory": ".next",
+  "regions": ["mad1"],
+  "env": {
+    "NEXTAUTH_URL": "https://safia.app"
+  }
+}

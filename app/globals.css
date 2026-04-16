@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-base: #0d0a1a;
+  --color-bg-surface: #1b1340;
+  --color-bg-elevated: #241a52;
+  --color-text-primary: #f0eef6;
+  --color-text-secondary: #a8a3b8;
+  --color-text-muted: #6b6580;
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #7c3aed;
+  --color-accent-muted: rgba(139, 92, 246, 0.15);
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-destructive: #ef4444;
+  --color-xp: #a78bfa;
+  --color-badge-gold: #fbbf24;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+}
+
+/* Gradients as CSS custom properties (not in @theme) */
+:root {
+  --gradient-hero: linear-gradient(135deg, #1b1340 0%, #2d1b69 50%, #1b1340 100%);
+  --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  --gradient-xp-bar: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 50%, #c4b5fd 100%);
+  --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #8b5cf6 0%, #c4b5fd 50%, #8b5cf6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glow shadow utility */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Prose styling for MDX lesson content */
+.prose-safia {
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+.prose-safia h2 {
+  color: var(--color-text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-safia h3 {
+  color: var(--color-text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-safia p {
+  margin-bottom: 1rem;
+}
+.prose-safia strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+.prose-safia ul, .prose-safia ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+.prose-safia li {
+  margin-bottom: 0.25rem;
+}
+.prose-safia ul li::marker {
+  color: var(--color-accent);
+}
+.prose-safia code {
+  background: var(--color-bg-elevated);
+  color: var(--color-xp);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+.prose-safia pre {
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+.prose-safia pre code {
+  background: transparent;
+  padding: 0;
+}
+.prose-safia table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+.prose-safia th {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.prose-safia td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Simulator training banner — CSS ::before redundancy */
+body[data-simulator-active="true"]::before {
+  content: "TRAINING SIMULATION — Nothing is real";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: var(--color-accent);
+  color: white;
+  text-align: center;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

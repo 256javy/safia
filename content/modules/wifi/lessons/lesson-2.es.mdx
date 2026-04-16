@@ -1,0 +1,127 @@
+---
+title: "Cómo funciona un ataque 'man in the middle'"
+description: "Entiende en términos simples cómo los atacantes se interponen entre tú e internet para espiar tu tráfico."
+xp_reward: 100
+order: 2
+quiz:
+  - question: "¿Qué hace un atacante en un ataque 'man in the middle'?"
+    options:
+      - "Hackea directamente el servidor de tu banco"
+      - "Se posiciona entre tu dispositivo y el servidor al que te conectas, pudiendo ver y modificar el tráfico"
+      - "Instala un virus en tu teléfono remotamente"
+    correct: 1
+    explanation: "En un ataque MitM, el atacante intercepta la comunicación entre tú y tu destino. Puede leer lo que envías, modificarlo antes de que llegue, y ver lo que recibes."
+  - question: "¿Por qué HTTPS no protege completamente contra ataques man-in-the-middle en WiFi público?"
+    options:
+      - "HTTPS es demasiado antiguo para ser seguro"
+      - "El atacante puede ver el dominio al que te conectas y en ataques sofisticados puede hacerse pasar por el sitio destino"
+      - "HTTPS solo funciona en WiFi privado"
+    correct: 1
+    explanation: "HTTPS cifra el contenido, pero el atacante aún sabe a qué sitio te conectas. En ataques avanzados con certificados falsos, puede incluso descifrar el contenido."
+  - question: "¿Cuál es la mejor protección contra ataques man-in-the-middle en redes públicas?"
+    options:
+      - "Usar solo sitios con HTTPS"
+      - "Conectarse al WiFi más rápido disponible"
+      - "Usar una VPN que cifra todo el tráfico antes de que salga de tu dispositivo"
+    correct: 2
+    explanation: "Una VPN crea un túnel cifrado entre tu dispositivo y el servidor VPN. Aunque alguien intercepte tu tráfico en la red pública, solo verá datos cifrados inútiles."
+---
+
+"Man in the middle" — el hombre en el medio. Este ataque tiene un nombre que lo describe perfectamente: alguien se coloca literalmente en medio de tu comunicación con el mundo.
+
+Para entenderlo, primero necesitamos entender cómo funciona una conexión normal.
+
+## Cómo funciona una conexión normal
+
+Cuando entras a Gmail desde un café:
+
+1. Tu laptop envía una solicitud: "Quiero ver gmail.com"
+2. El router del café reenvía esa solicitud a internet
+3. Los servidores de Google responden con la página
+4. El router reenvía la respuesta a tu laptop
+
+Normalmente, el router solo retransmite los datos sin leerlos ni modificarlos.
+
+## Qué hace un ataque man-in-the-middle (MitM)
+
+En un ataque MitM, el atacante se inserta en ese flujo:
+
+1. Tu laptop envía una solicitud: "Quiero ver gmail.com"
+2. **El dispositivo del atacante la intercepta** (usando técnicas disponibles en WiFi público)
+3. El atacante reenvía tu solicitud a internet
+4. Google responde al atacante
+5. **El atacante te reenvía la respuesta** (posiblemente modificada)
+
+Para ti, todo parece normal. La página carga, puedes navegar. Pero toda tu comunicación está pasando por el dispositivo del atacante.
+
+<TipBox type="analogia">
+Imagina que mandas una carta a tu banco. Normalmente el cartero la lleva directamente. En un ataque MitM, alguien intercepta la carta en el camino, la abre, la lee, puede modificarla, y luego la sella de nuevo y la entrega. Tú y el banco pensáis que os estáis comunicando directamente, pero hay alguien en medio leyendo todo.
+</TipBox>
+
+## Las dos variantes principales
+
+### Versión 1: Red WiFi falsa (Evil Twin)
+
+El atacante crea una red WiFi con el mismo nombre que la red legítima del café. Tu dispositivo se conecta automáticamente porque reconoce el nombre.
+
+En este caso, el "hombre en el medio" es el propio punto de acceso del atacante. Todo tu tráfico pasa directamente por su dispositivo.
+
+### Versión 2: ARP Spoofing en la misma red
+
+Sin necesidad de crear una red falsa, si el atacante ya está en la misma red WiFi pública que tú, puede usar técnicas de "ARP spoofing" para convencer a tu dispositivo de que él es el router.
+
+El resultado es el mismo: tu tráfico le llega a él antes de llegar a internet.
+
+## ¿HTTPS me protege?
+
+Parcialmente. HTTPS cifra el contenido de tu comunicación, de forma que el atacante no puede leer exactamente qué datos estás enviando a Google o a tu banco (el contenido de los emails, tu contraseña, etc.).
+
+Sin embargo, el atacante puede:
+
+- Ver **con qué dominios te comunicas** (sabe que entraste al banco)
+- En ataques sofisticados, usar **certificados SSL falsos** para hacerse pasar por el sitio destino
+- **Modificar páginas HTTP** (sin S) libremente
+- Analizar **patrones de tráfico** para inferir información
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Si la página tiene HTTPS y candado, estoy completamente seguro aunque use WiFi público."
+
+**Realidad:** HTTPS es una protección importante pero no absoluta en redes públicas. Un atacante sofisticado puede montar un ataque MitM incluso con HTTPS usando técnicas avanzadas. La VPN añade una capa adicional de protección que HTTPS no puede suplir.
+</TipBox>
+
+## Señales de que podrías estar en una red comprometida
+
+- Tu navegador muestra una advertencia de certificado SSL
+- Sitios que normalmente cargan rápido van muy lentos
+- El certificado de un sitio conocido muestra una empresa que no reconoces
+- Te piden aceptar un nuevo certificado de seguridad inesperadamente
+
+Si ves alguna de estas señales en WiFi público, desconéctate inmediatamente y usa datos móviles.
+
+## Cómo protegerse realmente
+
+### La VPN (explicada en detalle en la lección 3)
+
+Una VPN crea un "túnel" cifrado entre tu dispositivo y un servidor de tu elección. Todo tu tráfico pasa por ese túnel antes de llegar a internet.
+
+Para el atacante en el café, en lugar de ver:
+- "Este usuario se conectó a gmail.com y envió esta contraseña..."
+
+Solo ve:
+- "Este dispositivo está enviando datos cifrados a una IP en Amsterdam. No puedo leer nada."
+
+### Otras medidas
+
+**Desactiva el WiFi cuando no lo uses:** Evita conexiones automáticas a redes que recuerdas.
+
+**Activa la opción "Preguntar antes de conectar":** En la configuración de WiFi de tu teléfono.
+
+**Mantén tu sistema operativo actualizado:** Muchas vulnerabilidades que facilitan los MitM se parchean en actualizaciones.
+
+**Usa datos móviles para lo sensible:** Para banca y correo en lugares públicos.
+
+<TipBox type="consejo">
+En Android e iOS hay una opción en la configuración de WiFi para que el teléfono use una dirección MAC aleatoria cuando se conecta a redes WiFi. Esto dificulta que un atacante te rastree o te identifique en distintas redes. Actívala en "Configuración → WiFi → [nombre de la red] → Privacidad".
+</TipBox>
+
+<PromptButton prompt="Explícame cómo funciona un ataque ARP spoofing en WiFi público de forma simple" />

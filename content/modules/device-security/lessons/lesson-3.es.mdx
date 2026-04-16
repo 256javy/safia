@@ -1,0 +1,133 @@
+---
+title: "Bloqueo de pantalla y cifrado del dispositivo"
+description: "Aprende por qué el bloqueo de pantalla y el cifrado son tu primera línea de defensa si pierdes el dispositivo."
+xp_reward: 100
+order: 3
+quiz:
+  - question: "¿Qué protege el cifrado del dispositivo?"
+    options:
+      - "Tu conexión WiFi de intrusos"
+      - "Los datos almacenados en el dispositivo, haciéndolos ilegibles sin la clave de descifrado"
+      - "Tus contraseñas de internet"
+    correct: 1
+    explanation: "El cifrado del dispositivo transforma todos los datos almacenados en código ilegible. Si alguien roba el teléfono o saca la tarjeta de almacenamiento, no puede leer los datos sin la clave (que es tu PIN o contraseña de pantalla)."
+  - question: "¿Cuál es el método de bloqueo de pantalla más seguro?"
+    options:
+      - "Deslizar el dedo sin código (swipe)"
+      - "Un patrón de puntos"
+      - "PIN de 6 dígitos o contraseña alfanumérica"
+    correct: 2
+    explanation: "El deslizamiento no ofrece seguridad. Los patrones son vulnerables porque dejan marcas visibles en la pantalla. Un PIN de 6 dígitos o una contraseña alfanumérica son los métodos más seguros."
+  - question: "¿Los iPhones modernos (iOS) vienen con cifrado activado por defecto?"
+    options:
+      - "No, hay que activarlo en configuración"
+      - "Sí, desde que activas el bloqueo de pantalla el cifrado está automáticamente activo"
+      - "Solo en los modelos más caros"
+    correct: 1
+    explanation: "En iOS, el cifrado del dispositivo está activo automáticamente cuando configuras un código de desbloqueo. No necesitas hacer nada extra. En Android moderno también está activo por defecto en la mayoría de dispositivos."
+---
+
+Imagina que dejas el teléfono olvidado en un taxi. O que te lo roban. ¿Qué puede hacer esa persona con todo lo que hay dentro?
+
+Si tu teléfono tiene bloqueo de pantalla y cifrado, la respuesta es: prácticamente nada.
+
+## El bloqueo de pantalla: la primera barrera
+
+El bloqueo de pantalla es la primera barrera entre cualquier persona y tus datos. Es tan básico que a veces se subestima.
+
+### Métodos de bloqueo (de menos a más seguro)
+
+**Sin bloqueo** — Cualquiera que tome el teléfono tiene acceso inmediato a todo.
+
+**Deslizamiento (swipe)** — Solo evita pulsaciones accidentales. No es seguridad real.
+
+**Patrón de puntos** — Mejor que nada, pero tiene problemas:
+- Los dedos dejan marcas grasas en la pantalla que revelan el patrón
+- Las cámaras pueden registrar el movimiento desde lejos
+- Hay menos combinaciones únicas de las que parece
+
+**PIN de 4 dígitos** — 10,000 combinaciones posibles. Razonable para uso casual.
+
+**PIN de 6 dígitos** — 1,000,000 combinaciones. Mucho mejor, y la diferencia de incomodidad es mínima.
+
+**Contraseña alfanumérica** — La más segura. Letras + números + símbolos.
+
+**Huella dactilar / Face ID** — Cómodo y seguro. Es la primera opción recomendada para uso diario, con un PIN como respaldo.
+
+<TipBox type="consejo">
+Usa huella o Face ID para el uso diario (rápido y seguro) y configura un PIN de 6 dígitos como método alternativo. El PIN es el que desbloquea todo si la biométrica falla o el dispositivo se reinicia.
+</TipBox>
+
+### Configuración del tiempo de bloqueo automático
+
+Configura el teléfono para que se bloquee automáticamente después de poco tiempo de inactividad:
+
+- **30 segundos** es lo más seguro
+- **1 minuto** es un buen balance seguridad/comodidad
+- **Nunca** es un riesgo — cualquiera que tome el teléfono tiene acceso
+
+En iPhone: Configuración → Pantalla y brillo → Bloqueo automático
+En Android: Configuración → Pantalla → Tiempo de espera de pantalla
+
+## El cifrado: la segunda barrera (y la más importante)
+
+El bloqueo de pantalla evita que alguien use el teléfono directamente. Pero ¿qué pasa si alguien más técnico extrae los datos físicamente — por ejemplo, sacando la tarjeta de almacenamiento o conectando el teléfono a una computadora con herramientas especiales?
+
+Aquí entra el **cifrado del dispositivo**.
+
+### Qué hace el cifrado
+
+El cifrado transforma todos los datos almacenados en el dispositivo en texto completamente ilegible. Solo se pueden leer si se introduce la clave correcta (que está vinculada a tu PIN o contraseña de pantalla).
+
+Sin la clave:
+- Las fotos parecen archivos corruptos imposibles de abrir
+- Los mensajes son texto incomprensible
+- Las contraseñas guardadas son datos sin sentido
+- Los archivos son basura digital
+
+### ¿Está tu dispositivo cifrado?
+
+**iPhone (iOS):** Sí, automáticamente desde que configuras un código de pantalla. No necesitas hacer nada.
+
+**Android moderno (Android 7+):** En la mayoría de dispositivos, el cifrado está activo por defecto. Puedes verificarlo en:
+- Configuración → Seguridad → Cifrado y credenciales → Cifrado del teléfono
+
+**Windows 10/11:** Depende de la edición.
+- **BitLocker** (disponible en Pro, Enterprise): Configuración → Actualización y seguridad → Cifrado de dispositivo
+- **Cifrado de dispositivo** (en algunos equipos con Windows Home): disponible en cuentas Microsoft
+
+**Mac:** FileVault es el cifrado de macOS.
+- Configuración del Sistema → Privacidad y seguridad → FileVault
+
+<TipBox type="sabias-que">
+El cifrado en los teléfonos modernos usa estándares tan fuertes que incluso las fuerzas de seguridad con recursos ilimitados tienen dificultades para acceder a datos cifrados con un PIN fuerte. Apple tuvo un conflicto legal con el FBI en 2016 precisamente por esto — el FBI no podía descifrar el iPhone de un sospechoso.
+</TipBox>
+
+## Qué información expones sin cifrado
+
+Si alguien obtiene un dispositivo sin cifrar:
+
+- **Fotos y vídeos:** Todos tus recuerdos, posiblemente fotos íntimas
+- **Mensajes:** Conversaciones de WhatsApp, Signal, SMS
+- **Contraseñas:** Guardadas en el navegador o en apps sin protección adicional
+- **Documentos:** Archivos de trabajo, contractos, datos personales
+- **Correo:** Todos tus emails
+- **Historial de navegación:** Qué webs has visitado y cuándo
+
+Con cifrado, todo esto se convierte en datos inutilizables sin tu clave.
+
+## Configuración completa recomendada
+
+1. Activa un PIN de 6 dígitos o contraseña alfanumérica
+2. Configura huella/Face ID para uso diario
+3. Establece bloqueo automático en 30 segundos - 1 minuto
+4. Verifica que el cifrado está activo
+5. Activa "Encontrar mi dispositivo" para poder localizarlo o borrarlo remotamente si lo pierdes
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Si te hackean, el bloqueo de pantalla no sirve para nada."
+
+**Realidad:** La mayoría de robo de datos de dispositivos ocurre por acceso físico, no por hackeo remoto. El bloqueo + cifrado protege contra el escenario más común: alguien que encuentra o roba el dispositivo físico.
+</TipBox>
+
+<PromptButton prompt="¿Cómo activo el cifrado en mi teléfono Android y cómo sé si ya está activo?" />

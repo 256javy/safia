@@ -1,0 +1,117 @@
+---
+title: "Qué pasa si el gestor es hackeado"
+description: "Entiende por qué una brecha en el gestor de contraseñas no significa que tus contraseñas estén comprometidas."
+xp_reward: 100
+order: 6
+quiz:
+  - question: "¿Qué obtuvieron los atacantes cuando hackearon LastPass en 2022?"
+    options:
+      - "Las contraseñas de todos los usuarios en texto plano"
+      - "Datos cifrados que son inútiles sin la contraseña maestra de cada usuario"
+      - "El acceso completo a todas las cuentas de los usuarios"
+    correct: 1
+    explanation: "En la brecha de LastPass de 2022, los atacantes obtuvieron datos cifrados. Sin la contraseña maestra de cada usuario (que LastPass no conoce), esos datos no son útiles. Los usuarios con contraseñas maestras fuertes estaban protegidos."
+  - question: "¿Por qué el cifrado de extremo a extremo protege tus contraseñas incluso si hackean al proveedor del gestor?"
+    options:
+      - "Porque el proveedor guarda una copia de tu contraseña maestra"
+      - "Porque tus contraseñas se cifran en tu dispositivo antes de enviarse, y el proveedor nunca tiene acceso a la clave"
+      - "Porque los servidores del gestor están en países seguros"
+    correct: 1
+    explanation: "Con cifrado de extremo a extremo, tus datos se cifran localmente (en tu dispositivo) con tu contraseña maestra. El proveedor solo ve datos cifrados. Sin tu contraseña maestra, no pueden descifrarlos."
+  - question: "Si tu gestor de contraseñas sufre una brecha, ¿qué deberías hacer primero?"
+    options:
+      - "Cambiar todas tus contraseñas inmediatamente"
+      - "Evaluar el alcance real de la brecha — qué datos fueron comprometidos y si tu contraseña maestra era fuerte"
+      - "Dejar de usar gestores de contraseñas para siempre"
+    correct: 1
+    explanation: "No todas las brechas son iguales. Si el gestor usaba cifrado de extremo a extremo y tu contraseña maestra era fuerte, el riesgo real puede ser mínimo. Leer el comunicado oficial del gestor es el primer paso."
+---
+
+LastPass fue hackeado en 2022. Hay artículos alarmistas que dicen que los gestores de contraseñas son peligrosos. ¿Deberías preocuparte?
+
+La respuesta requiere entender cómo funciona realmente el cifrado.
+
+## Lo que realmente ocurrió con LastPass
+
+En agosto de 2022, LastPass sufrió una brecha de seguridad. En diciembre del mismo año, revelaron que los atacantes habían obtenido copias cifradas de los "vaults" (las cajas fuertes con contraseñas) de los usuarios.
+
+Datos robados:
+- Copias cifradas de los vaults de los usuarios
+- Metadatos como URLs de los sitios (algunas sin cifrar)
+- Información de la cuenta (email, nombre, etc.)
+
+Lo que NO robaron:
+- Las contraseñas maestras de los usuarios
+- Las contraseñas almacenadas en texto legible
+
+¿Por qué no pudieron leer las contraseñas? Porque estaban cifradas con la contraseña maestra de cada usuario, que LastPass no conoce y que no estaba en sus servidores.
+
+## El principio del cifrado de extremo a extremo
+
+Aquí está el concepto clave que hace que los gestores serios sean seguros:
+
+**Tus datos se cifran en tu dispositivo** (laptop, móvil) usando tu contraseña maestra como llave de cifrado. Solo después de cifrarse, se envían a los servidores del proveedor.
+
+El proveedor tiene:
+- Datos cifrados (inútiles sin la llave)
+- NO tiene tu contraseña maestra
+- NO puede descifrar tus datos
+
+Es como si guardaras tus documentos en una caja fuerte, la cerraras, y le dieras la caja cerrada a una empresa de almacenamiento. Ellos guardan la caja, pero no tienen la combinación. Si les roban el almacén, el ladrón tiene la caja pero no puede abrirla.
+
+<TipBox type="analogia">
+Imagina que escribes tu diario en un idioma que solo tú conoces. Luego guardas el diario en la biblioteca pública. Aunque alguien robe el diario de la biblioteca, no puede leerlo porque no conoce tu idioma. El cifrado de extremo a extremo es ese idioma secreto que solo tú posees.
+</TipBox>
+
+## La importancia de la contraseña maestra fuerte
+
+Si los atacantes obtienen tu vault cifrado (como en el caso de LastPass), pueden intentar adivinar tu contraseña maestra con ataques de fuerza bruta:
+
+- Contraseña maestra `Pepe1985`: pueden descifrarla en horas o días con hardware moderno
+- Contraseña maestra `caballo-luna-parque-zapato-27`: les llevaría millones de años
+
+Este es el motivo exacto por el que la contraseña maestra debe ser larga y aleatoria. No porque el gestor sea inseguro — sino para que incluso si alguien obtiene los datos cifrados, no pueda descifrarlos.
+
+## Gestores afectados vs. no afectados por brechas
+
+No todos los gestores han sufrido brechas igualmente serias. La historia reciente:
+
+| Gestor | Incidente | Impacto real |
+|---|---|---|
+| LastPass (2022) | Vaults cifrados robados | Bajo para usuarios con contraseñas maestras fuertes |
+| Bitwarden | Sin brechas significativas hasta 2024 | N/A |
+| 1Password | Sin brechas de datos de usuarios | N/A |
+| Proton Pass | Sin brechas hasta 2024 | N/A |
+
+## ¿Qué diferencia a los gestores seguros de los menos seguros?
+
+Los gestores con mejores prácticas de seguridad:
+
+1. **Auditorías regulares:** Contratan a empresas de seguridad externas para auditar su código
+2. **Programa de bug bounty:** Pagan a investigadores que encuentren vulnerabilidades
+3. **Código abierto:** El código es público y verificable
+4. **Transparencia:** Comunican brechas rápidamente y con detalle
+5. **Arquitectura de conocimiento cero (zero-knowledge):** Diseñados para que el proveedor nunca pueda ver tus datos
+
+<TipBox type="mito-vs-realidad">
+**Mito:** "Usar un gestor de contraseñas es más peligroso que recordarlas tú mismo."
+
+**Realidad:** Recordar contraseñas lleva a reutilizarlas o hacerlas débiles. Si un sitio es hackeado con contraseñas reutilizadas, el atacante tiene acceso a todas tus cuentas. El gestor, incluso en el peor escenario de una brecha, expone solo datos cifrados. Matemáticamente, el gestor es mucho más seguro.
+</TipBox>
+
+## Qué hacer si tu gestor sufre una brecha
+
+1. **Lee el comunicado oficial** del gestor — explican qué datos fueron afectados
+2. **Evalúa si tu vault fue comprometido** — no todas las brechas afectan a todos los usuarios
+3. **Verifica si tu contraseña maestra era fuerte** — si sí, tu riesgo es mínimo
+4. **Cambia la contraseña maestra** como medida de precaución
+5. **Cambia las contraseñas más sensibles** (banco, correo) en las semanas siguientes
+6. **Considera migrar** a otro gestor si la empresa maneja mal la crisis
+
+## El balance final
+
+El riesgo de usar un gestor de contraseñas serio (Bitwarden, 1Password, Proton Pass) es mucho menor que el riesgo de no usarlo. Las alternativas — contraseñas débiles, reutilizadas, o guardadas sin cifrado — son objetivamente más peligrosas.
+
+Una brecha en el gestor con cifrado de extremo a extremo y contraseña maestra fuerte expone prácticamente nada. Una contraseña reutilizada en 15 sitios, con uno de ellos hackeado, expone todo.
+
+<PromptButton prompt="¿Cómo sé si mi gestor de contraseñas usa cifrado de extremo a extremo de forma real?" />
