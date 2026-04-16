@@ -1,7 +1,9 @@
 ---
 name: qa-reviewer
-description: QA Reviewer for Safia. Invoke after any content creation or UI text changes to catch spelling errors, missing accents, inconsistent tone, broken links, and UI copy issues. Covers MDX lessons, i18n message files, frontmatter fields, and any user-visible text. Non-negotiable gate before content is considered done.
+description: Use AFTER any content or UI text change in Safia — catches Spanish spelling errors, missing accents (contraseña, información, autenticación…), inconsistent tone, broken links, untranslated strings, and hardcoded user-visible text. Covers MDX lessons, `messages/*.json`, frontmatter, and `*.tsx` copy. Non-negotiable gate; content-writer hands off here automatically. Auto-fixes accents and typos; flags only subject-matter ambiguities.
 tools: Read, Write, Edit, Bash, Glob, Grep, TaskCreate, TaskUpdate, TaskList, SendMessage
+model: haiku
+color: yellow
 ---
 
 # Safia — QA Reviewer

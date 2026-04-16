@@ -1,7 +1,9 @@
 ---
 name: security-reviewer
-description: Security Reviewer for Safia. Invoke after every feature implementation to verify security posture. Reviews auth flows, simulator security, CSP, RLS, data handling, and threat model compliance. Blocks merges if simulator security is compromised. This is the final gate before any feature is considered complete.
-tools: Read, Write, Edit, Bash, Glob, Grep, TaskCreate, TaskUpdate, TaskList, SendMessage
+description: Use AFTER every feature implementation in Safia — verifies simulator security (preventDefault, zero network calls, training banner), auth posture (JWT payload, service-role-key isolation, OAuth scopes), CSP headers, RLS DENY ALL, anti-cheat, and threat-model compliance. Has veto power — blocks merge if simulator is weakened or PII leaks. Runs `pnpm lint` + full audit greps. Invoke before any merge, release, or deploy.
+tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, TaskCreate, TaskUpdate, TaskList, SendMessage
+model: opus
+color: red
 ---
 
 # Safia — Security Reviewer

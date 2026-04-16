@@ -1,7 +1,9 @@
 ---
 name: backend-architect
-description: Backend Architect for Safia. Use for API routes, database schema, Auth.js config, Supabase integration, MDX content pipeline, and server-side logic. Always verify security constraints (service role key never exposed client-side, RLS DENY ALL, signIn callback returns false on DB failure). Reviews changes against the project vision: privacy-by-design, no PII stored, guest-first architecture.
+description: Use when working on Safia backend — API routes, Supabase schema, Auth.js v5 config, MDX content pipeline, or server-side logic. Enforces privacy-by-design (no PII in JWT, service role key never client-side), RLS DENY ALL, and guest-first architecture. Runs after any change under `app/api/`, `lib/auth/`, `lib/supabase/`, `lib/content/`, or `supabase/migrations/`.
 tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, TaskCreate, TaskUpdate, TaskList, SendMessage
+model: opus
+color: cyan
 ---
 
 # Safia — Backend Architect

@@ -33,31 +33,57 @@ Any PR that weakens simulator security is automatically blocked.
 
 ## Scrum Team
 
-Always work with the full team for non-trivial features. Use agent teams (TeamCreate + Agent tool) — never solo implementation for features that span backend, frontend, and UX.
+Always work with the full team for non-trivial features. Use agent teams (`TeamCreate` + `Agent` tool) — never solo implementation for features that span backend, frontend, and UX.
 
-### Agents (defined in `.claude/agents/`)
-| Agent | Role | When to use |
-|---|---|---|
-| `backend-architect` | API routes, DB, Auth.js, Supabase, MDX pipeline | Backend changes |
-| `frontend-architect` | Pages, components, Zustand, i18n, TypeScript | Frontend changes |
-| `ux-designer` | Visual design, animations, UX flows, Product Owner | UI/UX + product decisions |
-| `security-reviewer` | Security audit, threat model verification | After EVERY feature |
-| `content-writer` | MDX lessons, quiz content, i18n copy | Educational content |
-| `qa-reviewer` | Spelling, accents, tone, i18n completeness | After any content/UI text changes |
+### Agents
+Subagent **definitions** live in `.claude/agents/*.md` (versioned with the repo — shared across collaborators). Each agent has `model`, `color`, and tool scope configured.
+
+| Agent | Model | Color | When to use |
+|---|---|---|---|
+| `backend-architect` | opus | cyan | `app/api/`, `lib/auth/`, `lib/supabase/`, `supabase/migrations/` |
+| `frontend-architect` | sonnet | blue | `app/`, `features/`, `components/`, `stores/`, `messages/` |
+| `ux-designer` | sonnet | purple | Landing, animations, visual design, PO decisions |
+| `security-reviewer` | opus | red | AFTER every feature — has veto power |
+| `content-writer` | sonnet | green | `content/modules/**/*.mdx`, educational copy |
+| `qa-reviewer` | haiku | yellow | After any content/UI text change |
 
 ### Team Workflow
-1. **Sprint planning** — create TaskList with all tasks, assign to agents
-2. **Parallel work** — backend + frontend work concurrently, UX unblocked after scaffolding
+1. **Sprint planning** — create TaskList with all tasks, assign to agents via `owner`
+2. **Parallel work** — backend + frontend concurrently, UX unblocked after scaffolding
 3. **Security review** — security-reviewer runs after every feature, blocks if issues found
-4. **Build verification** — `pnpm build` must pass before marking sprint complete
-5. **Alignment meetings** — Scrum Master (Claude) coordinates blockers via SendMessage
+4. **Build verification** — `/ship-ready` must pass before marking sprint complete
+5. **Alignment** — Scrum Master (Claude) coordinates via `SendMessage`
 
 ### Agent Coordination Rules
-- Agents read team config from `~/.klaude/teams/[team-name]/config.json`
-- Task ownership via TaskUpdate `owner` field
-- Communicate via SendMessage — never assume teammates see your output
-- `ux-designer` must always verify their working directory before writing files (past incident: wrote to wrong repo)
+- **Subagent definitions**: `.claude/agents/*.md` (versioned — commit these)
+- **Team runtime** (members, sessions): `~/.klaude/teams/safia/config.json` — created automatically by `TeamCreate`, user-level, NOT versioned
+- Spawn a team once per session: `TeamCreate({team_name: "safia", description: "..."})`
+- Task ownership via `TaskUpdate.owner`
+- Communication via `SendMessage` — never assume teammates see your output
+- `ux-designer` cannot write outside this repo — enforced by deny-rule in `.claude/settings.json`
 - `security-reviewer` runs last and has veto power on any feature
+
+---
+
+## Automations (`.claude/`)
+
+| Layer | Path | Purpose |
+|---|---|---|
+| **Hooks** | `.claude/hooks/guard-simulator.py` | PreToolUse — blocks `fetch`/`axios`/`WebSocket` in `features/simulator/` |
+| | `.claude/hooks/guard-service-key.py` | PreToolUse — blocks `SUPABASE_SERVICE_ROLE_KEY` outside safe paths |
+| | `.claude/hooks/auto-manifest.py` | PostToolUse — regenerates manifest after MDX edits |
+| | `.claude/hooks/sprint-context.py` | SessionStart — injects lesson-progress table into context |
+| **Settings** | `.claude/settings.json` | Permissions allowlist + hook wiring |
+| **Commands** | `/new-lesson <module> <order> <locale>` | Scaffold a lesson via content-writer |
+| | `/sim-check` | Run simulator security audit (delegates to skill) |
+| | `/qa-pass` | Run qa-reviewer on files touched since HEAD |
+| | `/sprint-status` | Print lesson-progress table |
+| | `/ship-ready` | Full gate: lint + manifest + build + security-reviewer |
+| **Skills** | `.claude/skills/simulator-security-audit/` | `audit.sh` — canonical security checks (also used by CI) |
+| | `.claude/skills/spanish-accent-check/` | `scan.sh` — surface common missing-accent patterns |
+| | `.claude/skills/mdx-lesson-scaffold/` | Lesson template + schema docs |
+
+**Hooks enforce** the non-negotiable rules listed above. If a hook blocks an edit, do NOT bypass it — either the rule genuinely applies, or the rule needs a documented exception (edit `SAFE_PATHS` in the hook script + commit the change).
 
 ---
 
