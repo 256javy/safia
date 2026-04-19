@@ -40,38 +40,43 @@
         "title": "Secure passwords",
         "description": "Learn to create and manage passwords nobody can guess.",
         "time": "15 min",
-        "difficulty": "Basic",
-        "xp": "100"
+        "difficulty": "Basic"
       },
       "phishing": {
         "title": "Detect phishing",
         "description": "Identify fake emails and sites before they trick you.",
         "time": "20 min",
-        "difficulty": "Basic",
-        "xp": "150"
+        "difficulty": "Basic"
       },
       "mfa": {
         "title": "MFA authentication",
         "description": "Add an extra layer of protection to your accounts.",
         "time": "10 min",
-        "difficulty": "Intermediate",
-        "xp": "120"
+        "difficulty": "Intermediate"
       },
       "simulators": {
         "title": "Simulators",
         "description": "Practice in safe environments that mimic real attacks.",
         "time": "30 min",
-        "difficulty": "Advanced",
-        "xp": "200"
+        "difficulty": "Advanced"
       }
     },
     "howItWorks": {
       "heading": "It's that simple",
       "subheading": "Three steps. No complicated sign-ups.",
       "step": "Step {n}",
-      "step1": { "title": "Pick a topic", "description": "Choose the module that interests you most. No required order." },
-      "step2": { "title": "Learn by doing", "description": "Short lessons with interactive quizzes. Earn XP for every correct answer." },
-      "step3": { "title": "Practice in simulators", "description": "Face simulated attacks in a 100% safe environment. No real risks." }
+      "step1": {
+        "title": "Pick a topic",
+        "description": "Choose the module that interests you most. No required order."
+      },
+      "step2": {
+        "title": "Learn by doing",
+        "description": "Short lessons with interactive quizzes. Earn XP for every correct answer."
+      },
+      "step3": {
+        "title": "Practice in simulators",
+        "description": "Face simulated attacks in a 100% safe environment. No real risks."
+      }
     },
     "simulator": {
       "heading": "Practice without fear",
@@ -80,16 +85,6 @@
       "signIn": "Sign in",
       "next": "Next",
       "redFlags": "3 suspicious signs detected"
-    },
-    "gamification": {
-      "heading": "Learn and unlock achievements",
-      "subheading": "Earn XP, level up, and collect badges for every completed module.",
-      "level": "Level {level}",
-      "rank": "Apprentice",
-      "badge1": "First password",
-      "badge2": "Anti-phishing",
-      "badge3": "MFA enabled",
-      "badge4": "First simulator"
     },
     "newsletter": {
       "heading": "Stay up to date",
@@ -115,15 +110,6 @@
     "lessons": "Lessons",
     "lessonsHeading": "Lessons",
     "lessonCompleted": "Completed",
-    "quiz": "Quiz",
-    "completed": "Completed",
-    "locked": "Locked",
-    "home": "Home",
-    "quizHeading": "Test what you learned",
-    "backToModule": "Back to module",
-    "difficultyBasic": "Basic",
-    "difficultyIntermediate": "Intermediate",
-    "difficultyAdvanced": "Advanced",
     "quiz": {
       "excellent": "Excellent work!",
       "keepPracticing": "Keep practicing",
@@ -133,7 +119,15 @@
       "incorrect": "✗ Incorrect",
       "next": "Next",
       "seeResult": "See result"
-    }
+    },
+    "completed": "Completed",
+    "locked": "Locked",
+    "home": "Home",
+    "quizHeading": "Test what you learned",
+    "backToModule": "Back to module",
+    "difficultyBasic": "Basic",
+    "difficultyIntermediate": "Intermediate",
+    "difficultyAdvanced": "Advanced"
   },
   "simulator": {
     "title": "Simulator",
@@ -160,7 +154,6 @@
     "complete": "Complete simulation",
     "completed": "Simulation completed",
     "completedDesc": "You completed the {platform} simulator.",
-    "xpEarned": "+50 XP earned",
     "backToSimulators": "Back to simulators",
     "platforms": {
       "google": "Google Workspace",
@@ -170,89 +163,106 @@
       "banking": "Online Banking"
     },
     "google": {
-      "step1": { "label": "Email", "placeholder": "you@gmail.com", "tip": "Always verify the URL. Fake sites use similar domains like gooogle.com or g00gle.com." },
-      "step2": { "label": "Password", "placeholder": "Your password", "tip": "Never reuse passwords. If one site leaks, all your accounts are exposed." },
-      "step3": { "label": "2FA Code (SMS)", "placeholder": "123456", "tip": "SMS codes are personal. No one from Google will ask you to share them by phone or email." },
-      "step4": { "label": "Verification successful", "tip": "With 2FA enabled, an attacker needs your phone plus your password. It's a huge barrier." }
+      "step1": {
+        "label": "Email",
+        "placeholder": "you@gmail.com",
+        "tip": "Always verify the URL. Fake sites use similar domains like gooogle.com or g00gle.com."
+      },
+      "step2": {
+        "label": "Password",
+        "placeholder": "Your password",
+        "tip": "Never reuse passwords. If one site leaks, all your accounts are exposed."
+      },
+      "step3": {
+        "label": "2FA Code (SMS)",
+        "placeholder": "123456",
+        "tip": "SMS codes are personal. No one from Google will ask you to share them by phone or email."
+      },
+      "step4": {
+        "label": "Verification successful",
+        "tip": "With 2FA enabled, an attacker needs your phone plus your password. It's a huge barrier."
+      }
     },
     "facebook": {
-      "step1": { "label": "Login", "placeholder": "Email or phone", "tip": "Facebook will never ask for your password by message. If someone does, it's phishing." },
-      "step2": { "label": "Set up 2FA", "tip": "Choose an authenticator app over SMS. Apps generate codes offline and are more secure." },
-      "step3": { "label": "Verification code", "placeholder": "000000", "tip": "Authentication codes change every 30 seconds. A stolen code expires quickly." },
-      "step4": { "label": "Confirmation", "tip": "Save your backup codes in a safe place. If you lose your phone, you'll need them." }
+      "step1": {
+        "label": "Login",
+        "placeholder": "Email or phone",
+        "tip": "Facebook will never ask for your password by message. If someone does, it's phishing."
+      },
+      "step2": {
+        "label": "Set up 2FA",
+        "tip": "Choose an authenticator app over SMS. Apps generate codes offline and are more secure."
+      },
+      "step3": {
+        "label": "Verification code",
+        "placeholder": "000000",
+        "tip": "Authentication codes change every 30 seconds. A stolen code expires quickly."
+      },
+      "step4": {
+        "label": "Confirmation",
+        "tip": "Save your backup codes in a safe place. If you lose your phone, you'll need them."
+      }
     },
     "x": {
-      "step1": { "label": "Username", "placeholder": "@your_username", "tip": "Verified accounts can also be hacked. Verification is not the same as security." },
-      "step2": { "label": "Password", "placeholder": "Your password", "tip": "Reusing passwords is the most common mistake. A password manager solves this." },
-      "step3": { "label": "2FA Method", "tip": "Physical security keys (like YubiKey) are the most secure method. SMS is better than nothing." },
-      "step4": { "label": "Code", "placeholder": "000000", "tip": "If someone asks for a code you just received, it's a real-time attack. Don't share it." }
+      "step1": {
+        "label": "Username",
+        "placeholder": "@your_username",
+        "tip": "Verified accounts can also be hacked. Verification is not the same as security."
+      },
+      "step2": {
+        "label": "Password",
+        "placeholder": "Your password",
+        "tip": "Reusing passwords is the most common mistake. A password manager solves this."
+      },
+      "step3": {
+        "label": "2FA Method",
+        "tip": "Physical security keys (like YubiKey) are the most secure method. SMS is better than nothing."
+      },
+      "step4": {
+        "label": "Code",
+        "placeholder": "000000",
+        "tip": "If someone asks for a code you just received, it's a real-time attack. Don't share it."
+      }
     },
     "tiktok": {
-      "step1": { "label": "Login", "placeholder": "Email or phone", "tip": "Accounts with followers are targets. More followers = more value for an attacker." },
-      "step2": { "label": "Security settings", "tip": "Check which apps have access to your account. Revoke any you don't recognize." },
-      "step3": { "label": "2FA Code", "placeholder": "000000", "tip": "Enable 2FA even if you think your account isn't important. Attackers use them for spam." }
+      "step1": {
+        "label": "Login",
+        "placeholder": "Email or phone",
+        "tip": "Accounts with followers are targets. More followers = more value for an attacker."
+      },
+      "step2": {
+        "label": "Security settings",
+        "tip": "Check which apps have access to your account. Revoke any you don't recognize."
+      },
+      "step3": {
+        "label": "2FA Code",
+        "placeholder": "000000",
+        "tip": "Enable 2FA even if you think your account isn't important. Attackers use them for spam."
+      }
     },
     "banking": {
-      "step1": { "label": "Bank login", "placeholder": "Your username", "tip": "Your bank will never send you a link by SMS to log in. Type the URL yourself." },
-      "step2": { "label": "Device verification", "tip": "New device alerts are your first line of defense. Don't ignore them." },
-      "step3": { "label": "Security question", "placeholder": "Your answer", "tip": "Don't use real answers. Invent answers that only you know." },
-      "step4": { "label": "Confirm transaction", "tip": "Always verify the amount and recipient before confirming. Scammers change details at the last moment." },
-      "step5": { "label": "Summary", "tip": "Review your statements regularly. Report any transaction you don't recognize." }
-    }
-  },
-  "gamification": {
-    "xp": "XP",
-    "level": "Level",
-    "badges": "Badges",
-    "streak": "Streak",
-    "streakDays": "{count, plural, one {# day} other {# days}}",
-    "levelUp": "You reached level {level}!",
-    "newBadge": "New badge unlocked!",
-    "levels": {
-      "novice": "Novice",
-      "apprentice": "Apprentice",
-      "explorer": "Explorer",
-      "defender": "Defender",
-      "guardian": "Guardian",
-      "sentinel": "Sentinel",
-      "protector": "Protector",
-      "champion": "Champion",
-      "master": "Master",
-      "legend": "Legend"
-    },
-    "badges_list": {
-      "firstLesson": "First lesson",
-      "firstLessonDesc": "Complete your first lesson",
-      "firstModule": "First module",
-      "firstModuleDesc": "Complete an entire module",
-      "passwordsComplete": "Passwords",
-      "passwordsCompleteDesc": "Complete the passwords module",
-      "phishingComplete": "Anti-phishing",
-      "phishingCompleteDesc": "Complete the phishing module",
-      "mfaComplete": "MFA enabled",
-      "mfaCompleteDesc": "Complete the MFA module",
-      "socialEngComplete": "Anti-manipulation",
-      "socialEngCompleteDesc": "Complete the social engineering module",
-      "wifiComplete": "Secure Wi-Fi",
-      "wifiCompleteDesc": "Complete the Wi-Fi security module",
-      "simulatorFirst": "First simulator",
-      "simulatorFirstDesc": "Complete your first simulator",
-      "streak7": "Weekly streak",
-      "streak7Desc": "Maintain a 7-day streak",
-      "streak30": "Monthly streak",
-      "streak30Desc": "Maintain a 30-day streak",
-      "xp500": "500 XP",
-      "xp500Desc": "Accumulate 500 XP",
-      "xp1000": "1000 XP",
-      "xp1000Desc": "Accumulate 1000 XP",
-      "xp2000": "2000 XP",
-      "xp2000Desc": "Accumulate 2000 XP",
-      "allBasic": "All basics",
-      "allBasicDesc": "Complete all basic modules",
-      "allIntermediate": "All intermediate",
-      "allIntermediateDesc": "Complete all intermediate modules",
-      "completionist": "Completionist",
-      "completionistDesc": "Complete all modules"
+      "step1": {
+        "label": "Bank login",
+        "placeholder": "Your username",
+        "tip": "Your bank will never send you a link by SMS to log in. Type the URL yourself."
+      },
+      "step2": {
+        "label": "Device verification",
+        "tip": "New device alerts are your first line of defense. Don't ignore them."
+      },
+      "step3": {
+        "label": "Security question",
+        "placeholder": "Your answer",
+        "tip": "Don't use real answers. Invent answers that only you know."
+      },
+      "step4": {
+        "label": "Confirm transaction",
+        "tip": "Always verify the amount and recipient before confirming. Scammers change details at the last moment."
+      },
+      "step5": {
+        "label": "Summary",
+        "tip": "Review your statements regularly. Report any transaction you don't recognize."
+      }
     }
   },
   "auth": {
@@ -323,8 +333,6 @@
   "coachMarks": {
     "roadmap": "Your learning path",
     "roadmapDesc": "See all modules and the recommended order here.",
-    "xpCounter": "Your experience",
-    "xpCounterDesc": "Earn XP by completing lessons and quizzes. Level up.",
     "authArea": "Save your progress",
     "authAreaDesc": "Sign in to sync your progress across all your devices.",
     "passwordsCard": "Start here",

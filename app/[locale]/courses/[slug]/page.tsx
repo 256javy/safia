@@ -24,7 +24,6 @@ export default async function ModulePage({ params }: Props) {
     icon: manifestModule.icon ?? "📖",
     difficulty: mockMeta?.difficulty ?? "basic",
     estimatedMinutes: mockMeta?.estimatedMinutes ?? 15,
-    xpTotal: manifestModule.lessons.length * 100,
     prerequisites: mockMeta?.prerequisites ?? [],
     lessons: manifestModule.lessons.map((l) => ({
       slug: l.slug,

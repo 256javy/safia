@@ -18,11 +18,6 @@ const STEPS: CoachStep[] = [
     descriptionKey: "roadmapDesc",
   },
   {
-    targetSelector: '[data-coach="xp-counter"]',
-    titleKey: "xpCounter",
-    descriptionKey: "xpCounterDesc",
-  },
-  {
     targetSelector: '[data-coach="auth-area"]',
     titleKey: "authArea",
     descriptionKey: "authAreaDesc",

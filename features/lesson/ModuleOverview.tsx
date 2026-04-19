@@ -54,7 +54,6 @@ export function ModuleOverview({ module }: Props) {
                     : t("difficultyAdvanced")}
               </span>
               <span>⏱ {module.estimatedMinutes} min</span>
-              <span>⭐ {module.xpTotal} XP</span>
             </div>
           </div>
         </div>

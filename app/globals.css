@@ -13,8 +13,7 @@
   --color-success: #22c55e;
   --color-warning: #f59e0b;
   --color-destructive: #ef4444;
-  --color-xp: #a78bfa;
-  --color-badge-gold: #fbbf24;
+  --color-code: #a78bfa;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
@@ -25,7 +24,6 @@
 :root {
   --gradient-hero: linear-gradient(135deg, #1b1340 0%, #2d1b69 50%, #1b1340 100%);
   --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-  --gradient-xp-bar: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 50%, #c4b5fd 100%);
   --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
@@ -86,7 +84,7 @@ body {
 }
 .prose-safia code {
   background: var(--color-bg-elevated);
-  color: var(--color-xp);
+  color: var(--color-code);
   padding: 0.15rem 0.4rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;

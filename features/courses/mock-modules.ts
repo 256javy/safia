@@ -11,7 +11,6 @@ export const MOCK_MODULES: ModuleMeta[] = [
     icon: "🔑",
     difficulty: "basic",
     estimatedMinutes: 60,
-    xpTotal: 600,
     prerequisites: [],
     lessons: [
       { slug: "lesson-1", title: "Qué hace una contraseña segura", order: 1 },
@@ -29,7 +28,6 @@ export const MOCK_MODULES: ModuleMeta[] = [
     icon: "🎣",
     difficulty: "basic",
     estimatedMinutes: 45,
-    xpTotal: 700,
     prerequisites: [],
     lessons: [
       { slug: "lesson-1", title: "Cómo reconocer un correo de phishing", order: 1 },
@@ -48,7 +46,6 @@ export const MOCK_MODULES: ModuleMeta[] = [
     icon: "🔐",
     difficulty: "basic",
     estimatedMinutes: 30,
-    xpTotal: 500,
     prerequisites: ["passwords"],
     lessons: [
       { slug: "lesson-1", title: "Qué es la autenticación de dos factores", order: 1 },
@@ -65,7 +62,6 @@ export const MOCK_MODULES: ModuleMeta[] = [
     icon: "🎯",
     difficulty: "intermediate",
     estimatedMinutes: 60,
-    xpTotal: 750,
     prerequisites: ["phishing"],
     lessons: [
       { slug: "lesson-1", title: "Qué son los simuladores de phishing", order: 1 },
@@ -82,7 +78,6 @@ export const MOCK_MODULES: ModuleMeta[] = [
     icon: "📶",
     difficulty: "basic",
     estimatedMinutes: 50,
-    xpTotal: 500,
     prerequisites: [],
     lessons: [
       { slug: "lesson-1", title: "Los peligros del WiFi público", order: 1 },
@@ -99,7 +94,6 @@ export const MOCK_MODULES: ModuleMeta[] = [
     icon: "📱",
     difficulty: "basic",
     estimatedMinutes: 60,
-    xpTotal: 600,
     prerequisites: [],
     lessons: [
       { slug: "lesson-1", title: "Qué información nunca debes publicar", order: 1 },
@@ -117,7 +111,6 @@ export const MOCK_MODULES: ModuleMeta[] = [
     icon: "🗄️",
     difficulty: "basic",
     estimatedMinutes: 60,
-    xpTotal: 600,
     prerequisites: ["passwords"],
     lessons: [
       { slug: "lesson-1", title: "Por qué un gestor de contraseñas cambia tu vida digital", order: 1 },
@@ -135,7 +128,6 @@ export const MOCK_MODULES: ModuleMeta[] = [
     icon: "🛡️",
     difficulty: "basic",
     estimatedMinutes: 50,
-    xpTotal: 500,
     prerequisites: [],
     lessons: [
       { slug: "lesson-1", title: "Actualizaciones de seguridad", order: 1 },

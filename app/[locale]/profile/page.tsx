@@ -5,10 +5,6 @@ import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useProgressStore } from "@/stores/progress-store";
-import { XPCounter } from "@/features/gamification/XPCounter";
-import { LevelBadge } from "@/features/gamification/LevelBadge";
-import { StreakCounter } from "@/features/gamification/StreakCounter";
-import { BadgeGrid } from "@/features/gamification/BadgeGrid";
 import { GuestBanner } from "@/features/auth/GuestBanner";
 import { DeleteAccountModal } from "@/features/auth/DeleteAccountModal";
 import { MOCK_MODULES } from "@/features/courses/mock-modules";
@@ -27,7 +23,11 @@ function ModuleProgressCards() {
     return mp && Object.values(mp.lessons).some((l) => l.completed);
   });
 
-  if (started.length === 0) return null;
+  if (started.length === 0) {
+    return (
+      <p className="text-sm text-text-muted">{t("noProgressYet")}</p>
+    );
+  }
 
   return (
     <motion.div variants={fadeIn} initial="hidden" animate="visible" transition={{ delay: 0.3 }}>
@@ -40,7 +40,6 @@ function ModuleProgressCards() {
           const completed = Object.values(mp.lessons).filter((l) => l.completed).length;
           const total = mod.lessons.length;
           const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
-          const xpEarned = Object.values(mp.lessons).reduce((sum, l) => sum + l.score, 0);
 
           return (
             <motion.div
@@ -54,10 +53,7 @@ function ModuleProgressCards() {
               </div>
               <div className="mb-2 h-2 overflow-hidden rounded-full bg-bg-base">
                 <motion.div
-                  className="h-full rounded-full"
-                  style={{
-                    background: percent === 100 ? "var(--color-success)" : "var(--gradient-xp-bar)",
-                  }}
+                  className="h-full rounded-full bg-accent"
                   initial={{ width: 0 }}
                   animate={{ width: `${percent}%` }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
@@ -67,7 +63,7 @@ function ModuleProgressCards() {
                 <span>
                   {completed}/{total} {t("lessonsLabel")}
                 </span>
-                <span className="text-xp font-medium">{xpEarned} XP</span>
+                <span>{percent}%</span>
               </div>
             </motion.div>
           );
@@ -112,36 +108,10 @@ export default function ProfilePage() {
         </motion.div>
       )}
 
-      {/* Hero stats */}
-      <motion.div
-        className="mb-8 grid gap-4 sm:grid-cols-3"
-        variants={fadeIn}
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.1 }}
-      >
-        <XPCounter />
-        <LevelBadge />
-        <StreakCounter />
-      </motion.div>
-
-      {/* Badges */}
-      <motion.div
-        className="mb-8"
-        variants={fadeIn}
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.2 }}
-      >
-        <BadgeGrid />
-      </motion.div>
-
-      {/* Module progress */}
       <div className="mb-8">
         <ModuleProgressCards />
       </div>
 
-      {/* Delete account (auth only) */}
       {session && (
         <motion.div
           className="border-t border-accent/10 pt-8"

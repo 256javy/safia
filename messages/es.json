@@ -40,38 +40,43 @@
         "title": "Contraseñas seguras",
         "description": "Aprende a crear y gestionar contraseñas que nadie pueda adivinar.",
         "time": "15 min",
-        "difficulty": "Básico",
-        "xp": "100"
+        "difficulty": "Básico"
       },
       "phishing": {
         "title": "Detecta el phishing",
         "description": "Identifica correos y sitios falsos antes de que te engañen.",
         "time": "20 min",
-        "difficulty": "Básico",
-        "xp": "150"
+        "difficulty": "Básico"
       },
       "mfa": {
         "title": "Autenticación MFA",
         "description": "Agrega una capa extra de protección a tus cuentas.",
         "time": "10 min",
-        "difficulty": "Intermedio",
-        "xp": "120"
+        "difficulty": "Intermedio"
       },
       "simulators": {
         "title": "Simuladores",
         "description": "Practica en entornos seguros que imitan ataques reales.",
         "time": "30 min",
-        "difficulty": "Avanzado",
-        "xp": "200"
+        "difficulty": "Avanzado"
       }
     },
     "howItWorks": {
       "heading": "Así de simple",
       "subheading": "Tres pasos. Sin registros complicados.",
       "step": "Paso {n}",
-      "step1": { "title": "Elige un tema", "description": "Escoge el módulo que más te interese. No hay orden obligatorio." },
-      "step2": { "title": "Aprende haciendo", "description": "Lecciones cortas con quizzes interactivos. Gana XP por cada respuesta correcta." },
-      "step3": { "title": "Practica en simuladores", "description": "Enfrenta ataques simulados en un entorno 100% seguro. Sin riesgos reales." }
+      "step1": {
+        "title": "Elige un tema",
+        "description": "Escoge el módulo que más te interese. No hay orden obligatorio."
+      },
+      "step2": {
+        "title": "Aprende haciendo",
+        "description": "Lecciones cortas con quizzes interactivos. Gana XP por cada respuesta correcta."
+      },
+      "step3": {
+        "title": "Practica en simuladores",
+        "description": "Enfrenta ataques simulados en un entorno 100% seguro. Sin riesgos reales."
+      }
     },
     "simulator": {
       "heading": "Practica sin miedo",
@@ -80,16 +85,6 @@
       "signIn": "Iniciar sesión",
       "next": "Siguiente",
       "redFlags": "3 señales sospechosas detectadas"
-    },
-    "gamification": {
-      "heading": "Aprende y desbloquea logros",
-      "subheading": "Gana XP, sube de nivel y colecciona badges por cada módulo completado.",
-      "level": "Nivel {level}",
-      "rank": "Aprendiz",
-      "badge1": "Primera contraseña",
-      "badge2": "Anti-phishing",
-      "badge3": "MFA activado",
-      "badge4": "Primer simulador"
     },
     "newsletter": {
       "heading": "Mantente al día",
@@ -115,15 +110,6 @@
     "lessons": "Lecciones",
     "lessonsHeading": "Lecciones",
     "lessonCompleted": "Completada",
-    "quiz": "Cuestionario",
-    "completed": "Completado",
-    "locked": "Bloqueado",
-    "home": "Inicio",
-    "quizHeading": "Pon a prueba lo aprendido",
-    "backToModule": "Volver al módulo",
-    "difficultyBasic": "Básico",
-    "difficultyIntermediate": "Intermedio",
-    "difficultyAdvanced": "Avanzado",
     "quiz": {
       "excellent": "¡Excelente trabajo!",
       "keepPracticing": "Sigue practicando",
@@ -133,7 +119,15 @@
       "incorrect": "✗ Incorrecto",
       "next": "Siguiente",
       "seeResult": "Ver resultado"
-    }
+    },
+    "completed": "Completado",
+    "locked": "Bloqueado",
+    "home": "Inicio",
+    "quizHeading": "Pon a prueba lo aprendido",
+    "backToModule": "Volver al módulo",
+    "difficultyBasic": "Básico",
+    "difficultyIntermediate": "Intermedio",
+    "difficultyAdvanced": "Avanzado"
   },
   "simulator": {
     "title": "Simulador",
@@ -160,7 +154,6 @@
     "complete": "Completar simulación",
     "completed": "Simulación completada",
     "completedDesc": "Has completado el simulador de {platform}.",
-    "xpEarned": "+50 XP ganados",
     "backToSimulators": "Volver a simuladores",
     "platforms": {
       "google": "Google Workspace",
@@ -170,89 +163,106 @@
       "banking": "Banca en línea"
     },
     "google": {
-      "step1": { "label": "Email", "placeholder": "tu@gmail.com", "tip": "Verifica siempre la URL. Los sitios falsos usan dominios similares como gooogle.com o g00gle.com." },
-      "step2": { "label": "Contraseña", "placeholder": "Tu contraseña", "tip": "Nunca reutilices contraseñas. Si un sitio se filtra, todas tus cuentas quedan expuestas." },
-      "step3": { "label": "Código 2FA (SMS)", "placeholder": "123456", "tip": "Los códigos SMS son personales. Nadie de Google te pedirá que los compartas por teléfono o email." },
-      "step4": { "label": "Verificación exitosa", "tip": "Con 2FA activado, un atacante necesita tu teléfono además de tu contraseña. Es una barrera enorme." }
+      "step1": {
+        "label": "Email",
+        "placeholder": "tu@gmail.com",
+        "tip": "Verifica siempre la URL. Los sitios falsos usan dominios similares como gooogle.com o g00gle.com."
+      },
+      "step2": {
+        "label": "Contraseña",
+        "placeholder": "Tu contraseña",
+        "tip": "Nunca reutilices contraseñas. Si un sitio se filtra, todas tus cuentas quedan expuestas."
+      },
+      "step3": {
+        "label": "Código 2FA (SMS)",
+        "placeholder": "123456",
+        "tip": "Los códigos SMS son personales. Nadie de Google te pedirá que los compartas por teléfono o email."
+      },
+      "step4": {
+        "label": "Verificación exitosa",
+        "tip": "Con 2FA activado, un atacante necesita tu teléfono además de tu contraseña. Es una barrera enorme."
+      }
     },
     "facebook": {
-      "step1": { "label": "Login", "placeholder": "Email o teléfono", "tip": "Facebook nunca te pedirá tu contraseña por mensaje. Si alguien te la pide, es phishing." },
-      "step2": { "label": "Configurar 2FA", "tip": "Elige app autenticadora sobre SMS. Las apps generan códigos sin conexión y son más seguras." },
-      "step3": { "label": "Código de verificación", "placeholder": "000000", "tip": "Los códigos de autenticación cambian cada 30 segundos. Un código robado caduca rápido." },
-      "step4": { "label": "Confirmación", "tip": "Guarda tus códigos de respaldo en un lugar seguro. Si pierdes tu teléfono, los necesitarás." }
+      "step1": {
+        "label": "Login",
+        "placeholder": "Email o teléfono",
+        "tip": "Facebook nunca te pedirá tu contraseña por mensaje. Si alguien te la pide, es phishing."
+      },
+      "step2": {
+        "label": "Configurar 2FA",
+        "tip": "Elige app autenticadora sobre SMS. Las apps generan códigos sin conexión y son más seguras."
+      },
+      "step3": {
+        "label": "Código de verificación",
+        "placeholder": "000000",
+        "tip": "Los códigos de autenticación cambian cada 30 segundos. Un código robado caduca rápido."
+      },
+      "step4": {
+        "label": "Confirmación",
+        "tip": "Guarda tus códigos de respaldo en un lugar seguro. Si pierdes tu teléfono, los necesitarás."
+      }
     },
     "x": {
-      "step1": { "label": "Usuario", "placeholder": "@tu_usuario", "tip": "Cuentas verificadas también pueden ser hackeadas. La verificación no es sinónimo de seguridad." },
-      "step2": { "label": "Contraseña", "placeholder": "Tu contraseña", "tip": "Reutilizar contraseñas es el error más común. Un gestor de contraseñas resuelve esto." },
-      "step3": { "label": "Método 2FA", "tip": "Las llaves de seguridad físicas (como YubiKey) son el método más seguro. SMS es mejor que nada." },
-      "step4": { "label": "Código", "placeholder": "000000", "tip": "Si alguien te pide un código que acabas de recibir, es un ataque en tiempo real. No lo compartas." }
+      "step1": {
+        "label": "Usuario",
+        "placeholder": "@tu_usuario",
+        "tip": "Cuentas verificadas también pueden ser hackeadas. La verificación no es sinónimo de seguridad."
+      },
+      "step2": {
+        "label": "Contraseña",
+        "placeholder": "Tu contraseña",
+        "tip": "Reutilizar contraseñas es el error más común. Un gestor de contraseñas resuelve esto."
+      },
+      "step3": {
+        "label": "Método 2FA",
+        "tip": "Las llaves de seguridad físicas (como YubiKey) son el método más seguro. SMS es mejor que nada."
+      },
+      "step4": {
+        "label": "Código",
+        "placeholder": "000000",
+        "tip": "Si alguien te pide un código que acabas de recibir, es un ataque en tiempo real. No lo compartas."
+      }
     },
     "tiktok": {
-      "step1": { "label": "Login", "placeholder": "Email o teléfono", "tip": "Las cuentas con seguidores son objetivos. Más seguidores = más valor para un atacante." },
-      "step2": { "label": "Ajustes de seguridad", "tip": "Revisa qué apps tienen acceso a tu cuenta. Revoca las que no reconozcas." },
-      "step3": { "label": "Código 2FA", "placeholder": "000000", "tip": "Activa 2FA incluso si crees que tu cuenta no es importante. Los atacantes las usan para spam." }
+      "step1": {
+        "label": "Login",
+        "placeholder": "Email o teléfono",
+        "tip": "Las cuentas con seguidores son objetivos. Más seguidores = más valor para un atacante."
+      },
+      "step2": {
+        "label": "Ajustes de seguridad",
+        "tip": "Revisa qué apps tienen acceso a tu cuenta. Revoca las que no reconozcas."
+      },
+      "step3": {
+        "label": "Código 2FA",
+        "placeholder": "000000",
+        "tip": "Activa 2FA incluso si crees que tu cuenta no es importante. Los atacantes las usan para spam."
+      }
     },
     "banking": {
-      "step1": { "label": "Login bancario", "placeholder": "Tu usuario", "tip": "Tu banco nunca te enviará un enlace por SMS para iniciar sesión. Escribe la URL tú mismo." },
-      "step2": { "label": "Verificación de dispositivo", "tip": "Las alertas de dispositivo nuevo son tu primera línea de defensa. No las ignores." },
-      "step3": { "label": "Pregunta de seguridad", "placeholder": "Tu respuesta", "tip": "No uses respuestas reales. Inventa respuestas que solo tú conozcas." },
-      "step4": { "label": "Confirmar transacción", "tip": "Siempre verifica el monto y destinatario antes de confirmar. Los estafadores cambian datos en el último momento." },
-      "step5": { "label": "Resumen", "tip": "Revisa tu estado de cuenta regularmente. Reporta cualquier transacción que no reconozcas." }
-    }
-  },
-  "gamification": {
-    "xp": "XP",
-    "level": "Nivel",
-    "badges": "Insignias",
-    "streak": "Racha",
-    "streakDays": "{count, plural, one {# día} other {# días}}",
-    "levelUp": "¡Subiste al nivel {level}!",
-    "newBadge": "¡Nueva insignia desbloqueada!",
-    "levels": {
-      "novice": "Novato",
-      "apprentice": "Aprendiz",
-      "explorer": "Explorador",
-      "defender": "Defensor",
-      "guardian": "Guardián",
-      "sentinel": "Centinela",
-      "protector": "Protector",
-      "champion": "Campeón",
-      "master": "Maestro",
-      "legend": "Leyenda"
-    },
-    "badges_list": {
-      "firstLesson": "Primera lección",
-      "firstLessonDesc": "Completa tu primera lección",
-      "firstModule": "Primer módulo",
-      "firstModuleDesc": "Completa un módulo entero",
-      "passwordsComplete": "Contraseñas",
-      "passwordsCompleteDesc": "Completa el módulo de contraseñas",
-      "phishingComplete": "Anti-phishing",
-      "phishingCompleteDesc": "Completa el módulo de phishing",
-      "mfaComplete": "MFA activado",
-      "mfaCompleteDesc": "Completa el módulo de MFA",
-      "socialEngComplete": "Anti-manipulación",
-      "socialEngCompleteDesc": "Completa el módulo de ingeniería social",
-      "wifiComplete": "Wi-Fi seguro",
-      "wifiCompleteDesc": "Completa el módulo de seguridad Wi-Fi",
-      "simulatorFirst": "Primer simulador",
-      "simulatorFirstDesc": "Completa tu primer simulador",
-      "streak7": "Racha semanal",
-      "streak7Desc": "Mantén una racha de 7 días",
-      "streak30": "Racha mensual",
-      "streak30Desc": "Mantén una racha de 30 días",
-      "xp500": "500 XP",
-      "xp500Desc": "Acumula 500 XP",
-      "xp1000": "1000 XP",
-      "xp1000Desc": "Acumula 1000 XP",
-      "xp2000": "2000 XP",
-      "xp2000Desc": "Acumula 2000 XP",
-      "allBasic": "Básicos completos",
-      "allBasicDesc": "Completa todos los módulos básicos",
-      "allIntermediate": "Intermedios completos",
-      "allIntermediateDesc": "Completa todos los módulos intermedios",
-      "completionist": "Completista",
-      "completionistDesc": "Completa todos los módulos"
+      "step1": {
+        "label": "Login bancario",
+        "placeholder": "Tu usuario",
+        "tip": "Tu banco nunca te enviará un enlace por SMS para iniciar sesión. Escribe la URL tú mismo."
+      },
+      "step2": {
+        "label": "Verificación de dispositivo",
+        "tip": "Las alertas de dispositivo nuevo son tu primera línea de defensa. No las ignores."
+      },
+      "step3": {
+        "label": "Pregunta de seguridad",
+        "placeholder": "Tu respuesta",
+        "tip": "No uses respuestas reales. Inventa respuestas que solo tú conozcas."
+      },
+      "step4": {
+        "label": "Confirmar transacción",
+        "tip": "Siempre verifica el monto y destinatario antes de confirmar. Los estafadores cambian datos en el último momento."
+      },
+      "step5": {
+        "label": "Resumen",
+        "tip": "Revisa tu estado de cuenta regularmente. Reporta cualquier transacción que no reconozcas."
+      }
     }
   },
   "auth": {
@@ -323,8 +333,6 @@
   "coachMarks": {
     "roadmap": "Tu ruta de aprendizaje",
     "roadmapDesc": "Aquí puedes ver todos los módulos y su orden recomendado.",
-    "xpCounter": "Tu experiencia",
-    "xpCounterDesc": "Gana XP completando lecciones y quizzes. Sube de nivel.",
     "authArea": "Guarda tu progreso",
     "authAreaDesc": "Inicia sesión para sincronizar tu avance en todos tus dispositivos.",
     "passwordsCard": "Empieza aquí",
