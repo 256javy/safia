@@ -58,6 +58,13 @@ export async function POST(req: NextRequest) {
     .single();
 
   if (error || !data) {
+    // Log server-side so ops can diagnose. The client still gets an opaque
+    // 500 — specific database errors must never reach the public response.
+    console.error("POST /api/certificates failed", {
+      track_slug: track.slug,
+      db_code: error?.code,
+      db_message: error?.message,
+    });
     return NextResponse.json({ error: "Could not issue certificate" }, { status: 500 });
   }
 
