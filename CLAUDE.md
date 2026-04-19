@@ -1,5 +1,9 @@
 # Safia — Project Instructions for Claude
 
+> **⚠️ Branch `experiment/gstack`:** This branch replaces the custom Safia subagents (backend-architect, frontend-architect, ux-designer, security-reviewer, qa-reviewer, content-writer) with [GStack](https://github.com/garrytan/gstack), installed project-locally in `.claude/skills/gstack/`. The "Scrum Team / Agents" section below describes the **main-branch** setup and is kept here for reference while we evaluate GStack. On this branch, use GStack skills (`/plan-eng-review`, `/design-shotgun`, `/design-review`, `/cso`, `/qa`, `/review`, `/ship`, …) plus the Safia-specific commands (`/sim-check`, `/qa-pass`, `/ship-ready`, `/new-lesson`). See `AGENTS.md` for the portable agent context and the GStack mapping table.
+>
+> **Install step (requires `bun`):** `cd .claude/skills/gstack && ./setup --local` — run this once per clone. Without it, the gstack slash commands won't be registered with the Claude Code harness.
+
 ## Project Overview
 Safia is a free, open-source security learning platform for non-technical users. Tagline: **"Aprende a protegerte."**
 

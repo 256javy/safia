@@ -26,6 +26,7 @@ SAFE_PATHS = (
     ".env.local.example",
     ".claude/hooks/guard-service-key.py",
     "CLAUDE.md",
+    "AGENTS.md",
     "SECURITY.md",
     "README.md",
     "CONTRIBUTING.md",
