@@ -346,5 +346,46 @@
     "prereqsHeading": "Este contenido asume que ya:",
     "freshnessStale": "Este contenido está pendiente de revisión. Sigue siendo útil, pero puede no reflejar cambios recientes.",
     "freshnessArchived": "Este contenido no se ha revisado en más de 18 meses y puede estar desactualizado. Lo mantenemos como referencia mientras lo actualizamos."
+  },
+  "certificates": {
+    "issuedBy": "Emitido por",
+    "levelLabel": "Nivel",
+    "awardedTo": "Otorgado a",
+    "issuedOn": "Emitido en {date}",
+    "verifyAt": "Verifica en",
+    "code": "Código",
+    "cardAriaLabel": "Certificado de {track}",
+    "earnedTitle": "¡Completaste el track {track}!",
+    "earnedBody": "Si quieres, puedes emitir un certificado con el nombre que elijas. No necesitas cuenta. Es verificable con un enlace público, sin correo, sin identificadores ocultos.",
+    "displayNameLabel": "Nombre a mostrar",
+    "displayNamePlaceholder": "Ej. Ana López",
+    "displayNameHint": "Aparecerá tal cual en la página pública de verificación. Usa el nombre que quieras asociar con este logro — no tiene que ser el real.",
+    "issueButton": "Emitir certificado",
+    "issuing": "Emitiendo…",
+    "later": "Quizá más tarde",
+    "close": "Cerrar",
+    "error": "No pudimos emitir el certificado. Intenta de nuevo en un momento.",
+    "viewVerificationPage": "Ver página de verificación",
+    "levels": {
+      "completion": "Completado",
+      "applied": "Aplicado",
+      "mastery": "Dominio"
+    },
+    "tracks": {
+      "passwords": {
+        "title": "Contraseñas seguras",
+        "description": "Has completado todas las lecciones del track de contraseñas."
+      }
+    },
+    "verifyPage": {
+      "kicker": "Certificado Safia",
+      "heading": "Certificado verificable",
+      "subheading": "Esta página confirma la emisión del certificado. No recogemos datos sobre quien la visita.",
+      "notFoundTitle": "Certificado no encontrado — Safia",
+      "ogTitle": "{name} completó el track {track} en Safia",
+      "ogDescription": "Certificado emitido por Safia para {name} tras completar {track}.",
+      "revoked": "Este certificado ha sido revocado. El logro queda registrado, pero ya no está vigente.",
+      "privacyNote": "Esta página no registra tu IP ni instala cookies. La fecha se muestra con granularidad de mes por respeto a la privacidad del titular."
+    }
   }
 }

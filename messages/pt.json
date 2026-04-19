@@ -346,5 +346,46 @@
     "prereqsHeading": "Este conteúdo assume que você já:",
     "freshnessStale": "Este conteúdo está pendente de revisão. Ainda é útil, mas pode não refletir mudanças recentes.",
     "freshnessArchived": "Este conteúdo não foi revisado há mais de 18 meses e pode estar desatualizado. Mantemos como referência enquanto atualizamos."
+  },
+  "certificates": {
+    "issuedBy": "Emitido por",
+    "levelLabel": "Nível",
+    "awardedTo": "Concedido a",
+    "issuedOn": "Emitido em {date}",
+    "verifyAt": "Verifique em",
+    "code": "Código",
+    "cardAriaLabel": "Certificado de {track}",
+    "earnedTitle": "Você completou a trilha {track}!",
+    "earnedBody": "Se quiser, pode emitir um certificado com o nome que escolher. Não precisa de conta. É verificável em um link público, sem e-mail e sem identificadores ocultos.",
+    "displayNameLabel": "Nome a exibir",
+    "displayNamePlaceholder": "Ex. Ana López",
+    "displayNameHint": "Aparecerá exatamente assim na página pública. Use o nome que quiser associar a esta conquista — não precisa ser o real.",
+    "issueButton": "Emitir certificado",
+    "issuing": "Emitindo…",
+    "later": "Talvez mais tarde",
+    "close": "Fechar",
+    "error": "Não foi possível emitir o certificado. Tente novamente em breve.",
+    "viewVerificationPage": "Ver página de verificação",
+    "levels": {
+      "completion": "Completado",
+      "applied": "Aplicado",
+      "mastery": "Domínio"
+    },
+    "tracks": {
+      "passwords": {
+        "title": "Senhas seguras",
+        "description": "Você concluiu todas as aulas da trilha de senhas."
+      }
+    },
+    "verifyPage": {
+      "kicker": "Certificado Safia",
+      "heading": "Certificado verificável",
+      "subheading": "Esta página confirma a emissão do certificado. Não coletamos dados de quem visita.",
+      "notFoundTitle": "Certificado não encontrado — Safia",
+      "ogTitle": "{name} completou a trilha {track} na Safia",
+      "ogDescription": "Certificado emitido pela Safia para {name} após concluir {track}.",
+      "revoked": "Este certificado foi revogado. A conquista fica registrada, mas não está mais em vigor.",
+      "privacyNote": "Esta página não registra seu IP nem instala cookies. As datas aparecem com granularidade de mês por respeito à privacidade do titular."
+    }
   }
 }

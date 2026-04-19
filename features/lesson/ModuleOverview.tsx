@@ -3,6 +3,7 @@
 import { Link } from "@/lib/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useProgressStore } from "@/stores/progress-store";
+import { TrackCompletionDetector } from "@/features/certificates";
 import type { ModuleMeta } from "@/types/module";
 
 interface Props {
@@ -112,6 +113,8 @@ export function ModuleOverview({ module }: Props) {
           );
         })}
       </div>
+
+      <TrackCompletionDetector moduleSlug={module.slug} />
     </div>
   );
 }

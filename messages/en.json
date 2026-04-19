@@ -346,5 +346,46 @@
     "prereqsHeading": "This content assumes you already:",
     "freshnessStale": "This content is pending review. It still holds up, but may not reflect recent changes.",
     "freshnessArchived": "This content has not been reviewed in more than 18 months and may be out of date. Kept for reference while we update it."
+  },
+  "certificates": {
+    "issuedBy": "Issued by",
+    "levelLabel": "Level",
+    "awardedTo": "Awarded to",
+    "issuedOn": "Issued in {date}",
+    "verifyAt": "Verify at",
+    "code": "Code",
+    "cardAriaLabel": "Certificate for {track}",
+    "earnedTitle": "You completed the {track} track!",
+    "earnedBody": "If you want, you can issue a certificate under any display name. No account required. It is verifiable at a public link, with no email and no hidden identifiers.",
+    "displayNameLabel": "Display name",
+    "displayNamePlaceholder": "e.g. Ana López",
+    "displayNameHint": "This appears verbatim on the public verification page. Use whatever name you want tied to this achievement — it does not have to be your real one.",
+    "issueButton": "Issue certificate",
+    "issuing": "Issuing…",
+    "later": "Maybe later",
+    "close": "Close",
+    "error": "Could not issue the certificate. Try again in a moment.",
+    "viewVerificationPage": "View verification page",
+    "levels": {
+      "completion": "Completion",
+      "applied": "Applied",
+      "mastery": "Mastery"
+    },
+    "tracks": {
+      "passwords": {
+        "title": "Strong passwords",
+        "description": "You finished every lesson in the passwords track."
+      }
+    },
+    "verifyPage": {
+      "kicker": "Safia certificate",
+      "heading": "Verifiable certificate",
+      "subheading": "This page confirms the certificate was issued. We do not collect data on visitors.",
+      "notFoundTitle": "Certificate not found — Safia",
+      "ogTitle": "{name} completed the {track} track on Safia",
+      "ogDescription": "Certificate issued by Safia to {name} for completing {track}.",
+      "revoked": "This certificate has been revoked. The achievement stays on record but is no longer current.",
+      "privacyNote": "This page does not log your IP or install cookies. Dates are shown with month granularity out of respect for the holder."
+    }
   }
 }
