@@ -5,6 +5,15 @@ import { Link } from "@/lib/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useProgressStore } from "@/stores/progress-store";
 import { Quiz, type QuizQuestion } from "./Quiz";
+import { LastReviewed } from "./LastReviewed";
+import { FreshnessBanner } from "./FreshnessBanner";
+import { PrerequisitesBlock } from "./PrerequisitesBlock";
+
+interface Prereq {
+  slug: string;
+  title?: string;
+  moduleSlug?: string;
+}
 
 interface LessonViewerProps {
   moduleSlug: string;
@@ -15,6 +24,8 @@ interface LessonViewerProps {
   quiz?: QuizQuestion[];
   prevLesson?: { slug: string; title: string } | null;
   nextLesson?: { slug: string; title: string } | null;
+  lastReviewed?: string;
+  prereqs?: Prereq[];
 }
 
 export function LessonViewer({
@@ -26,6 +37,8 @@ export function LessonViewer({
   quiz,
   prevLesson,
   nextLesson,
+  lastReviewed,
+  prereqs = [],
 }: LessonViewerProps) {
   const t = useTranslations("courses");
   const { completeLesson, modules } = useProgressStore();
@@ -88,8 +101,14 @@ export function LessonViewer({
         {lessonTitle}
       </h1>
 
+      {lastReviewed && <FreshnessBanner lastReviewed={lastReviewed} />}
+
+      <PrerequisitesBlock prereqs={prereqs} />
+
       {/* MDX content */}
       <article className="prose-safia">{content}</article>
+
+      {lastReviewed && <LastReviewed date={lastReviewed} />}
 
       {/* Quiz */}
       {quiz && quiz.length > 0 && !isCompleted && (

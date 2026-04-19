@@ -340,5 +340,11 @@
     "skip": "Skip tour",
     "next": "Next",
     "done": "Got it"
+  },
+  "lesson": {
+    "lastReviewed": "Last reviewed on {date}.",
+    "prereqsHeading": "This content assumes you already:",
+    "freshnessStale": "This content is pending review. It still holds up, but may not reflect recent changes.",
+    "freshnessArchived": "This content has not been reviewed in more than 18 months and may be out of date. Kept for reference while we update it."
   }
 }

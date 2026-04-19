@@ -1,29 +1,58 @@
 ---
-title: "Qué pasa si el gestor es hackeado"
-description: "Entiende por qué una brecha en el gestor de contraseñas no significa que tus contraseñas estén comprometidas."
+title: Qué pasa si el gestor es hackeado
+description: >-
+  Entiende por qué una brecha en el gestor de contraseñas no significa que tus
+  contraseñas estén comprometidas.
 order: 6
 quiz:
-  - question: "¿Qué obtuvieron los atacantes cuando hackearon LastPass en 2022?"
+  - question: ¿Qué obtuvieron los atacantes cuando hackearon LastPass en 2022?
     options:
-      - "Las contraseñas de todos los usuarios en texto plano"
-      - "Datos cifrados que son inútiles sin la contraseña maestra de cada usuario"
-      - "El acceso completo a todas las cuentas de los usuarios"
+      - Las contraseñas de todos los usuarios en texto plano
+      - >-
+        Datos cifrados que son inútiles sin la contraseña maestra de cada
+        usuario
+      - El acceso completo a todas las cuentas de los usuarios
     correct: 1
-    explanation: "En la brecha de LastPass de 2022, los atacantes obtuvieron datos cifrados. Sin la contraseña maestra de cada usuario (que LastPass no conoce), esos datos no son útiles. Los usuarios con contraseñas maestras fuertes estaban protegidos."
-  - question: "¿Por qué el cifrado de extremo a extremo protege tus contraseñas incluso si hackean al proveedor del gestor?"
+    explanation: >-
+      En la brecha de LastPass de 2022, los atacantes obtuvieron datos cifrados.
+      Sin la contraseña maestra de cada usuario (que LastPass no conoce), esos
+      datos no son útiles. Los usuarios con contraseñas maestras fuertes estaban
+      protegidos.
+  - question: >-
+      ¿Por qué el cifrado de extremo a extremo protege tus contraseñas incluso
+      si hackean al proveedor del gestor?
     options:
-      - "Porque el proveedor guarda una copia de tu contraseña maestra"
-      - "Porque tus contraseñas se cifran en tu dispositivo antes de enviarse, y el proveedor nunca tiene acceso a la clave"
-      - "Porque los servidores del gestor están en países seguros"
+      - Porque el proveedor guarda una copia de tu contraseña maestra
+      - >-
+        Porque tus contraseñas se cifran en tu dispositivo antes de enviarse, y
+        el proveedor nunca tiene acceso a la clave
+      - Porque los servidores del gestor están en países seguros
     correct: 1
-    explanation: "Con cifrado de extremo a extremo, tus datos se cifran localmente (en tu dispositivo) con tu contraseña maestra. El proveedor solo ve datos cifrados. Sin tu contraseña maestra, no pueden descifrarlos."
-  - question: "Si tu gestor de contraseñas sufre una brecha, ¿qué deberías hacer primero?"
+    explanation: >-
+      Con cifrado de extremo a extremo, tus datos se cifran localmente (en tu
+      dispositivo) con tu contraseña maestra. El proveedor solo ve datos
+      cifrados. Sin tu contraseña maestra, no pueden descifrarlos.
+  - question: 'Si tu gestor de contraseñas sufre una brecha, ¿qué deberías hacer primero?'
     options:
-      - "Cambiar todas tus contraseñas inmediatamente"
-      - "Evaluar el alcance real de la brecha — qué datos fueron comprometidos y si tu contraseña maestra era fuerte"
-      - "Dejar de usar gestores de contraseñas para siempre"
+      - Cambiar todas tus contraseñas inmediatamente
+      - >-
+        Evaluar el alcance real de la brecha — qué datos fueron comprometidos y
+        si tu contraseña maestra era fuerte
+      - Dejar de usar gestores de contraseñas para siempre
     correct: 1
-    explanation: "No todas las brechas son iguales. Si el gestor usaba cifrado de extremo a extremo y tu contraseña maestra era fuerte, el riesgo real puede ser mínimo. Leer el comunicado oficial del gestor es el primer paso."
+    explanation: >-
+      No todas las brechas son iguales. Si el gestor usaba cifrado de extremo a
+      extremo y tu contraseña maestra era fuerte, el riesgo real puede ser
+      mínimo. Leer el comunicado oficial del gestor es el primer paso.
+last_reviewed: '2026-04-19'
+author: 256javy
+steward: 256javy
+audience:
+  - obligation
+  - curiosity
+assumes: []
+module: pass-manager
+locale: es
 ---
 
 LastPass fue hackeado en 2022. Hay artículos alarmistas que dicen que los gestores de contraseñas son peligrosos. ¿Deberías preocuparte?

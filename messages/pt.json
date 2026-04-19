@@ -340,5 +340,11 @@
     "skip": "Pular tour",
     "next": "Próximo",
     "done": "Entendi"
+  },
+  "lesson": {
+    "lastReviewed": "Revisado pela última vez em {date}.",
+    "prereqsHeading": "Este conteúdo assume que você já:",
+    "freshnessStale": "Este conteúdo está pendente de revisão. Ainda é útil, mas pode não refletir mudanças recentes.",
+    "freshnessArchived": "Este conteúdo não foi revisado há mais de 18 meses e pode estar desatualizado. Mantemos como referência enquanto atualizamos."
   }
 }

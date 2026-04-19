@@ -340,5 +340,11 @@
     "skip": "Saltar tour",
     "next": "Siguiente",
     "done": "Entendido"
+  },
+  "lesson": {
+    "lastReviewed": "Revisado por última vez el {date}.",
+    "prereqsHeading": "Este contenido asume que ya:",
+    "freshnessStale": "Este contenido está pendiente de revisión. Sigue siendo útil, pero puede no reflejar cambios recientes.",
+    "freshnessArchived": "Este contenido no se ha revisado en más de 18 meses y puede estar desactualizado. Lo mantenemos como referencia mientras lo actualizamos."
   }
 }
