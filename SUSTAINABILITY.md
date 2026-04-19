@@ -60,12 +60,12 @@ Safia does not need to solve sustainability today. It needs to not paint itself 
 
 ### Stage 0 — Today
 - **Scale:** one maintainer, early content, near-zero traffic.
-- **Costs:** domain (~$15/year), Vercel free tier, Supabase free tier.
+- **Costs:** a domain (~$15/year) and free-tier hosting + database. Currently implemented on Vercel and Supabase, but those are implementation conveniences, not commitments — any equivalent free tier works.
 - **Funding source:** maintainer's pocket.
 - **What to do:** keep costs at zero; ship content; publish everything openly.
 
 ### Stage 1 — Early traction (first few thousand users)
-- **Costs start appearing:** Vercel bandwidth, Supabase rows, maybe a small email flow for cert verification.
+- **Costs start appearing:** hosting bandwidth, database rows, maybe a small email flow for cert verification.
 - **Funding sources, in preference order:**
   1. **Open-source infrastructure programs** — see §5.
   2. **Individual recurring donations** via GitHub Sponsors and Open Collective. No rewards tiers. No perks. Just a "thank you" page with named donors who opt in.

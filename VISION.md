@@ -148,8 +148,16 @@ When in doubt: re-read §2. Everything else should serve it.
 
 ## Cross-references
 
-- **`AGENTS.md` / `CLAUDE.md`** — technical stack, repo layout, product constraints that implement §6.
-- **`SUSTAINABILITY.md`** — how §6's "sustained, not monetized" becomes concrete: funding principles, sponsor-alignment thesis, staged funding path, programs to apply to, money we never accept.
-- **`GOVERNANCE.md`** — how decisions are made, who reviews what, the contribution ladder, the RFC process for changes to this document.
-- **`CONTRIBUTING.md`** — how to propose, write, and review content or code.
-- **`STYLE.md`** — voice, tone, pedagogical standards, bias checklist, lesson frontmatter schema, "This content assumes…" block format.
+Three layers of documentation, each independent:
+
+**Layer 1 — Why (this layer).** Idea and stewardship. Survives any reimplementation.
+- `VISION.md` — this document.
+- `SUSTAINABILITY.md` — how §6's *sustained, not monetized* becomes concrete.
+- `GOVERNANCE.md` — how decisions are made.
+- `STYLE.md` — voice, tone, bias checklist, pedagogical standards.
+
+**Layer 2 — What.** Product specification, stack-agnostic. Lives in `atlas/`. Describes tools, tracks, routes, certificates, Range, threat model, brand — the product Safia *is*, independent of how it is built.
+
+**Layer 3 — How.** This implementation.
+- `AGENTS.md` / `CLAUDE.md` — stack, repo layout, technical constraints.
+- `CONTRIBUTING.md` — how to work on this codebase.
