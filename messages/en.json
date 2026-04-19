@@ -271,7 +271,7 @@
     "signInWith": "Sign in with {provider}",
     "guest": "Continue as guest",
     "profile": "My profile",
-    "guestBanner": "Sign in to save your progress and earn badges.",
+    "guestBanner": "Sign in to save your progress across devices.",
     "signInPage": {
       "title": "Sign in",
       "subtitle": "Save your progress and access from any device.",
@@ -304,7 +304,8 @@
     "deleteWarning": "This action is irreversible. All your data, progress, and badges will be deleted.",
     "cancel": "Cancel",
     "deleteConfirm": "Yes, delete",
-    "deleting": "Deleting..."
+    "deleting": "Deleting...",
+    "noProgressYet": "You have not completed any lesson yet. Start with whichever module interests you."
   },
   "settings": {
     "title": "Settings",

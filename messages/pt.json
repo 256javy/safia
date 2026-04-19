@@ -271,7 +271,7 @@
     "signInWith": "Entrar com {provider}",
     "guest": "Continuar como convidado",
     "profile": "Meu perfil",
-    "guestBanner": "Entre para salvar seu progresso e ganhar insígnias.",
+    "guestBanner": "Entre para salvar seu progresso entre dispositivos.",
     "signInPage": {
       "title": "Entrar",
       "subtitle": "Salve seu progresso e acesse de qualquer dispositivo.",
@@ -304,7 +304,8 @@
     "deleteWarning": "Esta ação é irreversível. Todos os seus dados, progresso e insígnias serão excluídos.",
     "cancel": "Cancelar",
     "deleteConfirm": "Sim, excluir",
-    "deleting": "Excluindo..."
+    "deleting": "Excluindo...",
+    "noProgressYet": "Você ainda não completou nenhuma aula. Comece pelo módulo que mais te interessa."
   },
   "settings": {
     "title": "Configurações",

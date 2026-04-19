@@ -271,7 +271,7 @@
     "signInWith": "Iniciar sesión con {provider}",
     "guest": "Continuar como invitado",
     "profile": "Mi perfil",
-    "guestBanner": "Inicia sesión para guardar tu progreso y ganar insignias.",
+    "guestBanner": "Inicia sesión para guardar tu progreso entre dispositivos.",
     "signInPage": {
       "title": "Inicia sesión",
       "subtitle": "Guarda tu progreso y accede desde cualquier dispositivo.",
@@ -304,7 +304,8 @@
     "deleteWarning": "Esta acción es irreversible. Se eliminarán todos tus datos, progreso e insignias.",
     "cancel": "Cancelar",
     "deleteConfirm": "Sí, eliminar",
-    "deleting": "Eliminando..."
+    "deleting": "Eliminando...",
+    "noProgressYet": "Aún no has completado ninguna lección. Empieza por el módulo que más te interese."
   },
   "settings": {
     "title": "Ajustes",
