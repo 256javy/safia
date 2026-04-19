@@ -5,7 +5,8 @@ Free, open-source security learning platform for non-technical users (office wor
 - **Repo:** https://github.com/256javy/safia
 - **License:** AGPL-3.0
 - **Primary locale:** Spanish (`es`). English (`en`) is a secondary target; not all copy is translated yet.
-- **Spec (source of truth):** `docs/superpowers/specs/2026-04-15-safia-platform-design.md`
+- **North star:** `VISION.md` — mission, principles, audience ranking, and the four-question decision filter. **Read before any non-trivial product decision.**
+- **Spec (source of truth for scope):** `docs/superpowers/specs/2026-04-15-safia-platform-design.md`
 
 ## Stack
 

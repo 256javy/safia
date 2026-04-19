@@ -4,7 +4,8 @@ Free, open-source security learning platform for non-technical users. Tagline: *
 
 - **Repo:** https://github.com/256javy/safia
 - **License:** AGPL-3.0 — chosen because the simulator code could be repurposed into actual phishing tools; AGPL forces any modified service to be open-sourced.
-- **Spec (source of truth):** `docs/superpowers/specs/2026-04-15-safia-platform-design.md`
+- **North star:** `VISION.md` — mission, principles, audience ranking, decision filter. Read before any non-trivial product decision.
+- **Spec (source of truth for scope):** `docs/superpowers/specs/2026-04-15-safia-platform-design.md`
 
 ## Stack
 
