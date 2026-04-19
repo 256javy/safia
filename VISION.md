@@ -2,9 +2,9 @@
 
 > *Aprende a protegerte.*
 
-This document is the north star for Safia. It is deliberately abstract: it describes **why** Safia exists, **who** it serves, and **what it must always be**, without prescribing how. When you are asked to add a feature, fix a bug, or reshape the product, check your proposal against this document first. If a change contradicts any section here, the change is wrong — not the document.
+This document is the north star for Safia. It is deliberately abstract: it describes **why** Safia exists, **who** it serves, and **what it must always be**, without prescribing how. Before making any non-trivial product decision — a new feature, a copy change, a track, a partnership — check your proposal against this document. If a change contradicts any section here, the change is wrong, not the document.
 
-Implementation details live in `AGENTS.md` and `CLAUDE.md`. This file rarely changes.
+`AGENTS.md` and `CLAUDE.md` cover implementation detail. `SUSTAINABILITY.md` covers how Safia pays its bills. This file changes rarely.
 
 ---
 
@@ -18,7 +18,7 @@ Safia exists to close that gap. It is a place where anyone — with no prior kno
 
 **Build the safest, freest place on the internet to practice being unsafe.**
 
-A hands-on, zero-risk playground where people face realistic threats (phishing pages, social-engineering scripts, weak passwords, hostile networks) in a controlled environment, and walk away with reflexes, not just knowledge.
+A hands-on, zero-risk environment where people face realistic threats (phishing pages, social-engineering scripts, weak passwords, hostile networks, account takeovers) in a controlled setting, and walk away with reflexes, not just knowledge.
 
 ## 3. Vision
 
@@ -26,77 +26,130 @@ Ten years from now, when a parent asks *"how do I know if this email is real?"* 
 
 Safia is to online security what Wikipedia is to general knowledge: a public good, free forever, community-built, trusted because it is transparent.
 
-## 4. The learner journey
+## 4. How people arrive
 
-Safia is a ladder. Every rung stands on its own, but they connect.
+People do not arrive at Safia in one mental state. They arrive in at least four, and the product must recognize each as first-class:
 
-1. **Survive.** Basics anyone should know before their next login: what a password is, why phishing works, why "free WiFi" can hurt you. Target: a 65-year-old who has never heard the word *malware*.
-2. **Defend.** Protective habits for daily life: password managers, two-factor authentication, recognizing scams on social media, securing personal devices, reclaiming a hacked account.
-3. **Understand.** How attacks and defenses actually work underneath: authentication flows, DNS, certificates, sessions, common web vulnerabilities. Target: a curious teenager or a junior dev who wants depth.
-4. **Practice.** Guided hands-on exercises in safe simulators: spotting phishing kits, breaking weak auth flows, reading packet captures, reasoning about threat models.
-5. **Launch.** Foundations for a career in cybersecurity: how the industry is structured, what roles exist, what certifications mean, what a CTF is, how to build a portfolio, how to get a first job.
+- **Crisis.** *"Me acaba de estafar alguien. Me hackearon la cuenta. Creo que este mensaje es phishing y no sé qué hacer."* Minutes matter. The person wants the bleeding to stop, not to learn.
+- **Obligation.** *"Arranqué un trabajo nuevo y me piden activar 2FA / hacer un curso. Quiero cumplir sin sentirme tonto."* Time-boxed, low panic, outcome-focused.
+- **Care for others.** *"Mi madre / mis alumnos / mi equipo navegan y quiero protegerlos."* Arrives looking for tools to pass forward.
+- **Curiosity or career.** *"Me interesa esto. Quiero ver hasta dónde llega y si puedo hacer carrera."* Time-abundant, process-focused.
 
-No rung is gated behind payment, registration, or nationality. A learner can enter at any rung, skip any rung, and leave at any rung.
+Two metrics coexist without conflict: **time-to-relief** (for crisis and obligation) and **time-to-depth** (for curiosity and care). A composable product can serve both; a linear one cannot.
 
-## 5. Non-negotiable principles
+## 5. The atlas
 
-These are the axes on which trade-offs are **not** available. If a decision forces a choice against one of them, the decision is wrong — not the principle.
+Safia is not a ladder. Safia is an **atlas of interconnected learning tools**, each independently usable, each categorizable along two axes:
 
-### 5.1 Secure by default
-Every feature ships in its safest configuration. The burden of security is on us, never on the learner. A user who clicks through the defaults without reading anything must still end up safe.
+| | Theoretical | Practical |
+|---|---|---|
+| **Learn** | Lessons, explanations, analogies | Guided simulators, quizzes with feedback |
+| **Test / practice** | Checklists, habit audits | Free playgrounds (password-manager range, 2FA tester, phishing range, etc.) |
 
-### 5.2 Private by default
-We collect the minimum data technically required to make the product work, and not one byte more. We never sell, broker, or enrich user data. Identifiers are unlinkable from behavior wherever feasible. When in doubt: collect less.
+A person who already understands everything and just wants a sandbox to test their password manager **must be able to land there directly**, skip onboarding, and leave when done. A person who does not know what a password is **must be able to start from the simplest lesson without seeing anything else**.
 
-### 5.3 Free forever
-No paywall. No premium tier. No ads. No affiliate kickbacks that steer recommendations. If a feature requires money to run, we fundraise for it transparently or we don't build it. "Freemium" is not on the table.
+**Curated routes** sit on top of the atlas as opt-in playlists — not as the atlas's structure. Examples of curated routes Safia may offer:
+- *Survive → Defend → Understand → Practice → Launch* — the classic ladder, for someone entering at the bottom and climbing to a career.
+- *Just happened to me* — a short path for someone in crisis.
+- *Starting a security job* — a crash course for onboarding.
+- *Protecting someone I love* — a parent/caregiver path.
 
-### 5.4 Open source forever
-The full source — content, code, design system, infrastructure — stays public under a copyleft license. If a fork improves Safia, the community benefits. If a fork weaponizes it, the license forces the weaponizer's code back open.
+Routes are recommendations, not architecture. The architecture is the atlas.
 
-### 5.5 Guest-first
-Login is a convenience, never a condition. Every lesson, every simulator, every practice exercise must work for a visitor who has not authenticated and never will. Progress sync is the only reason an account exists.
+## 6. Non-negotiable principles
 
-### 5.6 Harm-proof simulators
-Any code in Safia that imitates a real attack surface must be structurally incapable of causing real harm: no outbound network, no credential exfiltration path, no embedding in third-party contexts, no confusion with the real service being imitated. This is a hard constraint of the product, not a policy.
+These are the axes on which trade-offs are **not** available. If a decision forces a choice against one of them, the decision is wrong — not the principle. They are grouped by posture.
 
-### 5.7 Dignified pedagogy
-We teach to the learner in front of us, not to an imagined expert. Jargon is a failure of the writer, not the reader. Analogies come before terminology. A 60-year-old who has never used a password manager is not a sub-par student; the sub-par material is the material that loses them.
+### Security & privacy posture
 
-### 5.8 Radically accessible
-Accessible language, accessible reading levels, accessible WCAG compliance, accessible on low-end phones and slow networks. Spanish is the first class locale; other locales are first-class when they ship, not second-class translations.
+- **Secure by default.** Every feature ships in its safest configuration. A user who clicks through defaults without reading anything must still end up safe.
+- **Private by default.** We collect the minimum data technically required and not one byte more. We never sell, broker, or enrich user data. Identifiers are unlinkable from behavior wherever feasible. When in doubt: collect less.
+- **Guest-first as protection.** Login is a convenience, never a condition. Every lesson, simulator, and playground works for a visitor who has not authenticated and never will. For crisis users this is not UX nicety — it is protection against re-victimization: a person already in a vulnerable state must not be asked to hand over identity to receive help.
+- **Harm-proof simulators.** Any code that imitates a real attack surface must be structurally incapable of causing real harm: no outbound network, no credential exfiltration path, no embedding in third-party contexts, no confusion with the real service being imitated. This is a product constraint, not a policy.
 
-## 6. Who we serve (in order)
+### Access posture
 
-1. **People who have never been taught** — the primary audience. If a feature makes them feel stupid, the feature is broken.
-2. **People who want to go deeper** — curious learners climbing the ladder toward a career.
-3. **People who teach others** — parents, teachers, volunteers, NGOs using Safia as a resource.
-4. **Practitioners and researchers** — who extend content, contribute simulators, and keep us honest.
+- **Free forever.** No paywall, no premium tier, no ads, no affiliate kickbacks that steer recommendations. If a feature needs money, we fund it transparently or we don't build it. "Freemium" is not on the table.
+- **Open source forever.** The full source — content, code, design system, infrastructure — stays public under a copyleft license. If a fork improves Safia, the community benefits. If a fork weaponizes it, the license forces the weaponizer's code back open.
+- **Radically accessible.** Accessible language, accessible reading levels, WCAG compliance, performant on low-end phones and slow networks. Spanish is a first-class locale; every other locale is first-class when it ships, not a second-class translation.
 
-When these groups' needs conflict, earlier groups win.
+### Pedagogy posture
 
-## 7. What Safia is not
+- **Dignity under duress.** A person in crisis is not a learner first — they are a person in a bad moment. Copy, pace, and next-step suggestions must respect that. Shame is the silent enemy: **nobody is stupid for having been attacked**, and the product must say this explicitly where it matters. Teaching to the learner in front of us, not to an imagined expert — jargon is a failure of the writer, not the reader.
+- **Task-first surfacing.** Tools are named by the problem they solve, not by the concept they teach. *"Recupera una cuenta hackeada"* beats *"Lesson 3: Account Recovery"*. Someone who does not know the concept still recognizes the problem.
+- **Composable by design.** Every tool stands alone. Pre-requisites are suggestions, never gates. Deep links to any tool work without context.
+- **Motivation by accomplishment, not by engagement.** Safia motivates via transferable artifacts the learner keeps — certificates, portfolio items, CTF writeups — never via FOMO mechanics (streaks, global leaderboards that shame, "come back, you're losing your streak" notifications). Gamification exists only in explicitly opt-in competitive spaces (see §7), never transversally. If a learner does not return for a month, we have succeeded. If they return because they want to, better.
 
-- Not a certification body.
+### Stewardship posture
+
+- **Sustained, not monetized.** The funding model is part of the mission. Any revenue path that compromises the principles above kills the project. Details in `SUSTAINABILITY.md`.
+- **Transparent decisions.** Every "does this belong in Safia?" call is justified against published criteria. Power that is not accountable to a written standard is power that drifts.
+- **Author humility.** Authors are visible by name. Assumptions are declared per piece. Reviews are public. Safia does not hide behind a corporate voice.
+- **Contribution over canonization.** The goal is many aligned authors, not a single pristine voice. Plurality is a feature. The style guide holds the line, not any one author.
+
+## 7. Motivation, credentials, and the competitive wing
+
+Safia recognizes accomplishment through **certificates**, not points. Completing a track emits a verifiable credential the learner keeps forever, in two formats:
+
+- **Share card** — visual, with strong OpenGraph metadata, meant for social platforms and messaging apps.
+- **Portfolio-grade PDF** — sober, signed, with a public verification URL; suitable alongside a CV. Open Badges compatible when feasible.
+
+Certificates are **rigorous** (earned through demonstrated practice, not reading), **multi-level** (completion → applied → mastery), and **privacy-safe** (user-chosen display name, no PII leakage on verification pages). A weak certificate is worse than no certificate: it erodes the signal for the strong ones.
+
+**Gamification is not platform-wide.** It lives exclusively in **Safia Range / Labs**, an opt-in competitive area aimed at curiosity-driven and career-oriented learners — the fourth and fifth rungs of the ladder route. There, CTFs, seasons, scoreboards, category badges, and hall-of-fame dynamics are appropriate because users opted into them. Those mechanics never leak into the main atlas. Crisis users never see a streak counter.
+
+The Range is also the natural pipeline from Safia learner to cybersecurity practitioner.
+
+## 8. Who we serve (two dimensions, no hierarchy)
+
+The audience is a plane, not a list. Two axes matter, and neither ranks people:
+
+- **Relation to the knowledge:** never-taught ↔ building foundations ↔ practitioner-level.
+- **Motivation for arrival:** crisis · obligation · care for others · curiosity/career.
+
+Every feature should name who it serves along **both axes**. A feature that serves "curious never-taught" is legitimate; a feature that serves "practitioner in crisis" is legitimate; a feature that serves nobody in particular is not.
+
+When competing audiences collide, two tiebreakers apply, in order:
+1. **The more vulnerable wins.** A person in crisis beats a person exploring.
+2. **The person who paid a higher cost to arrive wins.** A learner who overcame embarrassment to come asking beats a learner browsing casually.
+
+## 9. What Safia is not
+
+- Not a certification body for industry compliance (ISO, PCI, etc.).
 - Not a pentesting product.
-- Not a consumer-facing antivirus or password manager.
+- Not a consumer-facing antivirus, password manager, or VPN.
 - Not an aggregator of third-party courses.
-- Not a lead-gen funnel for a commercial offering. There is no commercial offering.
-- Not neutral about attacks on learners: we will never host content that helps someone harm another person, even framed as education.
+- Not a lead-generation funnel for a commercial offering. There is no commercial offering.
+- Not "free temporarily until we find a business model." Safia is free permanently by design; the sustainability model is aligned philanthropy, not monetization.
+- Not Duolingo. We do not engineer addiction.
+- Not neutral about attacks on learners: we will never host content that helps someone harm another person, even framed as "education."
 
-## 8. How to use this document as an agent
+## 10. Decision filter
 
-Before making a non-trivial product decision, run it past four questions:
+Before committing to a non-trivial product decision, run it through five questions:
 
-1. **Mission fit.** Does this help someone practice being unsafe in a safe place, or learn to protect themselves?
-2. **Ladder fit.** Which rung (§4) does this serve? Is the rung underserved?
-3. **Principle check.** Does it violate any of §5? If yes, stop. Redesign or reject.
-4. **Audience check.** Who in §6 benefits? Who in §6 pays a cost? Does the ranking hold?
+1. **Mission fit.** Does this help someone practice being unsafe safely, or learn to protect themselves?
+2. **Atlas fit.** Which cell of the atlas (§5) does it serve? Is that cell underserved?
+3. **Principle check.** Does it violate any principle in §6? If yes, stop. Redesign or reject.
+4. **Audience check.** Who on the §8 plane benefits? Who pays a cost? Do the tiebreakers hold?
+5. **Emotional-state check.** In what state does the person arrive at this piece (§4), and is the piece designed for that state?
 
-If all four pass, you are probably on-mission. If any fail, escalate or rework before writing code.
+If all five pass, the decision is probably on-mission. If any fail, escalate or rework before writing code.
 
-## 9. How this document changes
+## 11. How this document changes
 
-The **mission** (§2) and **non-negotiables** (§5) change only by explicit, deliberate decision documented in a spec. Everything else can be edited freely as understanding deepens.
+The **mission** (§2), the **non-negotiable principles** (§6), and the **audience tiebreakers** (§8) change only by explicit, deliberate decision documented in a spec and merged through the governance process described in `GOVERNANCE.md`.
+
+Everything else — the atlas categories, the curated routes, the certificate tiers, what counts as "the competitive wing" — can be edited freely as understanding deepens.
 
 When in doubt: re-read §2. Everything else should serve it.
+
+---
+
+## Cross-references
+
+- **`AGENTS.md` / `CLAUDE.md`** — technical stack, repo layout, product constraints that implement §6.
+- **`SUSTAINABILITY.md`** — how §6's "sustained, not monetized" becomes concrete: funding principles, sponsor-alignment thesis, staged funding path, programs to apply to, money we never accept.
+- **`GOVERNANCE.md`** — how decisions are made, who reviews what, the contribution ladder, the RFC process for changes to this document.
+- **`CONTRIBUTING.md`** — how to propose, write, and review content or code.
+- **`STYLE.md`** — voice, tone, pedagogical standards, bias checklist, lesson frontmatter schema, "This content assumes…" block format.
