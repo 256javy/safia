@@ -1,145 +1,82 @@
-# Safia — Project Instructions for Claude
+# Safia
 
-> **⚠️ Branch `experiment/gstack`:** This branch replaces the custom Safia subagents (backend-architect, frontend-architect, ux-designer, security-reviewer, qa-reviewer, content-writer) with [GStack](https://github.com/garrytan/gstack), installed project-locally in `.claude/skills/gstack/`. The "Scrum Team / Agents" section below describes the **main-branch** setup and is kept here for reference while we evaluate GStack. On this branch, use GStack skills (`/plan-eng-review`, `/design-shotgun`, `/design-review`, `/cso`, `/qa`, `/review`, `/ship`, …) plus the Safia-specific commands (`/sim-check`, `/qa-pass`, `/ship-ready`, `/new-lesson`). See `AGENTS.md` for the portable agent context and the GStack mapping table.
->
-> **Install step (requires `bun`):** `cd .claude/skills/gstack && ./setup --local` — run this once per clone. Without it, the gstack slash commands won't be registered with the Claude Code harness.
+Free, open-source security learning platform for non-technical users. Tagline: **"Aprende a protegerte."**
 
-## Project Overview
-Safia is a free, open-source security learning platform for non-technical users. Tagline: **"Aprende a protegerte."**
+- **Repo:** https://github.com/256javy/safia
+- **License:** AGPL-3.0 — chosen because the simulator code could be repurposed into actual phishing tools; AGPL forces any modified service to be open-sourced.
+- **Spec (source of truth):** `docs/superpowers/specs/2026-04-15-safia-platform-design.md`
 
-**Repo:** https://github.com/256javy/safia  
-**Stack:** Next.js 16, React 19, TypeScript strict, Tailwind v4, Auth.js v5, Supabase, next-intl, Zustand, Framer Motion  
-**Spec:** `docs/superpowers/specs/2026-04-15-safia-platform-design.md`
+## Stack
 
----
+Next.js 16 (App Router, Turbopack) · React 19 · TypeScript strict · Tailwind v4 · Framer Motion · Auth.js v5 (OAuth only) · Supabase (Postgres) · next-intl · Zustand · pnpm.
 
-## 🚨 Non-Negotiable Rules
-
-### Working Directory
-Always work in `/home/javy/projects/safia/`. NEVER touch `/home/javy/projects/protonpass-training/` or any other repo unless explicitly asked.
-
-### Simulator Security (CRITICAL)
-The auth simulators are pixel-accurate replicas of real login flows. They MUST:
-- Have `e.preventDefault()` on every form submit — hardcoded, never removed
-- Have zero network calls — no `fetch`, `axios`, `XMLHttpRequest`
-- Have a triple-redundant training banner (CSS + React component + setInterval 2s)
-- Have `robots: { index: false }` metadata on all simulator pages
-
-Any PR that weakens simulator security is automatically blocked.
-
-### Privacy by Design
-- No email stored — OAuth gives us only a provider user ID (`oauth_id`)
-- No PII in JWT — payload is `{ userId: uuid }` only
-- No FK between `users` and `newsletter` tables — identity must never be linkable to subscriptions
-- `SUPABASE_SERVICE_ROLE_KEY` — never in client code, never `NEXT_PUBLIC_` prefix
-
----
-
-## Scrum Team
-
-Always work with the full team for non-trivial features. Use agent teams (`TeamCreate` + `Agent` tool) — never solo implementation for features that span backend, frontend, and UX.
-
-### Agents
-Subagent **definitions** live in `.claude/agents/*.md` (versioned with the repo — shared across collaborators). Each agent has `model`, `color`, and tool scope configured.
-
-| Agent | Model | Color | When to use |
-|---|---|---|---|
-| `backend-architect` | opus | cyan | `app/api/`, `lib/auth/`, `lib/supabase/`, `supabase/migrations/` |
-| `frontend-architect` | sonnet | blue | `app/`, `features/`, `components/`, `stores/`, `messages/` |
-| `ux-designer` | sonnet | purple | Landing, animations, visual design, PO decisions |
-| `security-reviewer` | opus | red | AFTER every feature — has veto power |
-| `content-writer` | sonnet | green | `content/modules/**/*.mdx`, educational copy |
-| `qa-reviewer` | haiku | yellow | After any content/UI text change |
-
-### Team Workflow
-1. **Sprint planning** — create TaskList with all tasks, assign to agents via `owner`
-2. **Parallel work** — backend + frontend concurrently, UX unblocked after scaffolding
-3. **Security review** — security-reviewer runs after every feature, blocks if issues found
-4. **Build verification** — `/ship-ready` must pass before marking sprint complete
-5. **Alignment** — Scrum Master (Claude) coordinates via `SendMessage`
-
-### Agent Coordination Rules
-- **Subagent definitions**: `.claude/agents/*.md` (versioned — commit these)
-- **Team runtime** (members, sessions): `~/.klaude/teams/safia/config.json` — created automatically by `TeamCreate`, user-level, NOT versioned
-- Spawn a team once per session: `TeamCreate({team_name: "safia", description: "..."})`
-- Task ownership via `TaskUpdate.owner`
-- Communication via `SendMessage` — never assume teammates see your output
-- `ux-designer` cannot write outside this repo — enforced by deny-rule in `.claude/settings.json`
-- `security-reviewer` runs last and has veto power on any feature
-
----
-
-## Automations (`.claude/`)
-
-| Layer | Path | Purpose |
-|---|---|---|
-| **Hooks** | `.claude/hooks/guard-simulator.py` | PreToolUse — blocks `fetch`/`axios`/`WebSocket` in `features/simulator/` |
-| | `.claude/hooks/guard-service-key.py` | PreToolUse — blocks `SUPABASE_SERVICE_ROLE_KEY` outside safe paths |
-| | `.claude/hooks/auto-manifest.py` | PostToolUse — regenerates manifest after MDX edits |
-| | `.claude/hooks/sprint-context.py` | SessionStart — injects lesson-progress table into context |
-| **Settings** | `.claude/settings.json` | Permissions allowlist + hook wiring |
-| **Commands** | `/new-lesson <module> <order> <locale>` | Scaffold a lesson via content-writer |
-| | `/sim-check` | Run simulator security audit (delegates to skill) |
-| | `/qa-pass` | Run qa-reviewer on files touched since HEAD |
-| | `/sprint-status` | Print lesson-progress table |
-| | `/ship-ready` | Full gate: lint + manifest + build + security-reviewer |
-| **Skills** | `.claude/skills/simulator-security-audit/` | `audit.sh` — canonical security checks (also used by CI) |
-| | `.claude/skills/spanish-accent-check/` | `scan.sh` — surface common missing-accent patterns |
-| | `.claude/skills/mdx-lesson-scaffold/` | Lesson template + schema docs |
-
-**Hooks enforce** the non-negotiable rules listed above. If a hook blocks an edit, do NOT bypass it — either the rule genuinely applies, or the rule needs a documented exception (edit `SAFE_PATHS` in the hook script + commit the change).
-
----
-
-## Development Commands
+## Development
 
 ```bash
-pnpm dev              # Next.js 16 dev server (Turbopack by default)
-pnpm build            # Production build
-pnpm generate-manifest # Regenerate content/manifest.json after MDX changes
+pnpm dev                  # Next.js 16 dev server
+pnpm build                # Production build
+pnpm lint                 # ESLint (Next 16 flat-native)
+pnpm generate-manifest    # Regenerate content/manifest.json after MDX edits
 ```
 
----
-
-## Key Architecture Decisions
-
-### Why DENY ALL RLS?
-We use Auth.js v5 with our own JWT — NOT Supabase Auth. Therefore `auth.uid()` is always `null` in RLS policies. All DB access goes through the service role key on the server, which bypasses RLS anyway. RLS is defense-in-depth as a deny-all layer.
-
-### Why AGPL-3.0?
-The simulator code could be repurposed into actual phishing tools. AGPL requires any modified version run as a service to be open-sourced, preventing commercial phishing-as-a-service wrappers.
-
-### Why no email/password auth?
-Privacy by design. We never store passwords. OAuth gives us a unique ID without requiring email storage.
-
-### Why JSONB for progress (not normalized tables)?
-Progress is always read/written per-user as a whole blob. JSONB eliminates N+1 queries, a max user payload is under 5KB, and it's indexable if analytics are needed later.
-
----
-
-## Content Structure
+## Repository layout
 
 ```
-content/modules/
-  passwords/        — 2/6 lessons done
-  phishing/         — 2/7 lessons done
-  mfa/              — 2/5 lessons done
-  simulators/       — 0/5 lessons done
-  wifi/             — 0/5 lessons done
-  social-media/     — 0/6 lessons done
-  pass-manager/     — 0/6 lessons done
-  device-security/  — 0/5 lessons done
+app/[locale]/            Next.js pages (locale-prefixed routes)
+features/                Feature-scoped components (simulator/, lessons/, quiz/, …)
+components/              Shared UI primitives
+content/modules/         MDX lessons: <module>/lessons/<slug>.<locale>.mdx
+content/manifest.json    Generated
+messages/                i18n strings (es.json, en.json)
+lib/auth/                Auth.js v5 config + JWT signing
+lib/supabase/            Server-only Supabase clients
+stores/                  Zustand stores
+supabase/migrations/     SQL migrations
+scripts/                 Build tooling
+docs/superpowers/specs/  Product specs
 ```
 
-Run `pnpm generate-manifest` after any content changes.
+## Product rules that constrain implementation
 
----
+### Simulator security (hard rule)
+The auth simulators under `features/simulator/` and `app/[locale]/simulator/` are pixel-accurate replicas of real login flows used to teach users to recognize phishing. Any change to these files must preserve:
 
-## Next Steps (Sprint 3 Backlog)
-- Complete lesson content for all 8 modules (6 modules need content)
-- Legal pages (`/[locale]/legal/privacy` and `/[locale]/legal/terms`)
-- Settings page (`/[locale]/settings`) — language, theme, account management
-- `robots.txt` and `sitemap.xml`
-- GitHub Actions CI (build + lint on PR)
-- Vercel deployment configuration
-- Initial git commit and push to https://github.com/256javy/safia
+1. `e.preventDefault()` on every form submit — hardcoded.
+2. **Zero** network calls. No `fetch`, `axios`, `XMLHttpRequest`, `WebSocket`, `navigator.sendBeacon`, no form `action` attribute that posts anywhere.
+3. A training-mode banner that cannot be removed via DOM injection (CSS watermark + React component + integrity check).
+4. `robots: { index: false, follow: false }` in page metadata.
+5. CSP `frame-ancestors 'none'`.
+
+### Privacy
+- No email stored. OAuth gives us only a provider user id (`oauth_id`). The email scope is not requested or persisted.
+- JWT payload is `{ userId: <uuid> }` only — no name, no email, no avatar URL.
+- No foreign key between `users` and `newsletter`. Identity must remain unlinkable to subscription state.
+- `SUPABASE_SERVICE_ROLE_KEY` is read exclusively by `lib/supabase/server.ts`. Never prefix secrets with `NEXT_PUBLIC_`.
+
+### RLS is DENY ALL
+Auth.js signs its own JWT (not Supabase Auth), so `auth.uid()` is always `null` in policies. All DB access goes through the service role key on the server. RLS exists as a defense-in-depth deny-all layer.
+
+### Guest-first UX
+Every feature works for unauthenticated visitors. Login is optional, used only to sync progress across devices. Do not gate lessons, simulators, or quizzes behind auth.
+
+### Progress storage
+JSONB, not normalized tables. Progress is always read/written per-user as a whole blob (max ~5KB), so JSONB avoids N+1 queries and is still indexable for future analytics.
+
+### Content tone
+Audience is people who don't know what a browser is. Zero jargon. Analogy-driven. 400–600 words per lesson. Spanish orthography (accents, ñ, ¿¡) must be correct.
+
+## Content model
+
+Eight modules, 45 lessons total. Each lesson:
+- Filename: `<slug>.<locale>.mdx` under `content/modules/<module>/lessons/`.
+- Frontmatter: `title`, `description`, `xp_reward`, `order`, and a `quiz` array with exactly 3 questions.
+- Body (400–600 words): opening analogy → explanation → practical steps → `<TipBox>` → `<PromptButton>`.
+- Must exist in both `es` and `en`.
+
+After MDX changes, run `pnpm generate-manifest`.
+
+> Known bug: `scripts/generate-manifest.ts` counts `lesson-1.es.mdx` and `lesson-1.en.mdx` as two separate lessons (no dedup by stripped slug). Don't reconcile reported counts without fixing the generator first.
+
+## Working directory
+
+Always work in `/home/javy/projects/safia/`. Do not touch other repos on this machine unless explicitly asked.
