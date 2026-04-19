@@ -15,8 +15,10 @@ These are derived from `VISION.md §6` and restated here so funding decisions ha
 3. **No advertising.** No display ads, no sponsored content, no affiliate links that steer recommendations.
 4. **No sale, broker, or enrichment of user data.** Full stop. This principle has no exceptions disguised as "analytics partnerships."
 5. **No sponsorship in exchange for editorial influence.** A sponsor buys gratitude, infrastructure credits, or brand association. A sponsor does not buy track topics, product decisions, or soft placement.
-6. **Transparent finances.** Once any funding flows, inflows and outflows are public. Annual reports if amounts justify it.
-7. **Every dollar traceable to a stated use.** Infrastructure, content stipends, contributor recognition, legal — each funding source has a declared destination. No "general pool" that blurs accountability.
+6. **No single funding source exceeds a declared share.** From Stage 2 onward, no single sponsor, foundation, grant, or government contract provides more than a publicly declared share of total funding (default: 25%). This makes Safia structurally incapable of being captured by any one funder. The cap is part of the public ledger, not an internal guideline. If a funding offer would push any source past the cap, the excess is declined or phased across years until the cap is respected.
+7. **Transparent finances.** Once any funding flows, inflows and outflows are public. Annual reports once amounts justify them.
+8. **Every dollar traceable to a stated use.** Infrastructure, content stipends, contributor recognition, legal, incident response — each funding source has a declared destination. No "general pool" that blurs accountability.
+9. **Legal capacity is a line item, not a contingency.** Trademark registration and defense (`VISION.md §6`, *Defended trademark, free code*) and incident response capacity (`GOVERNANCE.md §7`) are budgeted explicitly from the first year funding exists, not deferred until problems occur. A project that cannot afford to defend its promise has already broken it.
 
 If a funding opportunity requires violating any of these, the answer is no. The opportunity is never worth the erosion.
 
@@ -125,7 +127,7 @@ From the first dollar:
 Learned from projects that did not navigate this well.
 
 - **Taking VC.** Non-negotiable. Already covered.
-- **Single-funder dependency.** Mozilla's Google problem. No single sponsor exceeds a stated share of total funding (e.g., 25%) after Stage 2.
+- **Single-funder dependency.** Mozilla's Google problem. The structural protection is in §1 (no source exceeds a declared share). This failure mode exists here as the reason the principle exists: once a single funder is load-bearing, every editorial decision is quietly shaped by what keeps that funder happy, whether anyone names it or not.
 - **Donation fatigue through over-asking.** Wikipedia's banners work but abrade the brand. At most one annual campaign. Donation prompts are opt-in surfaces, never forced.
 - **Scope creep to please funders.** A grant that nudges Safia into "adjacent work" is worse than no grant. Criteria from §1 hold.
 - **Maintainer burnout as subsidy.** If the project only survives because one person is unpaid and overworked, that is not sustainability — it is a delayed failure. Budgeting maintainer time is part of the cost model.
