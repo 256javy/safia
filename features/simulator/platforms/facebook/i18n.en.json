@@ -1,0 +1,130 @@
+{
+  "cta": {
+    "next": "Next",
+    "signIn": "Log in",
+    "skip": "Skip",
+    "create": "Sign up",
+    "save": "Save",
+    "verify": "Verify",
+    "done": "Done",
+    "activate": "Turn on",
+    "disable": "Turn off",
+    "forgot": "Forgot password?"
+  },
+  "fields": {
+    "firstName": { "label": "First name", "placeholder": "Your first name" },
+    "lastName": { "label": "Last name", "placeholder": "Your last name" },
+    "email": { "label": "Email", "placeholder": "you@example.com" },
+    "password": {
+      "label": "Password",
+      "placeholder": "Create a password",
+      "help": "At least 8 characters. Mix letters, numbers and symbols."
+    },
+    "passwordConfirm": { "label": "Confirm password", "placeholder": "Type it again" },
+    "currentPassword": { "label": "Current password", "placeholder": "Your current password" },
+    "birthdate": { "label": "Date of birth" },
+    "gender": {
+      "label": "Gender",
+      "female": "Female",
+      "male": "Male",
+      "other": "Custom",
+      "prefer_not": "Prefer not to say"
+    },
+    "mfa": { "label": "Authenticator code", "placeholder": "123456" },
+    "recoveryCode": { "label": "Verification code", "placeholder": "123456" }
+  },
+  "create": {
+    "name": {
+      "title": "Create a new account",
+      "subtitle": "It's quick and easy.",
+      "tip": "Use your real name only if you want people who know you to find you."
+    },
+    "contact": {
+      "title": "What's your email?",
+      "subtitle": "We'll use it to log you in and recover your account.",
+      "tip": "Pick an email only you can access. If you lose that email, you lose the account."
+    },
+    "password": {
+      "title": "Create a password",
+      "subtitle": "Make it hard to guess and don't reuse it anywhere else.",
+      "tip": "A unique password per account stops a leak elsewhere from spilling over here."
+    },
+    "birthday": {
+      "title": "When were you born?",
+      "subtitle": "Why we ask for your birthday.",
+      "tip": "A real date helps you recover the account if it's stolen, but don't show it publicly on your profile."
+    },
+    "gender": {
+      "title": "What's your gender?",
+      "subtitle": "You can change who sees this later.",
+      "tip": "Only share personal details with services you trust and always check who can see them."
+    }
+  },
+  "login": {
+    "email": {
+      "title": "Log in to Facebook",
+      "subtitle": "Enter your email to continue.",
+      "tip": "Check the URL before typing your email: facebook.com, with no extra letters or hyphens."
+    },
+    "password": {
+      "title": "Welcome back",
+      "subtitle": "Enter your password.",
+      "tip": "Facebook will never ask for your password by message or email. If someone asks, it's phishing."
+    },
+    "mfa": {
+      "title": "Two-factor verification",
+      "subtitle": "Enter the code from your authenticator app.",
+      "tip": "The code changes every 30 seconds and lives only on your phone. Never share it with anyone."
+    },
+    "verify": {
+      "title": "You're in!",
+      "subtitle": "You're signed in on this device.",
+      "tip": "If you logged in on a borrowed device, sign out before you leave."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirm it's you",
+      "subtitle": "Enter your current password to continue.",
+      "tip": "If you don't remember your current password, go back and use 'Forgot password?' instead of guessing."
+    },
+    "new": {
+      "title": "Create a new password",
+      "subtitle": "Pick something unique you haven't used before.",
+      "tip": "Change your password the moment you suspect anyone else knows it."
+    }
+  },
+  "recover": {
+    "email": {
+      "title": "Recover your account",
+      "subtitle": "Enter the email tied to your account.",
+      "tip": "Facebook also lets you recover your account through trusted friends if you set that up beforehand."
+    },
+    "code": {
+      "title": "Enter the code",
+      "subtitle": "We sent a 6-digit code to your email.",
+      "tip": "If you get a code you didn't request, someone is trying to break in. Change your password."
+    }
+  },
+  "totp": {
+    "enable": {
+      "scan": {
+        "title": "Turn on two-factor",
+        "subtitle": "Scan the code with your authenticator app.",
+        "body": "Open your authenticator app and scan this code. If you can't, copy the key manually.",
+        "secretLabel": "Setup key",
+        "tip": "Two-factor is the single best protection against account takeover."
+      },
+      "verify": {
+        "title": "Confirm the code",
+        "subtitle": "Enter the 6-digit code shown by your app.",
+        "tip": "If the app shows a different code each time, it's working correctly."
+      }
+    },
+    "disable": {
+      "title": "Turn off two-factor",
+      "subtitle": "Your account will be less protected. Confirm with your password.",
+      "tip": "Only turn it off if you're switching methods. Without 2FA, one leaked password is enough to lose the account."
+    }
+  }
+}

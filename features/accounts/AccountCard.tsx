@@ -41,45 +41,29 @@ export function AccountCard({ account }: Props) {
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 12 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.96 }}
-      className="relative rounded-xl border border-accent/10 bg-bg-surface p-4 transition-colors hover:border-accent/30"
+      exit={{ opacity: 0, scale: 0.97 }}
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+      className="group relative rounded-xl border border-border-subtle/70 bg-bg-surface p-5 transition-colors duration-200 hover:border-accent/40 hover:bg-bg-elevated/40"
     >
+      {/* Top row: identity + actions */}
       <div className="flex items-start gap-3">
         <PlatformLogo platform={account.platform} size={40} />
 
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2 text-xs text-text-muted">
-            <span>{tp(meta.nameKey)}</span>
-            {account.totp.enabled && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-success">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                2FA
-              </span>
-            )}
+          <div className="text-[11px] font-medium uppercase tracking-wide text-text-muted">
+            {tp(meta.nameKey)}
           </div>
-
-          <div className="truncate text-sm font-semibold text-text-primary">{identity ?? "—"}</div>
-
-          <div className="mt-2 flex items-center gap-3">
-            <StrengthMeter score={account.password.strength} />
-            <span className="text-[11px] text-text-muted">
-              {lastLogin
-                ? lastLogin.success
-                  ? t("lastLogin", { ago: timeAgo(lastLogin.at, t) })
-                  : t("lastFailed", { ago: timeAgo(lastLogin.at, t) })
-                : t("neverLoggedIn")}
-            </span>
+          <div className="mt-0.5 truncate text-sm font-semibold text-text-primary">
+            {identity ?? "—"}
           </div>
         </div>
 
         <button
           aria-label="Account actions"
           onClick={() => setMenuOpen((v) => !v)}
-          className="rounded-md p-1.5 text-text-muted hover:bg-bg-elevated hover:text-text-primary"
+          className="-mt-1 -mr-1 rounded-md p-1.5 text-text-muted opacity-60 transition-all hover:bg-bg-elevated hover:text-text-primary group-hover:opacity-100"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <circle cx="5" cy="12" r="2" />
@@ -89,6 +73,35 @@ export function AccountCard({ account }: Props) {
         </button>
       </div>
 
+      {/* Bottom row: 2FA badge + strength + activity, quieter */}
+      <div className="mt-4 flex items-center gap-3 border-t border-border-subtle/40 pt-3">
+        {account.totp.enabled ? (
+          <span className="inline-flex items-center gap-1 rounded-full bg-success-muted px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-success">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            2FA
+          </span>
+        ) : (
+          <span className="inline-flex items-center gap-1 rounded-full border border-warning/30 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-warning">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3m0 3h.01M5 19h14a2 2 0 001.7-3L13.7 5a2 2 0 00-3.4 0L3.3 16A2 2 0 005 19z" />
+            </svg>
+            2FA
+          </span>
+        )}
+
+        <StrengthMeter score={account.password.strength} />
+
+        <span className="ml-auto truncate text-[11px] text-text-muted">
+          {lastLogin
+            ? lastLogin.success
+              ? t("lastLogin", { ago: timeAgo(lastLogin.at, t) })
+              : t("lastFailed", { ago: timeAgo(lastLogin.at, t) })
+            : t("neverLoggedIn")}
+        </span>
+      </div>
+
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -96,7 +109,7 @@ export function AccountCard({ account }: Props) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.12 }}
-            className="absolute right-3 top-12 z-10 w-56 overflow-hidden rounded-lg border border-accent/15 bg-bg-elevated shadow-lg"
+            className="absolute right-3 top-12 z-10 w-56 overflow-hidden rounded-lg border border-border-subtle bg-bg-elevated shadow-lg"
           >
             <Link
               href={`${baseSimulator}/login?account=${account.id}`}
@@ -127,7 +140,7 @@ export function AccountCard({ account }: Props) {
                 setMenuOpen(false);
                 setConfirmDelete(true);
               }}
-              className="block w-full px-3 py-2 text-left text-sm text-red-400 hover:bg-red-500/10"
+              className="block w-full px-3 py-2 text-left text-sm text-danger hover:bg-danger-muted"
             >
               {t("actions.delete")}
             </button>
@@ -141,20 +154,20 @@ export function AccountCard({ account }: Props) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 z-20 flex items-center justify-center rounded-xl bg-bg-base/95 p-4 text-center"
+            className="absolute inset-0 z-20 flex items-center justify-center rounded-xl bg-bg-base/95 p-4 text-center backdrop-blur-sm"
           >
             <div>
               <p className="text-sm text-text-primary">{t("confirmDelete")}</p>
               <div className="mt-3 flex justify-center gap-2">
                 <button
                   onClick={() => setConfirmDelete(false)}
-                  className="rounded-md border border-accent/20 px-3 py-1.5 text-xs text-text-secondary hover:border-accent/40"
+                  className="rounded-md border border-border-subtle px-3 py-1.5 text-xs text-text-secondary hover:border-accent/40 hover:text-text-primary"
                 >
                   {t("cancel")}
                 </button>
                 <button
                   onClick={() => remove(account.id)}
-                  className="rounded-md bg-red-500/80 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-500"
+                  className="rounded-md bg-danger px-3 py-1.5 text-xs font-semibold text-white hover:opacity-90"
                 >
                   {t("confirm")}
                 </button>

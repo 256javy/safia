@@ -1,0 +1,130 @@
+{
+  "cta": {
+    "next": "Siguiente",
+    "signIn": "Iniciar sesión",
+    "skip": "Omitir",
+    "create": "Registrarme",
+    "save": "Guardar",
+    "verify": "Verificar",
+    "done": "Listo",
+    "activate": "Activar",
+    "disable": "Desactivar",
+    "forgot": "¿Olvidaste la contraseña?"
+  },
+  "fields": {
+    "firstName": { "label": "Nombre", "placeholder": "Tu nombre" },
+    "lastName": { "label": "Apellido", "placeholder": "Tu apellido" },
+    "email": { "label": "Correo electrónico", "placeholder": "tu@ejemplo.com" },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Crea una contraseña",
+      "help": "Mínimo 8 caracteres. Mezcla letras, números y símbolos."
+    },
+    "passwordConfirm": { "label": "Confirma la contraseña", "placeholder": "Vuelve a escribirla" },
+    "currentPassword": { "label": "Contraseña actual", "placeholder": "Tu contraseña actual" },
+    "birthdate": { "label": "Fecha de nacimiento" },
+    "gender": {
+      "label": "Género",
+      "female": "Mujer",
+      "male": "Hombre",
+      "other": "Personalizado",
+      "prefer_not": "Prefiero no decirlo"
+    },
+    "mfa": { "label": "Código del autenticador", "placeholder": "123456" },
+    "recoveryCode": { "label": "Código de verificación", "placeholder": "123456" }
+  },
+  "create": {
+    "name": {
+      "title": "Crea una cuenta nueva",
+      "subtitle": "Es rápido y fácil.",
+      "tip": "Usa tu nombre real solo si quieres que te encuentren personas que te conocen."
+    },
+    "contact": {
+      "title": "¿Cuál es tu correo electrónico?",
+      "subtitle": "Lo usaremos para iniciar sesión y recuperar tu cuenta.",
+      "tip": "Elige un correo al que solo tú tengas acceso. Si pierdes ese correo, pierdes la cuenta."
+    },
+    "password": {
+      "title": "Crea una contraseña",
+      "subtitle": "Que sea difícil de adivinar y no la uses en ningún otro sitio.",
+      "tip": "Una contraseña única por cuenta evita que un robo en otro sitio te afecte aquí."
+    },
+    "birthday": {
+      "title": "¿Cuándo naciste?",
+      "subtitle": "Por qué pedimos tu fecha de nacimiento.",
+      "tip": "Una fecha real ayuda a recuperar la cuenta si te la roban, pero no la pongas pública en tu perfil."
+    },
+    "gender": {
+      "title": "¿Cuál es tu género?",
+      "subtitle": "Puedes cambiar quién lo ve más adelante.",
+      "tip": "Solo comparte datos personales con servicios que confíes y revisa siempre quién puede verlos."
+    }
+  },
+  "login": {
+    "email": {
+      "title": "Iniciar sesión en Facebook",
+      "subtitle": "Introduce tu correo electrónico para continuar.",
+      "tip": "Comprueba la URL antes de escribir tu correo: facebook.com, sin letras raras ni guiones extra."
+    },
+    "password": {
+      "title": "Hola de nuevo",
+      "subtitle": "Introduce tu contraseña.",
+      "tip": "Facebook nunca te pedirá tu contraseña por mensaje ni por correo. Si alguien te la pide, es phishing."
+    },
+    "mfa": {
+      "title": "Verificación en dos pasos",
+      "subtitle": "Introduce el código de tu app autenticadora.",
+      "tip": "El código cambia cada 30 segundos y solo está en tu teléfono. Nunca lo compartas con nadie."
+    },
+    "verify": {
+      "title": "¡Has entrado!",
+      "subtitle": "Tu sesión está iniciada en este dispositivo.",
+      "tip": "Si entraste desde un dispositivo prestado, cierra sesión antes de irte."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirma quién eres",
+      "subtitle": "Introduce tu contraseña actual para continuar.",
+      "tip": "Si no recuerdas la actual, vuelve y usa «¿Olvidaste la contraseña?» en lugar de adivinar."
+    },
+    "new": {
+      "title": "Crea una contraseña nueva",
+      "subtitle": "Elige algo único que no hayas usado antes.",
+      "tip": "Cambia la contraseña en cuanto sospeches que alguien más la conoce."
+    }
+  },
+  "recover": {
+    "email": {
+      "title": "Recuperar tu cuenta",
+      "subtitle": "Introduce el correo asociado a tu cuenta.",
+      "tip": "Facebook también permite recuperar la cuenta con amigos de confianza si configuraste esa opción antes."
+    },
+    "code": {
+      "title": "Introduce el código",
+      "subtitle": "Te enviamos un código de 6 dígitos a tu correo.",
+      "tip": "Si recibes un código que no pediste, alguien intenta entrar en tu cuenta. Cambia la contraseña."
+    }
+  },
+  "totp": {
+    "enable": {
+      "scan": {
+        "title": "Activa la verificación en dos pasos",
+        "subtitle": "Escanea el código con tu app autenticadora.",
+        "body": "Abre tu app autenticadora y escanea este código. Si no puedes, copia la clave manualmente.",
+        "secretLabel": "Clave de configuración",
+        "tip": "La verificación en dos pasos es la mejor protección contra el robo de cuentas."
+      },
+      "verify": {
+        "title": "Confirma el código",
+        "subtitle": "Introduce el código de 6 dígitos que muestra tu app.",
+        "tip": "Si la app pide un código distinto cada vez, está funcionando bien."
+      }
+    },
+    "disable": {
+      "title": "Desactivar verificación en dos pasos",
+      "subtitle": "Tu cuenta quedará menos protegida. Confirma con tu contraseña.",
+      "tip": "Solo desactívala si vas a cambiar de método. Sin 2FA, basta una contraseña filtrada para perder la cuenta."
+    }
+  }
+}

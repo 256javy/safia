@@ -1,0 +1,151 @@
+{
+  "cta": {
+    "next": "Next",
+    "signIn": "Sign in",
+    "skip": "Skip",
+    "create": "Create account",
+    "save": "Save",
+    "verify": "Verify",
+    "done": "Done",
+    "activate": "Activate",
+    "disable": "Disable",
+    "forgot": "Forgot your password?"
+  },
+  "fields": {
+    "email": {
+      "label": "Email",
+      "placeholder": "you@example.com"
+    },
+    "fullName": {
+      "label": "Full name",
+      "placeholder": "Your full name"
+    },
+    "username": {
+      "label": "Username",
+      "placeholder": "your_username",
+      "help": "Lowercase letters, numbers, dots and underscores only."
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Create a password",
+      "help": "At least 8 characters."
+    },
+    "passwordConfirm": {
+      "label": "Confirm password",
+      "placeholder": "Type it again"
+    },
+    "currentPassword": {
+      "label": "Current password",
+      "placeholder": "Your current password"
+    },
+    "birthdate": {
+      "label": "Date of birth"
+    },
+    "identity": {
+      "label": "Email or username",
+      "placeholder": "Your email or username"
+    },
+    "mfa": {
+      "label": "Authenticator code",
+      "placeholder": "123456"
+    },
+    "recoveryCode": {
+      "label": "Verification code",
+      "placeholder": "123456"
+    }
+  },
+  "create": {
+    "contact": {
+      "title": "Create an Instagram account",
+      "subtitle": "We'll send a code to this email to verify it.",
+      "tip": "Check that the domain is instagram.com — not instagrarn.com or instagram-login.app."
+    },
+    "name": {
+      "title": "What's your name?",
+      "subtitle": "Your name may be visible to your contacts.",
+      "tip": "The less personal info you share, the harder it is for someone to impersonate you."
+    },
+    "username": {
+      "title": "Pick a username",
+      "subtitle": "We suggest one; you can change it anytime.",
+      "tip": "Your username is public; anyone trying to steal your account starts by finding it."
+    },
+    "password": {
+      "title": "Create a password",
+      "subtitle": "You need at least 8 characters.",
+      "tip": "A strong password combined with 2FA is the best protection against account theft."
+    },
+    "birthday": {
+      "title": "When's your birthday?",
+      "subtitle": "This won't appear on your profile.",
+      "tip": "Your real date helps account recovery; never share it with anyone who asks."
+    }
+  },
+  "login": {
+    "identity": {
+      "title": "Sign in",
+      "subtitle": "Enter your email or username.",
+      "tip": "If you got a link by message, check the domain before typing your details."
+    },
+    "password": {
+      "title": "Your password",
+      "subtitle": "Only you should know it.",
+      "tip": "Instagram will never ask for your password by message, email or phone call."
+    },
+    "mfa": {
+      "title": "Two-factor code",
+      "subtitle": "Open your authentication app and enter the 6-digit code.",
+      "tip": "The code changes every 30 seconds; don't share it with anyone."
+    },
+    "verify": {
+      "title": "You're signed in",
+      "subtitle": "Welcome back.",
+      "tip": "If you see a sign-in you don't recognise, change your password immediately."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirm your current password",
+      "subtitle": "To protect your account before the change.",
+      "tip": "Change your password if you suspect anyone else knows it."
+    },
+    "new": {
+      "title": "New password",
+      "subtitle": "Choose one you haven't used before on this account.",
+      "tip": "Reusing old passwords turns a single leak into many breaches."
+    }
+  },
+  "recover": {
+    "identity": {
+      "title": "Recover your account",
+      "subtitle": "Enter your email or username and we'll send a code.",
+      "tip": "If the email doesn't arrive, check spam before asking for another code."
+    },
+    "code": {
+      "title": "Enter the code",
+      "subtitle": "We sent a 6-digit code to your email.",
+      "tip": "Never share this code over chat, voice or a call — only type it here."
+    }
+  },
+  "totp": {
+    "enable": {
+      "scan": {
+        "title": "Turn on two-factor",
+        "subtitle": "Scan this code with your authentication app.",
+        "body": "Open Google Authenticator, Authy or similar and scan the code. If you can't scan, copy the manual key.",
+        "secretLabel": "Manual key",
+        "tip": "Save the manual key somewhere safe to re-enable 2FA if you lose your phone."
+      },
+      "verify": {
+        "title": "Confirm the code",
+        "subtitle": "Enter the 6-digit code your app shows.",
+        "tip": "If the code fails, check that your phone's time is set automatically."
+      }
+    },
+    "disable": {
+      "title": "Disable 2FA",
+      "subtitle": "Confirm your password to continue.",
+      "tip": "Without 2FA, a leaked password is enough to enter your account."
+    }
+  }
+}

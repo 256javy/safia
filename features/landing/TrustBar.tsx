@@ -14,22 +14,29 @@ export default function TrustBar() {
   const t = useTranslations("landing.trust");
 
   return (
-    <section className="py-12 border-y border-accent/10 bg-bg-surface/30">
-      <div className="max-w-5xl mx-auto px-6">
-        <motion.div
-          className="flex flex-wrap justify-center gap-8 sm:gap-12"
-          initial={{ opacity: 0, y: 20 }}
+    <section className="border-y border-border-subtle/60 bg-bg-subtle/40 py-10">
+      <div className="mx-auto max-w-5xl px-6">
+        <motion.ul
+          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 sm:gap-x-14"
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           {trustKeys.map(({ icon, key }) => (
-            <div key={key} className="flex items-center gap-3 text-text-secondary">
-              <span className="text-2xl" aria-hidden="true">{icon}</span>
-              <span className="text-sm font-medium tracking-wide uppercase">{t(key)}</span>
-            </div>
+            <li
+              key={key}
+              className="flex items-center gap-2.5 text-text-secondary"
+            >
+              <span className="text-base leading-none opacity-90" aria-hidden="true">
+                {icon}
+              </span>
+              <span className="text-[0.8125rem] font-medium tracking-wide">
+                {t(key)}
+              </span>
+            </li>
           ))}
-        </motion.div>
+        </motion.ul>
       </div>
     </section>
   );

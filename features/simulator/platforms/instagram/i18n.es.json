@@ -1,0 +1,151 @@
+{
+  "cta": {
+    "next": "Siguiente",
+    "signIn": "Iniciar sesión",
+    "skip": "Omitir",
+    "create": "Crear cuenta",
+    "save": "Guardar",
+    "verify": "Verificar",
+    "done": "Listo",
+    "activate": "Activar",
+    "disable": "Desactivar",
+    "forgot": "¿Olvidaste tu contraseña?"
+  },
+  "fields": {
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": "tucorreo@ejemplo.com"
+    },
+    "fullName": {
+      "label": "Nombre completo",
+      "placeholder": "Tu nombre completo"
+    },
+    "username": {
+      "label": "Nombre de usuario",
+      "placeholder": "tu_usuario",
+      "help": "Solo minúsculas, números, puntos y guiones bajos."
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Crea una contraseña",
+      "help": "Mínimo 8 caracteres."
+    },
+    "passwordConfirm": {
+      "label": "Confirma la contraseña",
+      "placeholder": "Vuelve a escribirla"
+    },
+    "currentPassword": {
+      "label": "Contraseña actual",
+      "placeholder": "Tu contraseña actual"
+    },
+    "birthdate": {
+      "label": "Fecha de nacimiento"
+    },
+    "identity": {
+      "label": "Correo o usuario",
+      "placeholder": "Tu correo o nombre de usuario"
+    },
+    "mfa": {
+      "label": "Código del autenticador",
+      "placeholder": "123456"
+    },
+    "recoveryCode": {
+      "label": "Código de verificación",
+      "placeholder": "123456"
+    }
+  },
+  "create": {
+    "contact": {
+      "title": "Crea una cuenta de Instagram",
+      "subtitle": "Te enviaremos un código a este correo para verificarlo.",
+      "tip": "Verifica que el dominio sea instagram.com — no instagrarn.com ni instagram-login.app."
+    },
+    "name": {
+      "title": "¿Cómo te llamas?",
+      "subtitle": "Tu nombre podrá ser visible para tus contactos.",
+      "tip": "Cuanta menos información personal compartas, más difícil será que alguien te suplante."
+    },
+    "username": {
+      "title": "Elige un nombre de usuario",
+      "subtitle": "Te sugerimos uno; puedes cambiarlo cuando quieras.",
+      "tip": "Tu nombre de usuario es público; quien quiera robar tu cuenta empieza por encontrarlo."
+    },
+    "password": {
+      "title": "Crea una contraseña",
+      "subtitle": "Necesitas al menos 8 caracteres.",
+      "tip": "Una contraseña fuerte combinada con 2FA es la mejor protección contra el robo de cuenta."
+    },
+    "birthday": {
+      "title": "¿Cuándo es tu cumpleaños?",
+      "subtitle": "Esta información no aparecerá en tu perfil.",
+      "tip": "Tu fecha real ayuda a recuperar la cuenta; nunca la compartas con nadie que te la pida."
+    }
+  },
+  "login": {
+    "identity": {
+      "title": "Inicia sesión",
+      "subtitle": "Introduce tu correo o nombre de usuario.",
+      "tip": "Si recibiste un enlace por mensaje, revisa el dominio antes de escribir tus datos."
+    },
+    "password": {
+      "title": "Tu contraseña",
+      "subtitle": "Solo tú deberías conocerla.",
+      "tip": "Instagram nunca te pedirá tu contraseña por mensaje, correo ni llamada."
+    },
+    "mfa": {
+      "title": "Código de doble factor",
+      "subtitle": "Abre tu app de autenticación e introduce el código de 6 dígitos.",
+      "tip": "El código cambia cada 30 segundos; no lo compartas con nadie."
+    },
+    "verify": {
+      "title": "Sesión iniciada",
+      "subtitle": "Bienvenido de vuelta.",
+      "tip": "Si ves un inicio de sesión que no reconoces, cambia tu contraseña de inmediato."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirma tu contraseña actual",
+      "subtitle": "Para proteger tu cuenta antes del cambio.",
+      "tip": "Cambia la contraseña si sospechas que alguien más la conoce."
+    },
+    "new": {
+      "title": "Nueva contraseña",
+      "subtitle": "Elige una que no hayas usado antes en esta cuenta.",
+      "tip": "Reutilizar contraseñas viejas convierte una sola filtración en muchas brechas."
+    }
+  },
+  "recover": {
+    "identity": {
+      "title": "Recupera tu cuenta",
+      "subtitle": "Introduce tu correo o nombre de usuario y te enviaremos un código.",
+      "tip": "Si no recibes el correo, revisa el spam antes de pedir otro código."
+    },
+    "code": {
+      "title": "Introduce el código",
+      "subtitle": "Te enviamos un código de 6 dígitos por correo.",
+      "tip": "Nunca compartas este código por chat, voz o llamada — solo escríbelo aquí."
+    }
+  },
+  "totp": {
+    "enable": {
+      "scan": {
+        "title": "Activa el doble factor",
+        "subtitle": "Escanea este código con tu app de autenticación.",
+        "body": "Abre Google Authenticator, Authy o similar y escanea el código. Si no puedes escanear, copia la clave manual.",
+        "secretLabel": "Clave manual",
+        "tip": "Guarda la clave manual en un sitio seguro para reactivar 2FA si pierdes el teléfono."
+      },
+      "verify": {
+        "title": "Confirma el código",
+        "subtitle": "Introduce el código de 6 dígitos que muestra tu app.",
+        "tip": "Si el código falla, revisa que la hora del teléfono sea automática."
+      }
+    },
+    "disable": {
+      "title": "Desactivar 2FA",
+      "subtitle": "Confirma tu contraseña para continuar.",
+      "tip": "Sin 2FA, una contraseña filtrada basta para entrar a tu cuenta."
+    }
+  }
+}

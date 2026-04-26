@@ -20,8 +20,10 @@
   },
   "landing": {
     "hero": {
+      "eyebrow": "Segurança digital, sem medo",
       "title": "Aprenda a se proteger.",
       "subtitle": "Aprenda a se proteger online. Sem jargão. Sem medo. Grátis.",
+      "audience": "Para pessoas que sentem que a tecnologia não foi feita para elas.",
       "cta": "Comece grátis",
       "ctaSecondary": "Ver o caminho"
     },
@@ -77,6 +79,7 @@
       }
     },
     "simulator": {
+      "eyebrow": "Prática segura",
       "heading": "Pratique sem medo",
       "subheading": "Nada do que você digita é real. Aprenda a detectar páginas falsas em um ambiente seguro.",
       "banner": "SIMULADOR DE TREINAMENTO — Nada é real",
@@ -92,6 +95,43 @@
       "sending": "Enviando...",
       "success": "Pronto. Avisaremos quando houver novidades.",
       "error": "Algo deu errado. Tente novamente."
+    },
+    "follow": {
+      "heading": "Siga-nos onde você já está",
+      "subheading": "Postamos no Instagram, TikTok e X. Carrosséis curtos, exemplos reais, sem tecniquês.",
+      "ctaFollow": "Seguir",
+      "instagram": {
+        "handle": "@safia.app",
+        "label": "Instagram"
+      },
+      "tiktok": {
+        "handle": "@safia.app",
+        "label": "TikTok"
+      },
+      "youtube": {
+        "handle": "@safia",
+        "label": "YouTube"
+      },
+      "x": {
+        "handle": "@safiaapp",
+        "label": "X"
+      },
+      "threads": {
+        "handle": "@safia.app",
+        "label": "Threads"
+      },
+      "postsHeading": "Posts recentes",
+      "postsBanner": "Em breve: posts ao vivo do Instagram. Por enquanto, uma amostra do tipo de conteúdo.",
+      "postsCta": "Ver no Instagram",
+      "post1": {
+        "title": "Como identificar um e-mail falso"
+      },
+      "post2": {
+        "title": "Sua primeira senha forte"
+      },
+      "post3": {
+        "title": "O que é 2FA e por que importa"
+      }
     },
     "footer": {
       "tagline": "aprenda a se proteger.",
@@ -165,44 +205,324 @@
       "back": "Voltar para minhas contas"
     },
     "google": {
-      "step1": {
-        "label": "Email",
-        "placeholder": "voce@gmail.com",
-        "tip": "Sempre verifique a URL. Sites falsos usam domínios semelhantes como gooogle.com ou g00gle.com."
+      "cta": {
+        "next": "Próximo",
+        "skip": "Pular",
+        "create": "Criar conta",
+        "signIn": "Entrar",
+        "forgot": "Esqueci minha senha",
+        "verify": "Verificar",
+        "done": "Pronto",
+        "save": "Salvar",
+        "activate": "Ativar",
+        "disable": "Desativar"
       },
-      "step2": {
-        "label": "Senha",
-        "placeholder": "Sua senha",
-        "tip": "Nunca reutilize senhas. Se um site vazar, todas as suas contas ficam expostas."
+      "fields": {
+        "firstName": {
+          "label": "Nome",
+          "placeholder": "Seu nome"
+        },
+        "lastName": {
+          "label": "Sobrenome (opcional)",
+          "placeholder": "Seu sobrenome"
+        },
+        "birthdate": {
+          "label": "Data de nascimento"
+        },
+        "gender": {
+          "label": "Gênero (opcional)",
+          "female": "Mulher",
+          "male": "Homem",
+          "other": "Outro / Personalizado",
+          "prefer_not": "Prefiro não dizer"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "usuario@gmail.com"
+        },
+        "phone": {
+          "label": "Telefone de recuperação (opcional)",
+          "placeholder": "+55 11 90000 0000",
+          "help": "Ajuda a recuperar a conta se você perder o acesso. Nunca aparece publicamente."
+        },
+        "password": {
+          "label": "Senha",
+          "placeholder": "Crie uma senha forte",
+          "help": "Mínimo 8 caracteres. Misture letras, números e símbolos."
+        },
+        "passwordConfirm": {
+          "label": "Confirmar senha",
+          "placeholder": "Digite novamente"
+        },
+        "currentPassword": {
+          "label": "Senha atual",
+          "placeholder": "Sua senha atual"
+        },
+        "mfa": {
+          "label": "Código do seu app autenticador",
+          "placeholder": "123456"
+        },
+        "recoveryCode": {
+          "label": "Código de verificação",
+          "placeholder": "123456"
+        }
       },
-      "step3": {
-        "label": "Código 2FA (SMS)",
-        "placeholder": "123456",
-        "tip": "Os códigos SMS são pessoais. Ninguém do Google vai pedir que você os compartilhe."
+      "create": {
+        "name": {
+          "title": "Crie sua Conta do Google",
+          "subtitle": "Digite seu nome",
+          "tip": "Seu nome aparece nos serviços do Google. Não precisa ser seu nome legal."
+        },
+        "birthday": {
+          "title": "Quando você nasceu?",
+          "subtitle": "O Google usa isso para manter sua conta segura.",
+          "tip": "Mentir sobre a idade pode fazer encerrar a conta. Plataformas reais checam idade por lei."
+        },
+        "email": {
+          "title": "Escolha seu endereço de Gmail",
+          "subtitle": "Sugerimos um baseado no seu nome. Você pode editar.",
+          "tip": "Seu e-mail é visível para quem você contata. Não coloque informações sensíveis nele."
+        },
+        "password": {
+          "title": "Crie uma senha forte",
+          "subtitle": "Misture letras, números e símbolos.",
+          "tip": "Senhas fortes são longas, não reutilizadas e não aparecem em vazamentos. Use um gerenciador."
+        },
+        "phone": {
+          "title": "Adicione um telefone de recuperação",
+          "subtitle": "Se você esquecer a senha, isso permite recuperar acesso.",
+          "help": "Usado apenas para segurança da conta.",
+          "tip": "Sem contato de recuperação, esquecer a senha geralmente significa perder a conta para sempre."
+        },
+        "review": {
+          "title": "Quase lá",
+          "subtitle": "Ao continuar, você aceita os termos (simulados).",
+          "tip": "Em sites reais, leia os termos — especialmente as seções de privacidade e uso de dados."
+        }
       },
-      "step4": {
-        "label": "Verificação bem-sucedida",
-        "tip": "Com 2FA ativado, um invasor precisa do seu telefone além da sua senha. É uma barreira enorme."
+      "login": {
+        "email": {
+          "title": "Entrar",
+          "tip": "Sempre confira a URL. Phishing comum usa domínios como gooogle.com ou google-login.security."
+        },
+        "password": {
+          "title": "Bem-vindo de volta",
+          "subtitle": "Digite sua senha para continuar.",
+          "tip": "Se sua senha vazou em outro site e você reusa aqui, atacantes entram silenciosamente."
+        },
+        "suspicious": {
+          "title": "Verifique que é você",
+          "subtitle": "Detectamos acesso incomum. Enviamos um código para o seu telefone de recuperação.",
+          "tip": "Isso é o que o Google realmente faz em logins suspeitos. Nunca compartilhe o código."
+        },
+        "mfa": {
+          "title": "Verificação em duas etapas",
+          "subtitle": "Digite o código de 6 dígitos do seu app autenticador.",
+          "tip": "Apps autenticadores (Authy, Google Authenticator, 1Password) são mais seguros que SMS."
+        },
+        "verify": {
+          "title": "Você entrou!",
+          "subtitle": "Você fez login na sua conta de prática do Google.",
+          "tip": "Saia em dispositivos compartilhados. Revise periodicamente a atividade em myaccount.google.com."
+        }
+      },
+      "change": {
+        "current": {
+          "title": "Confirme sua senha atual",
+          "subtitle": "Por segurança, pedimos a senha atual antes de trocar.",
+          "tip": "Se pedem a senha atual e você não sabe, use \"Esqueci minha senha\"."
+        },
+        "new": {
+          "title": "Crie uma senha nova",
+          "subtitle": "Você não pode reutilizar senhas anteriores.",
+          "tip": "Troque a senha se suspeitar de vazamento. Cheque haveibeenpwned.com com seu e-mail."
+        }
+      },
+      "recover": {
+        "email": {
+          "title": "Recupere sua conta",
+          "subtitle": "Confirme seu e-mail do Google e enviaremos um código.",
+          "tip": "Golpistas falsificam páginas de \"recuperação\" para roubar e-mails. Confira o domínio."
+        },
+        "code": {
+          "title": "Digite o código",
+          "subtitle": "Enviamos um código de 6 dígitos ao seu e-mail de recuperação. Expira em 10 minutos.",
+          "tip": "Códigos de recuperação devem ser curtos no tempo. Quanto menor a janela, menor o risco."
+        }
+      },
+      "totp": {
+        "enable": {
+          "scan": {
+            "title": "Ativar verificação em duas etapas",
+            "subtitle": "Escaneie este QR com seu app autenticador.",
+            "body": "Abra Google Authenticator, Authy ou 1Password e escaneie. Você também pode copiar a chave manual.",
+            "secretLabel": "Chave manual",
+            "tip": "O QR é real: escaneie com seu app e terá códigos válidos. Útil para praticar."
+          },
+          "verify": {
+            "title": "Confirme com um código",
+            "subtitle": "Digite o código de 6 dígitos que aparece no app.",
+            "tip": "Se o código falhar, verifique a hora do celular — códigos TOTP dependem do tempo."
+          }
+        },
+        "disable": {
+          "title": "Desativar verificação em duas etapas",
+          "subtitle": "Confirme com sua senha antes de desativar.",
+          "tip": "Desativar 2FA reduz muito sua segurança. Só faça se souber o que está fazendo."
+        }
       }
     },
     "facebook": {
-      "step1": {
-        "label": "Login",
-        "placeholder": "E-mail ou telefone",
-        "tip": "O Facebook nunca pedirá sua senha por mensagem. Se alguém pedir, é phishing."
+      "cta": {
+        "next": "Avançar",
+        "signIn": "Entrar",
+        "skip": "Pular",
+        "create": "Cadastrar-me",
+        "save": "Salvar",
+        "verify": "Verificar",
+        "done": "Pronto",
+        "activate": "Ativar",
+        "disable": "Desativar",
+        "forgot": "Esqueceu a senha?"
       },
-      "step2": {
-        "label": "Configurar 2FA",
-        "tip": "Escolha um app autenticador em vez de SMS. Apps geram códigos offline e são mais seguros."
+      "fields": {
+        "firstName": {
+          "label": "Nome",
+          "placeholder": "Seu nome"
+        },
+        "lastName": {
+          "label": "Sobrenome",
+          "placeholder": "Seu sobrenome"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "voce@exemplo.com"
+        },
+        "password": {
+          "label": "Senha",
+          "placeholder": "Crie uma senha",
+          "help": "Mínimo de 8 caracteres. Misture letras, números e símbolos."
+        },
+        "passwordConfirm": {
+          "label": "Confirme a senha",
+          "placeholder": "Digite novamente"
+        },
+        "currentPassword": {
+          "label": "Senha atual",
+          "placeholder": "Sua senha atual"
+        },
+        "birthdate": {
+          "label": "Data de nascimento"
+        },
+        "gender": {
+          "label": "Gênero",
+          "female": "Mulher",
+          "male": "Homem",
+          "other": "Personalizado",
+          "prefer_not": "Prefiro não dizer"
+        },
+        "mfa": {
+          "label": "Código do autenticador",
+          "placeholder": "123456"
+        },
+        "recoveryCode": {
+          "label": "Código de verificação",
+          "placeholder": "123456"
+        }
       },
-      "step3": {
-        "label": "Código de verificação",
-        "placeholder": "000000",
-        "tip": "Os códigos de autenticação mudam a cada 30 segundos. Um código roubado expira rápido."
+      "create": {
+        "name": {
+          "title": "Criar uma conta nova",
+          "subtitle": "É rápido e fácil.",
+          "tip": "Use seu nome real só se quiser que pessoas que te conhecem possam te encontrar."
+        },
+        "contact": {
+          "title": "Qual é o seu e-mail?",
+          "subtitle": "Vamos usá-lo para entrar e recuperar a conta.",
+          "tip": "Escolha um e-mail só seu. Se perder esse e-mail, perde a conta."
+        },
+        "password": {
+          "title": "Crie uma senha",
+          "subtitle": "Que seja difícil de adivinhar e não use em nenhum outro lugar.",
+          "tip": "Uma senha única por conta evita que um vazamento em outro site afete também esta."
+        },
+        "birthday": {
+          "title": "Quando você nasceu?",
+          "subtitle": "Por que pedimos sua data de nascimento.",
+          "tip": "Uma data real ajuda a recuperar a conta se ela for roubada, mas não a deixe pública no seu perfil."
+        },
+        "gender": {
+          "title": "Qual é o seu gênero?",
+          "subtitle": "Você pode mudar quem vê isso depois.",
+          "tip": "Compartilhe dados pessoais só com serviços de confiança e revise sempre quem pode vê-los."
+        }
       },
-      "step4": {
-        "label": "Confirmação",
-        "tip": "Guarde seus códigos de backup em um lugar seguro. Se perder seu telefone, vai precisar deles."
+      "login": {
+        "email": {
+          "title": "Entrar no Facebook",
+          "subtitle": "Digite seu e-mail para continuar.",
+          "tip": "Confira a URL antes de digitar seu e-mail: facebook.com, sem letras estranhas nem traços extras."
+        },
+        "password": {
+          "title": "Bem-vindo de volta",
+          "subtitle": "Digite sua senha.",
+          "tip": "O Facebook nunca pede sua senha por mensagem ou e-mail. Se alguém pedir, é phishing."
+        },
+        "mfa": {
+          "title": "Verificação em duas etapas",
+          "subtitle": "Digite o código do seu app autenticador.",
+          "tip": "O código muda a cada 30 segundos e só existe no seu celular. Nunca compartilhe com ninguém."
+        },
+        "verify": {
+          "title": "Você entrou!",
+          "subtitle": "Sua sessão está ativa neste dispositivo.",
+          "tip": "Se entrou em um aparelho emprestado, encerre a sessão antes de sair."
+        }
+      },
+      "change": {
+        "current": {
+          "title": "Confirme que é você",
+          "subtitle": "Digite sua senha atual para continuar.",
+          "tip": "Se não lembra a senha atual, volte e use «Esqueceu a senha?» em vez de adivinhar."
+        },
+        "new": {
+          "title": "Crie uma senha nova",
+          "subtitle": "Escolha algo único que ainda não usou.",
+          "tip": "Troque a senha assim que suspeitar que outra pessoa a conhece."
+        }
+      },
+      "recover": {
+        "email": {
+          "title": "Recuperar sua conta",
+          "subtitle": "Digite o e-mail vinculado à conta.",
+          "tip": "O Facebook também permite recuperar a conta com amigos de confiança, se você configurou isso antes."
+        },
+        "code": {
+          "title": "Digite o código",
+          "subtitle": "Enviamos um código de 6 dígitos ao seu e-mail.",
+          "tip": "Se receber um código sem ter pedido, alguém está tentando entrar. Troque a senha."
+        }
+      },
+      "totp": {
+        "enable": {
+          "scan": {
+            "title": "Ative a verificação em duas etapas",
+            "subtitle": "Escaneie o código com seu app autenticador.",
+            "body": "Abra seu app autenticador e escaneie o código. Se não conseguir, copie a chave manualmente.",
+            "secretLabel": "Chave de configuração",
+            "tip": "A verificação em duas etapas é a melhor proteção contra roubo de conta."
+          },
+          "verify": {
+            "title": "Confirme o código",
+            "subtitle": "Digite o código de 6 dígitos exibido pelo app.",
+            "tip": "Se o app mostra um código diferente a cada vez, está funcionando direito."
+          }
+        },
+        "disable": {
+          "title": "Desativar verificação em duas etapas",
+          "subtitle": "Sua conta ficará menos protegida. Confirme com sua senha.",
+          "tip": "Só desative se for trocar de método. Sem 2FA, uma senha vazada basta para perder a conta."
+        }
       }
     },
     "x": {
@@ -265,7 +585,336 @@
         "label": "Resumo",
         "tip": "Revise seu extrato regularmente. Reporte qualquer transação que não reconheça."
       }
-    }
+    },
+    "runner": {
+      "exit": "Sair",
+      "exitConfirm": "Sair da simulação? Os dados não salvos serão perdidos.",
+      "step": "Etapa {current} de {total}",
+      "tip": "Dica de segurança",
+      "cancel": "Cancelar"
+    },
+    "instagram": {
+      "cta": {
+        "next": "Seguinte",
+        "signIn": "Iniciar sessão",
+        "skip": "Ignorar",
+        "create": "Criar conta",
+        "save": "Guardar",
+        "verify": "Verificar",
+        "done": "Pronto",
+        "activate": "Ativar",
+        "disable": "Desativar",
+        "forgot": "Esqueceste a tua palavra-passe?"
+      },
+      "fields": {
+        "email": {
+          "label": "Correio eletrónico",
+          "placeholder": "tucorreio@exemplo.com"
+        },
+        "fullName": {
+          "label": "Nome completo",
+          "placeholder": "O teu nome completo"
+        },
+        "username": {
+          "label": "Nome de utilizador",
+          "placeholder": "o_teu_utilizador",
+          "help": "Apenas minúsculas, números, pontos e sublinhados."
+        },
+        "password": {
+          "label": "Palavra-passe",
+          "placeholder": "Cria uma palavra-passe",
+          "help": "Mínimo de 8 carateres."
+        },
+        "passwordConfirm": {
+          "label": "Confirma a palavra-passe",
+          "placeholder": "Escreve-a novamente"
+        },
+        "currentPassword": {
+          "label": "Palavra-passe atual",
+          "placeholder": "A tua palavra-passe atual"
+        },
+        "birthdate": {
+          "label": "Data de nascimento"
+        },
+        "identity": {
+          "label": "Correio ou utilizador",
+          "placeholder": "O teu correio ou nome de utilizador"
+        },
+        "mfa": {
+          "label": "Código do autenticador",
+          "placeholder": "123456"
+        },
+        "recoveryCode": {
+          "label": "Código de verificação",
+          "placeholder": "123456"
+        }
+      },
+      "create": {
+        "contact": {
+          "title": "Cria uma conta no Instagram",
+          "subtitle": "Vamos enviar um código a este correio para o verificar.",
+          "tip": "Verifica que o domínio é instagram.com — não instagrarn.com nem instagram-login.app."
+        },
+        "name": {
+          "title": "Como te chamas?",
+          "subtitle": "O teu nome pode ficar visível para os teus contactos.",
+          "tip": "Quanta menos informação pessoal partilhares, mais difícil será que alguém te imite."
+        },
+        "username": {
+          "title": "Escolhe um nome de utilizador",
+          "subtitle": "Sugerimos um; podes alterá-lo quando quiseres.",
+          "tip": "O teu nome de utilizador é público; quem queira roubar a tua conta começa por encontrá-lo."
+        },
+        "password": {
+          "title": "Cria uma palavra-passe",
+          "subtitle": "Precisas de pelo menos 8 carateres.",
+          "tip": "Uma palavra-passe forte combinada com 2FA é a melhor proteção contra o roubo de conta."
+        },
+        "birthday": {
+          "title": "Quando é o teu aniversário?",
+          "subtitle": "Esta informação não aparecerá no teu perfil.",
+          "tip": "A tua data real ajuda a recuperar a conta; nunca a partilhes com quem ta peça."
+        }
+      },
+      "login": {
+        "identity": {
+          "title": "Iniciar sessão",
+          "subtitle": "Introduz o teu correio ou nome de utilizador.",
+          "tip": "Se recebeste um link por mensagem, verifica o domínio antes de escrever os teus dados."
+        },
+        "password": {
+          "title": "A tua palavra-passe",
+          "subtitle": "Só tu deves saber qual é.",
+          "tip": "O Instagram nunca te pedirá a palavra-passe por mensagem, correio ou chamada."
+        },
+        "mfa": {
+          "title": "Código de duplo fator",
+          "subtitle": "Abre a tua app de autenticação e introduz o código de 6 dígitos.",
+          "tip": "O código muda a cada 30 segundos; não o partilhes com ninguém."
+        },
+        "verify": {
+          "title": "Sessão iniciada",
+          "subtitle": "Bem-vindo de volta.",
+          "tip": "Se vires um início de sessão que não reconheças, muda a palavra-passe imediatamente."
+        }
+      },
+      "change": {
+        "current": {
+          "title": "Confirma a tua palavra-passe atual",
+          "subtitle": "Para proteger a conta antes da alteração.",
+          "tip": "Muda a palavra-passe se suspeitas que alguém mais a sabe."
+        },
+        "new": {
+          "title": "Nova palavra-passe",
+          "subtitle": "Escolhe uma que não tenhas usado antes nesta conta.",
+          "tip": "Reutilizar palavras-passe antigas transforma uma só fuga em várias falhas."
+        }
+      },
+      "recover": {
+        "identity": {
+          "title": "Recupera a tua conta",
+          "subtitle": "Introduz o teu correio ou nome de utilizador e enviaremos um código.",
+          "tip": "Se o correio não chegar, vê o spam antes de pedir outro código."
+        },
+        "code": {
+          "title": "Introduz o código",
+          "subtitle": "Enviámos um código de 6 dígitos para o teu correio.",
+          "tip": "Nunca partilhes este código por chat, voz ou chamada — apenas escreve-o aqui."
+        }
+      },
+      "totp": {
+        "enable": {
+          "scan": {
+            "title": "Ativa o duplo fator",
+            "subtitle": "Digitaliza este código com a tua app de autenticação.",
+            "body": "Abre o Google Authenticator, Authy ou similar e digitaliza o código. Se não conseguires digitalizar, copia a chave manual.",
+            "secretLabel": "Chave manual",
+            "tip": "Guarda a chave manual num sítio seguro para reativar 2FA se perderes o telemóvel."
+          },
+          "verify": {
+            "title": "Confirma o código",
+            "subtitle": "Introduz o código de 6 dígitos que a tua app mostra.",
+            "tip": "Se o código falhar, verifica que a hora do telemóvel está em automático."
+          }
+        },
+        "disable": {
+          "title": "Desativar 2FA",
+          "subtitle": "Confirma a tua palavra-passe para continuar.",
+          "tip": "Sem 2FA, uma palavra-passe vazada basta para entrar na tua conta."
+        }
+      }
+    },
+    "bank": {
+      "cta": {
+        "next": "Continuar",
+        "signIn": "Entrar",
+        "skip": "Pular",
+        "create": "Abrir conta",
+        "save": "Salvar",
+        "verify": "Verificar",
+        "done": "Pronto",
+        "activate": "Ativar",
+        "disable": "Desativar",
+        "forgot": "Esqueceu a senha?"
+      },
+      "fields": {
+        "nationalId": {
+          "label": "Documento de identidade",
+          "placeholder": "RG / CPF / passaporte",
+          "help": "5-20 caracteres alfanuméricos."
+        },
+        "firstName": {
+          "label": "Nome",
+          "placeholder": "Seu nome"
+        },
+        "lastName": {
+          "label": "Sobrenome",
+          "placeholder": "Seu sobrenome"
+        },
+        "email": {
+          "label": "Endereço de e-mail",
+          "placeholder": "voce@exemplo.com"
+        },
+        "phone": {
+          "label": "Celular",
+          "placeholder": "+55 11 90000-0000",
+          "help": "Necessário para verificação."
+        },
+        "password": {
+          "label": "Senha",
+          "placeholder": "Crie uma senha forte",
+          "help": "Mínimo 12 caracteres. Misture maiúsculas, números e símbolos."
+        },
+        "passwordConfirm": {
+          "label": "Confirme a senha",
+          "placeholder": "Digite novamente"
+        },
+        "currentPassword": {
+          "label": "Senha atual",
+          "placeholder": "Sua senha atual"
+        },
+        "mfa": {
+          "label": "Código do autenticador",
+          "placeholder": "123456"
+        },
+        "recoveryCode": {
+          "label": "Código de verificação",
+          "placeholder": "123456"
+        }
+      },
+      "create": {
+        "nationalId": {
+          "title": "Abra sua conta no SecureBank",
+          "subtitle": "Vamos começar verificando sua identidade.",
+          "tip": "Seu banco nunca pedirá sua senha por e-mail, SMS, ligação ou WhatsApp."
+        },
+        "name": {
+          "title": "Como você se chama?",
+          "subtitle": "Usaremos esse nome em seus extratos e comunicações.",
+          "tip": "Use seu nome legal. Bancos comparam com seu documento de identidade."
+        },
+        "email": {
+          "title": "Seu e-mail",
+          "subtitle": "Enviaremos avisos importantes e códigos de segurança aqui.",
+          "tip": "Se receber um e-mail com links para acessar seu banco, não clique. Digite a URL no navegador."
+        },
+        "phone": {
+          "title": "Seu celular",
+          "subtitle": "Usaremos como canal de verificação adicional.",
+          "tip": "Se alguém ligar dizendo ser do seu banco e pedir códigos, desligue e ligue para o número no verso do cartão."
+        },
+        "password": {
+          "title": "Crie uma senha bancária forte",
+          "subtitle": "Mínimo 12 caracteres. Não reutilize em outros lugares.",
+          "tip": "Uma senha bancária forte e única protege suas economias — nunca reutilize em outro site."
+        },
+        "totpScan": {
+          "title": "Ative seu segundo fator",
+          "subtitle": "Escaneie este código com seu app autenticador (Google Authenticator, Authy, 1Password).",
+          "body": "Abra seu app autenticador e adicione uma nova conta escaneando este QR. Se não puder escanear, copie a chave manual.",
+          "secretLabel": "Chave manual",
+          "tip": "O código do autenticador muda a cada 30 segundos. Se alguém pedir por telefone, desligue."
+        },
+        "totpVerify": {
+          "title": "Verifique o código",
+          "subtitle": "Digite o código de 6 dígitos mostrado pelo seu app.",
+          "tip": "Sem este passo não conseguimos abrir a conta. O 2FA é obrigatório porque protege seu dinheiro."
+        }
+      },
+      "login": {
+        "email": {
+          "title": "Acesse o SecureBank",
+          "subtitle": "Digite seu e-mail para continuar.",
+          "tip": "Sempre verifique se a URL começa com https:// e mostra o domínio correto antes de digitar a senha."
+        },
+        "password": {
+          "title": "Olá novamente",
+          "subtitle": "Digite sua senha.",
+          "tip": "Se sua senha vazou em outro site e você reutiliza aqui, atacantes podem esvaziar sua conta."
+        },
+        "mfa": {
+          "title": "Verificação em duas etapas",
+          "subtitle": "Digite o código de 6 dígitos do seu app autenticador.",
+          "tip": "O código do autenticador muda a cada 30 segundos. Se alguém pedir por telefone, desligue."
+        },
+        "verify": {
+          "title": "Acesso confirmado",
+          "subtitle": "Você entrou em sua conta de prática do SecureBank.",
+          "tip": "Saia da conta quando terminar, principalmente em dispositivos compartilhados."
+        }
+      },
+      "change": {
+        "current": {
+          "title": "Confirme sua senha atual",
+          "subtitle": "Por segurança, pedimos a senha antes de trocar.",
+          "tip": "Se não lembra a senha, use \"Esqueceu a senha?\" em vez de tentar adivinhar."
+        },
+        "mfa": {
+          "title": "Verificação em duas etapas",
+          "subtitle": "Digite o código de 6 dígitos do seu app autenticador.",
+          "tip": "Seu banco confirma alterações sensíveis com 2FA — isso impede que atacantes com sua senha possam trocá-la."
+        },
+        "new": {
+          "title": "Nova senha",
+          "subtitle": "Você não pode reutilizar senhas anteriores.",
+          "tip": "Uma senha bancária forte e única protege suas economias — nunca reutilize em outro site."
+        }
+      },
+      "recover": {
+        "email": {
+          "title": "Recuperar acesso",
+          "subtitle": "Digite o e-mail vinculado à sua conta.",
+          "tip": "Se receber um e-mail de recuperação que não solicitou, alguém pode estar tentando entrar. Troque sua senha."
+        },
+        "code": {
+          "title": "Verifique seu e-mail",
+          "subtitle": "Enviamos um código de 6 dígitos. Expira em 10 minutos.",
+          "tip": "Seu banco nunca pedirá sua senha por e-mail, SMS, ligação ou WhatsApp."
+        }
+      },
+      "totp": {
+        "disable": {
+          "title": "Seu banco não permite desativar 2FA",
+          "subtitle": "Por segurança, bancos exigem verificação em duas etapas sempre.",
+          "tip": "Por segurança, bancos exigem 2FA sempre — protege seu dinheiro."
+        },
+        "enable": {
+          "scan": {
+            "title": "Ative seu segundo fator",
+            "subtitle": "Escaneie este código com seu app autenticador.",
+            "body": "Abra seu app autenticador e adicione uma nova conta escaneando este QR. Se não puder escanear, copie a chave manual.",
+            "secretLabel": "Chave manual",
+            "tip": "O código do autenticador muda a cada 30 segundos. Se alguém pedir por telefone, desligue."
+          },
+          "verify": {
+            "title": "Verifique o código",
+            "subtitle": "Digite o código de 6 dígitos mostrado pelo seu app.",
+            "tip": "Após ativar, guarde seus códigos de backup em local seguro fora do celular."
+          }
+        }
+      }
+    },
+    "bannerTamper": "SIMULAÇÃO DE TREINAMENTO — Nada é real"
   },
   "auth": {
     "signIn": "Entrar",
@@ -426,6 +1075,48 @@
       "title": "Qual plataforma?",
       "subtitle": "Escolha uma plataforma para criar uma nova conta de prática.",
       "cancel": "Cancelar"
+    }
+  },
+  "validation": {
+    "required": "Este campo é obrigatório.",
+    "email": {
+      "invalid": "Informe um e-mail válido.",
+      "taken": "Já existe uma conta com esse e-mail nesta plataforma."
+    },
+    "username": {
+      "invalid": "Apenas letras minúsculas, números, pontos e sublinhados (3-30 caracteres).",
+      "taken": "Esse nome de usuário já está em uso."
+    },
+    "phone": {
+      "invalid": "Informe um número de telefone válido (inclua o código do país)."
+    },
+    "password": {
+      "tooShort": "A senha é muito curta.",
+      "tooWeak": "Esta senha é muito fraca. Combine letras, números e símbolos.",
+      "reused": "Você não pode reutilizar uma senha anterior.",
+      "mismatch": "As senhas não coincidem.",
+      "wrong": "Senha incorreta.",
+      "strength": {
+        "s0": "Muito fraca",
+        "s1": "Fraca",
+        "s2": "Razoável",
+        "s3": "Forte",
+        "s4": "Muito forte"
+      }
+    },
+    "birthdate": {
+      "invalid": "Informe uma data válida.",
+      "tooYoung": "Você deve ter pelo menos 13 anos."
+    },
+    "code": {
+      "invalid": "O código deve ter 6 dígitos.",
+      "expired": "Este código expirou. Solicite um novo."
+    },
+    "mfa": {
+      "invalid": "O código de verificação não confere."
+    },
+    "account": {
+      "notFound": "Não existe uma conta com essas informações."
     }
   }
 }

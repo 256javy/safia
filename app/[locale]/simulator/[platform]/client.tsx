@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { useAccountsStore, type Platform } from "@/stores/accounts-store";
@@ -17,7 +17,14 @@ const FLOWS: { id: "create" | "login" | "change-password" | "recover" | "totp"; 
 
 export function PlatformHubClient({ platform }: { platform: Platform }) {
   const tp = useTranslations("simulator.platforms");
-  const accounts = useAccountsStore((s) => s.byPlatform(platform));
+  // Subscribe to the raw accounts array (stable reference) and derive the
+  // platform-scoped list with useMemo to avoid the infinite re-render that
+  // s.byPlatform(platform) triggers (it returns a new array on every call).
+  const allAccounts = useAccountsStore((s) => s.accounts);
+  const accounts = useMemo(
+    () => allAccounts.filter((a) => a.platform === platform),
+    [allAccounts, platform],
+  );
   const [hydrated, setHydrated] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
 

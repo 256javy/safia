@@ -8,6 +8,8 @@ type Props = {
   params: Promise<{ platform: string; locale: string }>;
 };
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { platform } = await params;
   if (!PLATFORM_IDS.includes(platform as Platform)) return {};
@@ -15,10 +17,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Simulador: ${platform} — Safia`,
     robots: { index: false, follow: false },
   };
-}
-
-export function generateStaticParams() {
-  return PLATFORM_IDS.map((platform) => ({ platform }));
 }
 
 export default async function PlatformHubPage({ params }: Props) {

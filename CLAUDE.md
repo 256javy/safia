@@ -78,6 +78,42 @@ After MDX changes, run `pnpm generate-manifest`.
 
 > Known bug: `scripts/generate-manifest.ts` counts `lesson-1.es.mdx` and `lesson-1.en.mdx` as two separate lessons (no dedup by stripped slug). Don't reconcile reported counts without fixing the generator first.
 
+## Claude Code automation (AI-native dev)
+
+Esta app es ai-dev nativa. Para mantener autonomía y proactividad de los agentes:
+
+### Hooks activos (`.claude/settings.json`)
+
+- **`simulator-no-network`** (PreToolUse) — bloquea Edit/Write/MultiEdit en `features/simulator/platforms/**` o `FlowRoute.tsx` si el contenido nuevo introduce `fetch(`, `axios`, `XMLHttpRequest`, `WebSocket`, `sendBeacon` o `action="http`. Hard rule de seguridad. Falsos positivos: pon el ejemplo dentro de un string literal.
+- **`i18n-validate`** (PostToolUse) — al editar `messages/*.json` o `i18n.<locale>.json` por plataforma, valida JSON y reporta drift de claves entre `es/en/pt`. Non-blocking; emite warnings.
+- **`manifest-regen`** (PostToolUse) — regenera `content/manifest.json` cuando editas MDX bajo `content/modules/`.
+
+### Subagents custom (`.claude/agents/`)
+
+- **`simulator-security-auditor`** — audita cambios contra las reglas no negociables del simulador. Úsalo proactivamente antes de mergear PRs que tocan `features/simulator/`.
+- **`flow-spec-author`** — andamia FlowSpecs nuevos para plataformas adicionales (TikTok, X, LinkedIn, etc.). Conoce el patrón de Google y los helpers de fields.
+- **`i18n-keeper`** — mantiene paridad es/en/pt y detecta strings hardcodeados.
+
+### Skills relevantes (gstack ya instaladas)
+
+- `/qa` o `/qa-only` — QA de la web app (con test-fix-verify loop o solo report).
+- `/design-review` — auditoría visual en vivo.
+- `/plan-design-review` — review de plan en plan mode.
+- `/codex` — segunda opinión vía OpenAI Codex CLI.
+- `/health` — dashboard de calidad (typecheck/lint/test/dead-code).
+- `/cso` — security audit (cuando toque infraestructura/CI).
+- `/review` — pre-landing PR review.
+- `/learn` — gestiona aprendizajes persistentes (úsalo proactivamente cuando aprendas un patrón nuevo).
+
+### Tests
+
+```bash
+pnpm test                 # Vitest unit + integration (jsdom)
+pnpm test:coverage        # Coverage v8
+pnpm test:e2e             # Playwright E2E (requires dev server)
+pnpm test:all             # All
+```
+
 ## Working directory
 
 Always work in `/home/javy/projects/safia/`. Do not touch other repos on this machine unless explicitly asked.
