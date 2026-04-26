@@ -3,6 +3,6 @@ export { default as TrustBar } from "./TrustBar";
 export { default as ModulesPreview } from "./ModulesPreview";
 export { default as HowItWorks } from "./HowItWorks";
 export { default as SimulatorTeaser } from "./SimulatorTeaser";
-export { default as GamificationPreview } from "./GamificationPreview";
 export { default as NewsletterSection } from "./NewsletterSection";
+export { default as FollowSection } from "./FollowSection";
 export { default as Footer } from "./Footer";

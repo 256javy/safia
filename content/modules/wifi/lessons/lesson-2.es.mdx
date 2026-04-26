@@ -1,30 +1,59 @@
 ---
-title: "Cómo funciona un ataque 'man in the middle'"
-description: "Entiende en términos simples cómo los atacantes se interponen entre tú e internet para espiar tu tráfico."
-xp_reward: 100
+title: Cómo funciona un ataque 'man in the middle'
+description: >-
+  Entiende en términos simples cómo los atacantes se interponen entre tú e
+  internet para espiar tu tráfico.
 order: 2
 quiz:
-  - question: "¿Qué hace un atacante en un ataque 'man in the middle'?"
+  - question: ¿Qué hace un atacante en un ataque 'man in the middle'?
     options:
-      - "Hackea directamente el servidor de tu banco"
-      - "Se posiciona entre tu dispositivo y el servidor al que te conectas, pudiendo ver y modificar el tráfico"
-      - "Instala un virus en tu teléfono remotamente"
+      - Hackea directamente el servidor de tu banco
+      - >-
+        Se posiciona entre tu dispositivo y el servidor al que te conectas,
+        pudiendo ver y modificar el tráfico
+      - Instala un virus en tu teléfono remotamente
     correct: 1
-    explanation: "En un ataque MitM, el atacante intercepta la comunicación entre tú y tu destino. Puede leer lo que envías, modificarlo antes de que llegue, y ver lo que recibes."
-  - question: "¿Por qué HTTPS no protege completamente contra ataques man-in-the-middle en WiFi público?"
+    explanation: >-
+      En un ataque MitM, el atacante intercepta la comunicación entre tú y tu
+      destino. Puede leer lo que envías, modificarlo antes de que llegue, y ver
+      lo que recibes.
+  - question: >-
+      ¿Por qué HTTPS no protege completamente contra ataques man-in-the-middle
+      en WiFi público?
     options:
-      - "HTTPS es demasiado antiguo para ser seguro"
-      - "El atacante puede ver el dominio al que te conectas y en ataques sofisticados puede hacerse pasar por el sitio destino"
-      - "HTTPS solo funciona en WiFi privado"
+      - HTTPS es demasiado antiguo para ser seguro
+      - >-
+        El atacante puede ver el dominio al que te conectas y en ataques
+        sofisticados puede hacerse pasar por el sitio destino
+      - HTTPS solo funciona en WiFi privado
     correct: 1
-    explanation: "HTTPS cifra el contenido, pero el atacante aún sabe a qué sitio te conectas. En ataques avanzados con certificados falsos, puede incluso descifrar el contenido."
-  - question: "¿Cuál es la mejor protección contra ataques man-in-the-middle en redes públicas?"
+    explanation: >-
+      HTTPS cifra el contenido, pero el atacante aún sabe a qué sitio te
+      conectas. En ataques avanzados con certificados falsos, puede incluso
+      descifrar el contenido.
+  - question: >-
+      ¿Cuál es la mejor protección contra ataques man-in-the-middle en redes
+      públicas?
     options:
-      - "Usar solo sitios con HTTPS"
-      - "Conectarse al WiFi más rápido disponible"
-      - "Usar una VPN que cifra todo el tráfico antes de que salga de tu dispositivo"
+      - Usar solo sitios con HTTPS
+      - Conectarse al WiFi más rápido disponible
+      - >-
+        Usar una VPN que cifra todo el tráfico antes de que salga de tu
+        dispositivo
     correct: 2
-    explanation: "Una VPN crea un túnel cifrado entre tu dispositivo y el servidor VPN. Aunque alguien intercepte tu tráfico en la red pública, solo verá datos cifrados inútiles."
+    explanation: >-
+      Una VPN crea un túnel cifrado entre tu dispositivo y el servidor VPN.
+      Aunque alguien intercepte tu tráfico en la red pública, solo verá datos
+      cifrados inútiles.
+last_reviewed: '2026-04-19'
+author: 256javy
+steward: 256javy
+audience:
+  - obligation
+  - curiosity
+assumes: []
+module: wifi
+locale: es
 ---
 
 "Man in the middle" — el hombre en el medio. Este ataque tiene un nombre que lo describe perfectamente: alguien se coloca literalmente en medio de tu comunicación con el mundo.

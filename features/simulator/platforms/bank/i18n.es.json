@@ -1,0 +1,170 @@
+{
+  "cta": {
+    "next": "Continuar",
+    "signIn": "Acceder",
+    "skip": "Omitir",
+    "create": "Abrir cuenta",
+    "save": "Guardar",
+    "verify": "Verificar",
+    "done": "Listo",
+    "activate": "Activar",
+    "disable": "Desactivar",
+    "forgot": "¿Olvidaste la contraseña?"
+  },
+  "fields": {
+    "nationalId": {
+      "label": "Documento de identidad",
+      "placeholder": "DNI / cédula / pasaporte",
+      "help": "5-20 caracteres alfanuméricos."
+    },
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": "Tu nombre"
+    },
+    "lastName": {
+      "label": "Apellido",
+      "placeholder": "Tu apellido"
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": "tu@ejemplo.com"
+    },
+    "phone": {
+      "label": "Teléfono móvil",
+      "placeholder": "+34 600 000 000",
+      "help": "Necesario para verificación."
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Crea una contraseña fuerte",
+      "help": "Mínimo 12 caracteres. Mezcla mayúsculas, números y símbolos."
+    },
+    "passwordConfirm": {
+      "label": "Confirma la contraseña",
+      "placeholder": "Vuelve a escribirla"
+    },
+    "currentPassword": {
+      "label": "Contraseña actual",
+      "placeholder": "Tu contraseña actual"
+    },
+    "mfa": {
+      "label": "Código del autenticador",
+      "placeholder": "123456"
+    },
+    "recoveryCode": {
+      "label": "Código de verificación",
+      "placeholder": "123456"
+    }
+  },
+  "create": {
+    "nationalId": {
+      "title": "Abre tu cuenta en SecureBank",
+      "subtitle": "Empezamos por verificar tu identidad.",
+      "tip": "Tu banco nunca te pedirá la clave de acceso por correo, SMS, llamada o WhatsApp."
+    },
+    "name": {
+      "title": "¿Cómo te llamas?",
+      "subtitle": "Usaremos este nombre en tus extractos y comunicaciones.",
+      "tip": "Usa tu nombre legal. Los bancos comparan con tu documento de identidad."
+    },
+    "email": {
+      "title": "Tu correo electrónico",
+      "subtitle": "Te enviaremos avisos importantes y códigos de seguridad aquí.",
+      "tip": "Si recibes un correo con enlaces para acceder a tu banco, no los pulses. Entra siempre escribiendo la URL en el navegador."
+    },
+    "phone": {
+      "title": "Tu teléfono móvil",
+      "subtitle": "Lo usaremos como canal de verificación adicional.",
+      "tip": "Si alguien te llama diciendo que es de tu banco y te pide códigos, cuelga y llama tú al número del reverso de tu tarjeta."
+    },
+    "password": {
+      "title": "Crea una contraseña bancaria fuerte",
+      "subtitle": "Mínimo 12 caracteres. No la reutilices en ningún otro sitio.",
+      "tip": "Una contraseña bancaria fuerte y única salva tus ahorros — no la reutilices en ningún otro sitio."
+    },
+    "totpScan": {
+      "title": "Activa tu segundo factor",
+      "subtitle": "Escanea este código con tu app autenticadora (Google Authenticator, Authy, 1Password).",
+      "body": "Abre tu app autenticadora y añade una nueva cuenta escaneando este QR. Si no puedes escanear, copia la clave manual.",
+      "secretLabel": "Clave manual",
+      "tip": "El código del autenticador cambia cada 30 segundos. Si alguien te lo pide por teléfono, cuelga."
+    },
+    "totpVerify": {
+      "title": "Verifica el código",
+      "subtitle": "Introduce el código de 6 dígitos que muestra tu app.",
+      "tip": "Sin este paso no podemos abrir la cuenta. El 2FA es obligatorio porque protege tu dinero."
+    }
+  },
+  "login": {
+    "email": {
+      "title": "Accede a SecureBank",
+      "subtitle": "Introduce tu correo para continuar.",
+      "tip": "Comprueba siempre que la URL empieza por https:// y muestra el dominio correcto antes de escribir tu contraseña."
+    },
+    "password": {
+      "title": "Hola de nuevo",
+      "subtitle": "Introduce tu contraseña.",
+      "tip": "Si tu contraseña se filtró en otra web y la reutilizas aquí, atacantes podrían vaciarte la cuenta."
+    },
+    "mfa": {
+      "title": "Verificación en dos pasos",
+      "subtitle": "Introduce el código de 6 dígitos de tu app autenticadora.",
+      "tip": "El código del autenticador cambia cada 30 segundos. Si alguien te lo pide por teléfono, cuelga."
+    },
+    "verify": {
+      "title": "Acceso correcto",
+      "subtitle": "Has entrado en tu cuenta de SecureBank de práctica.",
+      "tip": "Cierra sesión cuando termines, sobre todo en dispositivos compartidos."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirma tu contraseña actual",
+      "subtitle": "Por seguridad, te pedimos la contraseña antes de cambiarla.",
+      "tip": "Si no recuerdas tu contraseña, usa \"¿Olvidaste la contraseña?\" en lugar de adivinar."
+    },
+    "mfa": {
+      "title": "Verificación en dos pasos",
+      "subtitle": "Introduce el código de 6 dígitos de tu app autenticadora.",
+      "tip": "Tu banco confirma cambios sensibles con 2FA — esto evita que un atacante con tu contraseña pueda cambiarla."
+    },
+    "new": {
+      "title": "Nueva contraseña",
+      "subtitle": "No puedes reutilizar contraseñas anteriores.",
+      "tip": "Una contraseña bancaria fuerte y única salva tus ahorros — no la reutilices en ningún otro sitio."
+    }
+  },
+  "recover": {
+    "email": {
+      "title": "Recupera tu acceso",
+      "subtitle": "Introduce el correo asociado a tu cuenta.",
+      "tip": "Si recibes un correo de recuperación que no solicitaste, alguien podría estar intentando entrar a tu cuenta. Cambia tu contraseña."
+    },
+    "code": {
+      "title": "Comprueba tu correo",
+      "subtitle": "Te hemos enviado un código de 6 dígitos. Caduca en 10 minutos.",
+      "tip": "Tu banco nunca te pedirá la clave de acceso por correo, SMS, llamada o WhatsApp."
+    }
+  },
+  "totp": {
+    "disable": {
+      "title": "Tu banco no permite desactivar 2FA",
+      "subtitle": "Por seguridad, los bancos exigen verificación en dos pasos siempre.",
+      "tip": "Por seguridad, los bancos exigen 2FA siempre — protege tu dinero."
+    },
+    "enable": {
+      "scan": {
+        "title": "Activa tu segundo factor",
+        "subtitle": "Escanea este código con tu app autenticadora.",
+        "body": "Abre tu app autenticadora y añade una nueva cuenta escaneando este QR. Si no puedes escanear, copia la clave manual.",
+        "secretLabel": "Clave manual",
+        "tip": "El código del autenticador cambia cada 30 segundos. Si alguien te lo pide por teléfono, cuelga."
+      },
+      "verify": {
+        "title": "Verifica el código",
+        "subtitle": "Introduce el código de 6 dígitos que muestra tu app.",
+        "tip": "Después de activarlo, guarda tus códigos de respaldo en un lugar seguro fuera del móvil."
+      }
+    }
+  }
+}

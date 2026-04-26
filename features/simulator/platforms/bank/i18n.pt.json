@@ -1,0 +1,170 @@
+{
+  "cta": {
+    "next": "Continuar",
+    "signIn": "Entrar",
+    "skip": "Pular",
+    "create": "Abrir conta",
+    "save": "Salvar",
+    "verify": "Verificar",
+    "done": "Pronto",
+    "activate": "Ativar",
+    "disable": "Desativar",
+    "forgot": "Esqueceu a senha?"
+  },
+  "fields": {
+    "nationalId": {
+      "label": "Documento de identidade",
+      "placeholder": "RG / CPF / passaporte",
+      "help": "5-20 caracteres alfanuméricos."
+    },
+    "firstName": {
+      "label": "Nome",
+      "placeholder": "Seu nome"
+    },
+    "lastName": {
+      "label": "Sobrenome",
+      "placeholder": "Seu sobrenome"
+    },
+    "email": {
+      "label": "Endereço de e-mail",
+      "placeholder": "voce@exemplo.com"
+    },
+    "phone": {
+      "label": "Celular",
+      "placeholder": "+55 11 90000-0000",
+      "help": "Necessário para verificação."
+    },
+    "password": {
+      "label": "Senha",
+      "placeholder": "Crie uma senha forte",
+      "help": "Mínimo 12 caracteres. Misture maiúsculas, números e símbolos."
+    },
+    "passwordConfirm": {
+      "label": "Confirme a senha",
+      "placeholder": "Digite novamente"
+    },
+    "currentPassword": {
+      "label": "Senha atual",
+      "placeholder": "Sua senha atual"
+    },
+    "mfa": {
+      "label": "Código do autenticador",
+      "placeholder": "123456"
+    },
+    "recoveryCode": {
+      "label": "Código de verificação",
+      "placeholder": "123456"
+    }
+  },
+  "create": {
+    "nationalId": {
+      "title": "Abra sua conta no SecureBank",
+      "subtitle": "Vamos começar verificando sua identidade.",
+      "tip": "Seu banco nunca pedirá sua senha por e-mail, SMS, ligação ou WhatsApp."
+    },
+    "name": {
+      "title": "Como você se chama?",
+      "subtitle": "Usaremos esse nome em seus extratos e comunicações.",
+      "tip": "Use seu nome legal. Bancos comparam com seu documento de identidade."
+    },
+    "email": {
+      "title": "Seu e-mail",
+      "subtitle": "Enviaremos avisos importantes e códigos de segurança aqui.",
+      "tip": "Se receber um e-mail com links para acessar seu banco, não clique. Digite a URL no navegador."
+    },
+    "phone": {
+      "title": "Seu celular",
+      "subtitle": "Usaremos como canal de verificação adicional.",
+      "tip": "Se alguém ligar dizendo ser do seu banco e pedir códigos, desligue e ligue para o número no verso do cartão."
+    },
+    "password": {
+      "title": "Crie uma senha bancária forte",
+      "subtitle": "Mínimo 12 caracteres. Não reutilize em outros lugares.",
+      "tip": "Uma senha bancária forte e única protege suas economias — nunca reutilize em outro site."
+    },
+    "totpScan": {
+      "title": "Ative seu segundo fator",
+      "subtitle": "Escaneie este código com seu app autenticador (Google Authenticator, Authy, 1Password).",
+      "body": "Abra seu app autenticador e adicione uma nova conta escaneando este QR. Se não puder escanear, copie a chave manual.",
+      "secretLabel": "Chave manual",
+      "tip": "O código do autenticador muda a cada 30 segundos. Se alguém pedir por telefone, desligue."
+    },
+    "totpVerify": {
+      "title": "Verifique o código",
+      "subtitle": "Digite o código de 6 dígitos mostrado pelo seu app.",
+      "tip": "Sem este passo não conseguimos abrir a conta. O 2FA é obrigatório porque protege seu dinheiro."
+    }
+  },
+  "login": {
+    "email": {
+      "title": "Acesse o SecureBank",
+      "subtitle": "Digite seu e-mail para continuar.",
+      "tip": "Sempre verifique se a URL começa com https:// e mostra o domínio correto antes de digitar a senha."
+    },
+    "password": {
+      "title": "Olá novamente",
+      "subtitle": "Digite sua senha.",
+      "tip": "Se sua senha vazou em outro site e você reutiliza aqui, atacantes podem esvaziar sua conta."
+    },
+    "mfa": {
+      "title": "Verificação em duas etapas",
+      "subtitle": "Digite o código de 6 dígitos do seu app autenticador.",
+      "tip": "O código do autenticador muda a cada 30 segundos. Se alguém pedir por telefone, desligue."
+    },
+    "verify": {
+      "title": "Acesso confirmado",
+      "subtitle": "Você entrou em sua conta de prática do SecureBank.",
+      "tip": "Saia da conta quando terminar, principalmente em dispositivos compartilhados."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirme sua senha atual",
+      "subtitle": "Por segurança, pedimos a senha antes de trocar.",
+      "tip": "Se não lembra a senha, use \"Esqueceu a senha?\" em vez de tentar adivinhar."
+    },
+    "mfa": {
+      "title": "Verificação em duas etapas",
+      "subtitle": "Digite o código de 6 dígitos do seu app autenticador.",
+      "tip": "Seu banco confirma alterações sensíveis com 2FA — isso impede que atacantes com sua senha possam trocá-la."
+    },
+    "new": {
+      "title": "Nova senha",
+      "subtitle": "Você não pode reutilizar senhas anteriores.",
+      "tip": "Uma senha bancária forte e única protege suas economias — nunca reutilize em outro site."
+    }
+  },
+  "recover": {
+    "email": {
+      "title": "Recuperar acesso",
+      "subtitle": "Digite o e-mail vinculado à sua conta.",
+      "tip": "Se receber um e-mail de recuperação que não solicitou, alguém pode estar tentando entrar. Troque sua senha."
+    },
+    "code": {
+      "title": "Verifique seu e-mail",
+      "subtitle": "Enviamos um código de 6 dígitos. Expira em 10 minutos.",
+      "tip": "Seu banco nunca pedirá sua senha por e-mail, SMS, ligação ou WhatsApp."
+    }
+  },
+  "totp": {
+    "disable": {
+      "title": "Seu banco não permite desativar 2FA",
+      "subtitle": "Por segurança, bancos exigem verificação em duas etapas sempre.",
+      "tip": "Por segurança, bancos exigem 2FA sempre — protege seu dinheiro."
+    },
+    "enable": {
+      "scan": {
+        "title": "Ative seu segundo fator",
+        "subtitle": "Escaneie este código com seu app autenticador.",
+        "body": "Abra seu app autenticador e adicione uma nova conta escaneando este QR. Se não puder escanear, copie a chave manual.",
+        "secretLabel": "Chave manual",
+        "tip": "O código do autenticador muda a cada 30 segundos. Se alguém pedir por telefone, desligue."
+      },
+      "verify": {
+        "title": "Verifique o código",
+        "subtitle": "Digite o código de 6 dígitos mostrado pelo seu app.",
+        "tip": "Após ativar, guarde seus códigos de backup em local seguro fora do celular."
+      }
+    }
+  }
+}

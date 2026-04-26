@@ -1,0 +1,170 @@
+{
+  "cta": {
+    "next": "Continue",
+    "signIn": "Sign in",
+    "skip": "Skip",
+    "create": "Open account",
+    "save": "Save",
+    "verify": "Verify",
+    "done": "Done",
+    "activate": "Activate",
+    "disable": "Disable",
+    "forgot": "Forgot your password?"
+  },
+  "fields": {
+    "nationalId": {
+      "label": "Government ID",
+      "placeholder": "ID / passport number",
+      "help": "5-20 alphanumeric characters."
+    },
+    "firstName": {
+      "label": "First name",
+      "placeholder": "Your first name"
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": "Your last name"
+    },
+    "email": {
+      "label": "Email address",
+      "placeholder": "you@example.com"
+    },
+    "phone": {
+      "label": "Mobile phone",
+      "placeholder": "+1 555 000 0000",
+      "help": "Required for verification."
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Create a strong password",
+      "help": "At least 12 characters. Mix uppercase, numbers and symbols."
+    },
+    "passwordConfirm": {
+      "label": "Confirm password",
+      "placeholder": "Type it again"
+    },
+    "currentPassword": {
+      "label": "Current password",
+      "placeholder": "Your current password"
+    },
+    "mfa": {
+      "label": "Authenticator code",
+      "placeholder": "123456"
+    },
+    "recoveryCode": {
+      "label": "Verification code",
+      "placeholder": "123456"
+    }
+  },
+  "create": {
+    "nationalId": {
+      "title": "Open your SecureBank account",
+      "subtitle": "Let's start by verifying your identity.",
+      "tip": "Your bank will never ask for your password by email, SMS, call or WhatsApp."
+    },
+    "name": {
+      "title": "What's your name?",
+      "subtitle": "We'll use this name on your statements and communications.",
+      "tip": "Use your legal name. Banks compare it with your government ID."
+    },
+    "email": {
+      "title": "Your email address",
+      "subtitle": "We'll send important alerts and security codes here.",
+      "tip": "If you get an email with links to access your bank, don't click them. Always type the URL in your browser."
+    },
+    "phone": {
+      "title": "Your mobile phone",
+      "subtitle": "We'll use it as an extra verification channel.",
+      "tip": "If someone calls saying they're from your bank and asks for codes, hang up and call the number on the back of your card."
+    },
+    "password": {
+      "title": "Create a strong banking password",
+      "subtitle": "At least 12 characters. Don't reuse it anywhere else.",
+      "tip": "A strong, unique banking password protects your savings — never reuse it elsewhere."
+    },
+    "totpScan": {
+      "title": "Set up your second factor",
+      "subtitle": "Scan this code with your authenticator app (Google Authenticator, Authy, 1Password).",
+      "body": "Open your authenticator app and add a new account by scanning this QR. If you can't scan, copy the manual key.",
+      "secretLabel": "Manual key",
+      "tip": "The authenticator code changes every 30 seconds. If anyone asks for it on the phone, hang up."
+    },
+    "totpVerify": {
+      "title": "Verify the code",
+      "subtitle": "Enter the 6-digit code shown by your app.",
+      "tip": "Without this step we can't open the account. 2FA is mandatory because it protects your money."
+    }
+  },
+  "login": {
+    "email": {
+      "title": "Sign in to SecureBank",
+      "subtitle": "Enter your email to continue.",
+      "tip": "Always check that the URL starts with https:// and shows the correct domain before typing your password."
+    },
+    "password": {
+      "title": "Welcome back",
+      "subtitle": "Enter your password.",
+      "tip": "If your password leaked elsewhere and you reuse it here, attackers could drain your account."
+    },
+    "mfa": {
+      "title": "Two-step verification",
+      "subtitle": "Enter the 6-digit code from your authenticator app.",
+      "tip": "The authenticator code changes every 30 seconds. If anyone asks for it on the phone, hang up."
+    },
+    "verify": {
+      "title": "Signed in",
+      "subtitle": "You're now in your practice SecureBank account.",
+      "tip": "Sign out when you're done, especially on shared devices."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirm your current password",
+      "subtitle": "For your security, we ask for it before changing.",
+      "tip": "If you don't remember your password, use \"Forgot your password?\" instead of guessing."
+    },
+    "mfa": {
+      "title": "Two-step verification",
+      "subtitle": "Enter the 6-digit code from your authenticator app.",
+      "tip": "Your bank confirms sensitive changes with 2FA — this prevents attackers with your password from changing it."
+    },
+    "new": {
+      "title": "New password",
+      "subtitle": "You can't reuse previous passwords.",
+      "tip": "A strong, unique banking password protects your savings — never reuse it elsewhere."
+    }
+  },
+  "recover": {
+    "email": {
+      "title": "Recover access",
+      "subtitle": "Enter the email tied to your account.",
+      "tip": "If you receive a recovery email you didn't request, someone may be trying to access your account. Change your password."
+    },
+    "code": {
+      "title": "Check your inbox",
+      "subtitle": "We sent you a 6-digit code. It expires in 10 minutes.",
+      "tip": "Your bank will never ask for your password by email, SMS, call or WhatsApp."
+    }
+  },
+  "totp": {
+    "disable": {
+      "title": "Your bank doesn't allow disabling 2FA",
+      "subtitle": "For your security, banks always require two-step verification.",
+      "tip": "For safety, banks require 2FA always — it protects your money."
+    },
+    "enable": {
+      "scan": {
+        "title": "Set up your second factor",
+        "subtitle": "Scan this code with your authenticator app.",
+        "body": "Open your authenticator app and add a new account by scanning this QR. If you can't scan, copy the manual key.",
+        "secretLabel": "Manual key",
+        "tip": "The authenticator code changes every 30 seconds. If anyone asks for it on the phone, hang up."
+      },
+      "verify": {
+        "title": "Verify the code",
+        "subtitle": "Enter the 6-digit code shown by your app.",
+        "tip": "After enabling it, store your backup codes somewhere safe outside your phone."
+      }
+    }
+  }
+}

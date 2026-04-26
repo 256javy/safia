@@ -1,9 +1,20 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+/**
+ * Progress store — atlas completion only.
+ *
+ * Per VISION.md §6 "Motivation by accomplishment, not by engagement" and §7
+ * "Gamification is not platform-wide", this store tracks whether a lesson or
+ * module has been completed. It does NOT track XP, streaks, levels, or
+ * badges. Those mechanics belong only to Safia Range (opt-in) and live in
+ * a separate store when Range is built.
+ */
+
 export interface LessonProgress {
   completed: boolean;
-  score: number;
+  /** Last quiz score in this lesson, 0..100. Used for local feedback only. */
+  lastScore: number;
   completedAt: string;
 }
 
@@ -13,48 +24,25 @@ export interface ModuleProgress {
 }
 
 export interface ProgressState {
-  xp: number;
-  level: number;
   modules: Record<string, ModuleProgress>;
-  badges: string[];
-  streak: number;
-  lastActivityDate: string;
   completeLesson: (
     moduleSlug: string,
     lessonSlug: string,
-    xpEarned: number,
+    lastScore: number,
   ) => void;
-  earnBadge: (badgeId: string) => void;
-  updateStreak: () => void;
   syncFromServer: (data: Partial<ProgressState>) => void;
   reset: () => void;
-}
-
-function calculateLevel(xp: number): number {
-  return Math.floor(xp / 100) + 1;
-}
-
-function todayISO(): string {
-  return new Date().toISOString().slice(0, 10);
 }
 
 export const useProgressStore = create<ProgressState>()(
   persist(
     (set) => ({
-      xp: 0,
-      level: 1,
       modules: {},
-      badges: [],
-      streak: 0,
-      lastActivityDate: "",
 
-      completeLesson(moduleSlug, lessonSlug, xpEarned) {
+      completeLesson(moduleSlug, lessonSlug, lastScore) {
         set((state) => {
-          const newXp = state.xp + xpEarned;
           const mod = state.modules[moduleSlug] ?? { lessons: {} };
           return {
-            xp: newXp,
-            level: calculateLevel(newXp),
             modules: {
               ...state.modules,
               [moduleSlug]: {
@@ -63,7 +51,7 @@ export const useProgressStore = create<ProgressState>()(
                   ...mod.lessons,
                   [lessonSlug]: {
                     completed: true,
-                    score: xpEarned,
+                    lastScore,
                     completedAt: new Date().toISOString(),
                   },
                 },
@@ -73,54 +61,17 @@ export const useProgressStore = create<ProgressState>()(
         });
       },
 
-      earnBadge(badgeId) {
-        set((state) => {
-          if (state.badges.includes(badgeId)) return state;
-          return { badges: [...state.badges, badgeId] };
-        });
-      },
-
-      updateStreak() {
-        set((state) => {
-          const today = todayISO();
-          if (state.lastActivityDate === today) return state;
-
-          const yesterday = new Date();
-          yesterday.setDate(yesterday.getDate() - 1);
-          const wasYesterday =
-            state.lastActivityDate === yesterday.toISOString().slice(0, 10);
-
-          return {
-            streak: wasYesterday ? state.streak + 1 : 1,
-            lastActivityDate: today,
-          };
-        });
-      },
-
       syncFromServer(data) {
         set((state) => ({ ...state, ...data }));
       },
 
       reset() {
-        set({
-          xp: 0,
-          level: 1,
-          modules: {},
-          badges: [],
-          streak: 0,
-          lastActivityDate: "",
-        });
+        set({ modules: {} });
       },
     }),
     {
       name: "safia-progress",
-      partialize: (state) => ({
-        modules: state.modules,
-        xp: state.xp,
-        badges: state.badges,
-        streak: state.streak,
-        lastActivityDate: state.lastActivityDate,
-      }),
+      partialize: (state) => ({ modules: state.modules }),
     },
   ),
 );

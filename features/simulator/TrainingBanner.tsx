@@ -12,13 +12,14 @@ import { useTranslations } from "next-intl";
 export function TrainingBanner() {
   const t = useTranslations("simulator");
   const bannerRef = useRef<HTMLDivElement>(null);
+  const tamperTitle = t("bannerTamper");
 
   useEffect(() => {
     // Redundancy #3: interval re-check
     const interval = setInterval(() => {
       if (bannerRef.current && !document.body.contains(bannerRef.current)) {
-        // Banner was removed from DOM — force page to show warning
-        document.title = "TRAINING SIMULATION";
+        // Banner was removed from DOM — force page to show warning (localized)
+        document.title = tamperTitle;
       }
       // Ensure data attribute stays on body
       document.body.setAttribute("data-simulator-active", "true");
@@ -30,7 +31,7 @@ export function TrainingBanner() {
       clearInterval(interval);
       document.body.removeAttribute("data-simulator-active");
     };
-  }, []);
+  }, [tamperTitle]);
 
   return (
     <div

@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { useProgressStore } from "@/stores/progress-store";
-import { useSessionStore } from "@/stores/session-store";
 import { usePracticeAccountsStore } from "@/stores/practice-accounts-store";
 import { TrainingBanner } from "./TrainingBanner";
 import { SimulatorTooltip } from "./SimulatorTooltip";
@@ -38,7 +37,6 @@ export function SimulatorShell({ platform, platformLabel, steps, renderChrome }:
   const [showPassword, setShowPassword] = useState(false);
 
   const completeLesson = useProgressStore((s) => s.completeLesson);
-  const setCelebration = useSessionStore((s) => s.setCelebration);
   const validate = usePracticeAccountsStore((s) => s.validate);
   const getAccountsForPlatform = usePracticeAccountsStore((s) => s.getAccountsForPlatform);
 
@@ -94,8 +92,7 @@ export function SimulatorShell({ platform, platformLabel, steps, renderChrome }:
 
       if (isLastStep) {
         setCompleted(true);
-        completeLesson("simulators", platform, 50);
-        setCelebration("50");
+        completeLesson("simulators", platform, 100);
       } else {
         setCurrentStep((s) => s + 1);
         setInputValue("");
@@ -112,7 +109,6 @@ export function SimulatorShell({ platform, platformLabel, steps, renderChrome }:
       validate,
       getAccountsForPlatform,
       completeLesson,
-      setCelebration,
       t,
     ],
   );
@@ -142,7 +138,6 @@ export function SimulatorShell({ platform, platformLabel, steps, renderChrome }:
             <div className="text-5xl mb-4">{"\u{2705}"}</div>
             <h2 className="text-2xl font-bold text-text-primary">{t("completed")}</h2>
             <p className="mt-2 text-text-secondary">{t("completedDesc", { platform: platformLabel })}</p>
-            <p className="mt-2 text-xp font-bold text-lg">{t("xpEarned")}</p>
             <Link
               href="/simulator"
               className="mt-6 inline-flex items-center justify-center rounded-xl border border-accent/20 px-6 py-3 text-sm font-medium text-text-secondary transition-all hover:border-accent/40 hover:text-text-primary"
@@ -167,8 +162,7 @@ export function SimulatorShell({ platform, platformLabel, steps, renderChrome }:
         {/* Progress bar */}
         <div className="mb-8 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-bg-surface">
           <motion.div
-            className="h-full rounded-full"
-            style={{ background: "var(--gradient-xp-bar)" }}
+            className="h-full rounded-full bg-accent"
             animate={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
             transition={{ duration: 0.3 }}
           />

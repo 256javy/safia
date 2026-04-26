@@ -3,12 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { signOut } from "next-auth/react";
-import { useProgressStore } from "@/stores/progress-store";
 
 export function UserMenu() {
   const t = useTranslations("auth");
-  const gt = useTranslations("gamification");
-  const xp = useProgressStore((s) => s.xp);
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -31,7 +28,6 @@ export function UserMenu() {
         <div className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/20 text-xs font-bold text-accent">
           S
         </div>
-        <span className="text-xp text-xs font-semibold">{xp} {gt("xp")}</span>
       </button>
 
       {open && (

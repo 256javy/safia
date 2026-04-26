@@ -6,10 +6,8 @@ import { Link, usePathname } from "@/lib/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const navLinks = [
-  { href: "/courses", labelKey: "nav.courses" },
+  { href: "/accounts", labelKey: "nav.accounts" },
   { href: "/simulator", labelKey: "nav.simulator" },
-  { href: "/roadmap", labelKey: "nav.roadmap" },
-  { href: "/profile", labelKey: "nav.profile" },
 ] as const;
 
 export function Header() {
@@ -50,12 +48,6 @@ export function Header() {
         {/* Right side */}
         <div className="hidden items-center gap-4 md:flex">
           <LanguageSwitcher />
-          <span
-            className="rounded-lg px-4 py-2 text-sm font-semibold text-text-muted cursor-not-allowed border border-accent/10"
-            title="Próximamente"
-          >
-            🔒 {t("signIn")}
-          </span>
         </div>
 
         {/* Mobile hamburger */}
@@ -100,11 +92,8 @@ export function Header() {
               );
             })}
           </nav>
-          <div className="mt-6 flex items-center justify-between">
+          <div className="mt-6 flex items-center">
             <LanguageSwitcher />
-            <span className="rounded-lg px-4 py-2 text-sm font-semibold text-text-muted border border-accent/10">
-              🔒 {t("signIn")}
-            </span>
           </div>
         </div>
       )}

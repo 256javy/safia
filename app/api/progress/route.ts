@@ -4,16 +4,6 @@ import { auth } from "@/lib/auth/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 import type { ModuleProgress } from "@/types/progress";
 
-function calculateXp(progressJson: Record<string, ModuleProgress>): number {
-  let total = 0;
-  for (const mod of Object.values(progressJson)) {
-    if (mod?.quiz_scores && typeof mod.quiz_scores === "object") {
-      total += Object.values(mod.quiz_scores).reduce((a, b) => a + b, 0);
-    }
-  }
-  return total;
-}
-
 function mergeProgress(
   clientProgress: Record<string, ModuleProgress>,
   serverProgress: Record<string, ModuleProgress>,
@@ -31,7 +21,6 @@ function mergeProgress(
     if (!local) { merged[slug] = server; continue; }
     if (!server) { merged[slug] = local; continue; }
 
-    // Both exist — granular merge per spec §3.4
     const completedLessons = [
       ...new Set([...local.completed_lessons, ...server.completed_lessons]),
     ];
@@ -51,7 +40,6 @@ function mergeProgress(
     merged[slug] = {
       completed_lessons: completedLessons,
       quiz_scores: quizScores,
-      xp_earned: Object.values(quizScores).reduce((a, b) => a + b, 0),
       started_at: local.started_at < server.started_at ? local.started_at : server.started_at,
       completed_at: local.completed_at ?? server.completed_at,
     };
@@ -60,7 +48,7 @@ function mergeProgress(
   return merged;
 }
 
-// GET /api/progress — fetch user's progress
+// GET /api/progress — fetch user's completion state
 export async function GET() {
   const session = await auth();
   if (!session?.user?.id) {
@@ -70,7 +58,7 @@ export async function GET() {
   const supabase = createServiceClient();
   const { data, error } = await supabase
     .from("users")
-    .select("xp, progress_json")
+    .select("progress_json")
     .eq("id", session.user.id)
     .single();
 
@@ -83,7 +71,7 @@ export async function GET() {
 
 const progressSchema = z.record(z.string(), z.unknown());
 
-// POST /api/progress — sync progress (merge algorithm per spec §3.4)
+// POST /api/progress — sync completion (merge algorithm per spec §3.4)
 export async function POST(req: NextRequest) {
   const session = await auth();
   if (!session?.user?.id) {
@@ -108,13 +96,12 @@ export async function POST(req: NextRequest) {
   const clientProgress = parsed.data as Record<string, ModuleProgress>;
 
   const merged = mergeProgress(clientProgress, serverProgress);
-  const xp = calculateXp(merged);
 
   const { data, error } = await supabase
     .from("users")
-    .update({ progress_json: merged, xp })
+    .update({ progress_json: merged })
     .eq("id", session.user.id)
-    .select("xp, progress_json")
+    .select("progress_json")
     .single();
 
   if (error) {

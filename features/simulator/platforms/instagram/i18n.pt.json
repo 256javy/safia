@@ -1,0 +1,151 @@
+{
+  "cta": {
+    "next": "Seguinte",
+    "signIn": "Iniciar sessão",
+    "skip": "Ignorar",
+    "create": "Criar conta",
+    "save": "Guardar",
+    "verify": "Verificar",
+    "done": "Pronto",
+    "activate": "Ativar",
+    "disable": "Desativar",
+    "forgot": "Esqueceste a tua palavra-passe?"
+  },
+  "fields": {
+    "email": {
+      "label": "Correio eletrónico",
+      "placeholder": "tucorreio@exemplo.com"
+    },
+    "fullName": {
+      "label": "Nome completo",
+      "placeholder": "O teu nome completo"
+    },
+    "username": {
+      "label": "Nome de utilizador",
+      "placeholder": "o_teu_utilizador",
+      "help": "Apenas minúsculas, números, pontos e sublinhados."
+    },
+    "password": {
+      "label": "Palavra-passe",
+      "placeholder": "Cria uma palavra-passe",
+      "help": "Mínimo de 8 carateres."
+    },
+    "passwordConfirm": {
+      "label": "Confirma a palavra-passe",
+      "placeholder": "Escreve-a novamente"
+    },
+    "currentPassword": {
+      "label": "Palavra-passe atual",
+      "placeholder": "A tua palavra-passe atual"
+    },
+    "birthdate": {
+      "label": "Data de nascimento"
+    },
+    "identity": {
+      "label": "Correio ou utilizador",
+      "placeholder": "O teu correio ou nome de utilizador"
+    },
+    "mfa": {
+      "label": "Código do autenticador",
+      "placeholder": "123456"
+    },
+    "recoveryCode": {
+      "label": "Código de verificação",
+      "placeholder": "123456"
+    }
+  },
+  "create": {
+    "contact": {
+      "title": "Cria uma conta no Instagram",
+      "subtitle": "Vamos enviar um código a este correio para o verificar.",
+      "tip": "Verifica que o domínio é instagram.com — não instagrarn.com nem instagram-login.app."
+    },
+    "name": {
+      "title": "Como te chamas?",
+      "subtitle": "O teu nome pode ficar visível para os teus contactos.",
+      "tip": "Quanta menos informação pessoal partilhares, mais difícil será que alguém te imite."
+    },
+    "username": {
+      "title": "Escolhe um nome de utilizador",
+      "subtitle": "Sugerimos um; podes alterá-lo quando quiseres.",
+      "tip": "O teu nome de utilizador é público; quem queira roubar a tua conta começa por encontrá-lo."
+    },
+    "password": {
+      "title": "Cria uma palavra-passe",
+      "subtitle": "Precisas de pelo menos 8 carateres.",
+      "tip": "Uma palavra-passe forte combinada com 2FA é a melhor proteção contra o roubo de conta."
+    },
+    "birthday": {
+      "title": "Quando é o teu aniversário?",
+      "subtitle": "Esta informação não aparecerá no teu perfil.",
+      "tip": "A tua data real ajuda a recuperar a conta; nunca a partilhes com quem ta peça."
+    }
+  },
+  "login": {
+    "identity": {
+      "title": "Iniciar sessão",
+      "subtitle": "Introduz o teu correio ou nome de utilizador.",
+      "tip": "Se recebeste um link por mensagem, verifica o domínio antes de escrever os teus dados."
+    },
+    "password": {
+      "title": "A tua palavra-passe",
+      "subtitle": "Só tu deves saber qual é.",
+      "tip": "O Instagram nunca te pedirá a palavra-passe por mensagem, correio ou chamada."
+    },
+    "mfa": {
+      "title": "Código de duplo fator",
+      "subtitle": "Abre a tua app de autenticação e introduz o código de 6 dígitos.",
+      "tip": "O código muda a cada 30 segundos; não o partilhes com ninguém."
+    },
+    "verify": {
+      "title": "Sessão iniciada",
+      "subtitle": "Bem-vindo de volta.",
+      "tip": "Se vires um início de sessão que não reconheças, muda a palavra-passe imediatamente."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirma a tua palavra-passe atual",
+      "subtitle": "Para proteger a conta antes da alteração.",
+      "tip": "Muda a palavra-passe se suspeitas que alguém mais a sabe."
+    },
+    "new": {
+      "title": "Nova palavra-passe",
+      "subtitle": "Escolhe uma que não tenhas usado antes nesta conta.",
+      "tip": "Reutilizar palavras-passe antigas transforma uma só fuga em várias falhas."
+    }
+  },
+  "recover": {
+    "identity": {
+      "title": "Recupera a tua conta",
+      "subtitle": "Introduz o teu correio ou nome de utilizador e enviaremos um código.",
+      "tip": "Se o correio não chegar, vê o spam antes de pedir outro código."
+    },
+    "code": {
+      "title": "Introduz o código",
+      "subtitle": "Enviámos um código de 6 dígitos para o teu correio.",
+      "tip": "Nunca partilhes este código por chat, voz ou chamada — apenas escreve-o aqui."
+    }
+  },
+  "totp": {
+    "enable": {
+      "scan": {
+        "title": "Ativa o duplo fator",
+        "subtitle": "Digitaliza este código com a tua app de autenticação.",
+        "body": "Abre o Google Authenticator, Authy ou similar e digitaliza o código. Se não conseguires digitalizar, copia a chave manual.",
+        "secretLabel": "Chave manual",
+        "tip": "Guarda a chave manual num sítio seguro para reativar 2FA se perderes o telemóvel."
+      },
+      "verify": {
+        "title": "Confirma o código",
+        "subtitle": "Introduz o código de 6 dígitos que a tua app mostra.",
+        "tip": "Se o código falhar, verifica que a hora do telemóvel está em automático."
+      }
+    },
+    "disable": {
+      "title": "Desativar 2FA",
+      "subtitle": "Confirma a tua palavra-passe para continuar.",
+      "tip": "Sem 2FA, uma palavra-passe vazada basta para entrar na tua conta."
+    }
+  }
+}

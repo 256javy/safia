@@ -10,32 +10,90 @@
         {
           "slug": "lesson-1",
           "title": "Qué hace una contraseña segura",
-          "order": 1
+          "order": 1,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-2",
           "title": "Cómo crear una frase de contraseña",
-          "order": 2
+          "order": 2,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-3",
           "title": "Gestores de contraseñas — para qué sirven y por qué son seguros",
-          "order": 3
+          "description": "Descubre cómo un gestor de contraseñas puede protegerte sin que tengas que memorizar nada.",
+          "order": 3,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-4",
           "title": "Cómo crear una contraseña maestra fuerte",
-          "order": 4
+          "description": "Aprende a crear la única contraseña que necesitarás recordar: tu contraseña maestra.",
+          "order": 4,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-5",
           "title": "Contraseñas en el trabajo — riesgos de compartirlas",
-          "order": 5
+          "description": "Por qué compartir contraseñas en el trabajo es más peligroso de lo que parece.",
+          "order": 5,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-6",
           "title": "Qué hacer si crees que te hackearon la cuenta",
-          "order": 6
+          "description": "Pasos concretos para recuperar el control si sospechas que alguien entró a tu cuenta.",
+          "order": 6,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         }
       ]
     },
@@ -49,37 +107,107 @@
         {
           "slug": "lesson-1",
           "title": "Cómo reconocer un correo de phishing",
-          "order": 1
+          "description": "Aprende a identificar las señales de alerta en correos electrónicos sospechosos.",
+          "order": 1,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "crisis",
+            "obligation"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-2",
           "title": "URLs sospechosas y dominios falsos",
-          "order": 2
+          "description": "Aprende a leer una dirección web y detectar cuando algo no es lo que parece.",
+          "order": 2,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "crisis",
+            "obligation"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-3",
           "title": "Phishing por WhatsApp y SMS (smishing)",
-          "order": 3
+          "description": "Aprende a reconocer los mensajes de texto y WhatsApp que intentan robarte información o dinero.",
+          "order": 3,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "crisis",
+            "obligation"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-4",
           "title": "Llamadas falsas de soporte técnico (vishing)",
-          "order": 4
+          "description": "Aprende a reconocer y cortar las llamadas de estafadores que se hacen pasar por técnicos o bancos.",
+          "order": 4,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "crisis",
+            "obligation"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-5",
           "title": "Phishing en redes sociales — mensajes de 'amigos'",
-          "order": 5
+          "description": "Aprende por qué los mensajes de personas conocidas en redes sociales también pueden ser trampas.",
+          "order": 5,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "crisis",
+            "obligation"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-6",
           "title": "Cómo reportar un intento de phishing",
-          "order": 6
+          "description": "Aprende a reportar estafas para protegerte y ayudar a que otros no caigan en la misma trampa.",
+          "order": 6,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "crisis",
+            "obligation"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-7",
           "title": "Simulacro mental — ¿caerías en esta trampa?",
-          "order": 7
+          "description": "Pon a prueba lo que aprendiste con escenarios reales de phishing y analiza cada señal de alerta.",
+          "order": 7,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "crisis",
+            "obligation"
+          ],
+          "assumes": []
         }
       ]
     },
@@ -93,27 +221,77 @@
         {
           "slug": "lesson-1",
           "title": "Qué es la autenticación de dos factores",
-          "order": 1
+          "description": "Entiende por qué una sola contraseña ya no es suficiente y cómo el doble factor te protege.",
+          "order": 1,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-2",
           "title": "Apps autenticadoras vs SMS: cuál elegir",
-          "order": 2
+          "description": "Compara los métodos de 2FA y aprende a configurar una app autenticadora paso a paso.",
+          "order": 2,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-3",
           "title": "Llaves de seguridad físicas (YubiKey y similares)",
-          "order": 3
+          "description": "Conoce el método de verificación más seguro del mundo: una llave física que conectas a tu dispositivo.",
+          "order": 3,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-4",
           "title": "Qué hacer si pierdes tu segundo factor",
-          "order": 4
+          "description": "Aprende cómo prepararte y cómo recuperar el acceso si pierdes el teléfono u otro método de verificación.",
+          "order": 4,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-5",
           "title": "MFA en el trabajo — por qué tu empresa lo exige",
-          "order": 5
+          "description": "Entiende por qué las empresas implementan autenticación multifactor y cómo protege a todos.",
+          "order": 5,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         }
       ]
     },
@@ -127,27 +305,72 @@
         {
           "slug": "lesson-1",
           "title": "Qué son los simuladores de phishing y para qué sirven",
-          "order": 1
+          "description": "Descubre cómo los simuladores de phishing te entrenan para reconocer ataques reales antes de que ocurran.",
+          "order": 1,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-2",
           "title": "Cómo funciona un ataque de robo de credenciales",
-          "order": 2
+          "description": "Entiende exactamente qué pasa técnicamente cuando alguien roba tu usuario y contraseña con una web falsa.",
+          "order": 2,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-3",
           "title": "Señales de alerta en pantallas de inicio de sesión falsas",
-          "order": 3
+          "description": "Aprende a identificar las diferencias clave entre una pantalla de login real y una falsa.",
+          "order": 3,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-4",
           "title": "Practica con el simulador — Google",
-          "order": 4
+          "description": "Entrena tu ojo para distinguir la pantalla de inicio de sesión real de Google de una imitación.",
+          "order": 4,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-5",
           "title": "Practica con el simulador — Banco",
-          "order": 5
+          "description": "Aprende a identificar páginas bancarias falsas con los mismos criterios que usan los expertos en seguridad.",
+          "order": 5,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "curiosity"
+          ],
+          "assumes": []
         }
       ]
     },
@@ -161,27 +384,77 @@
         {
           "slug": "lesson-1",
           "title": "Los peligros del WiFi público",
-          "order": 1
+          "description": "Entiende por qué conectarte al WiFi del café o el centro comercial puede ser más peligroso de lo que crees.",
+          "order": 1,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-2",
           "title": "Cómo funciona un ataque 'man in the middle'",
-          "order": 2
+          "description": "Entiende en términos simples cómo los atacantes se interponen entre tú e internet para espiar tu tráfico.",
+          "order": 2,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-3",
           "title": "VPN — qué es y cuándo usarla",
-          "order": 3
+          "description": "Desmitifica las VPN: qué hacen, qué no hacen, cuándo vale la pena usarlas y cómo elegir una.",
+          "order": 3,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-4",
           "title": "Cómo proteger tu red WiFi en casa",
-          "order": 4
+          "description": "Pasos concretos para asegurar el router de casa y evitar que intrusos accedan a tu red.",
+          "order": 4,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-5",
           "title": "WiFi en hoteles y aeropuertos — guía de supervivencia",
-          "order": 5
+          "description": "Guía práctica para usar internet de forma segura cuando viajas, sin paranoias pero sin descuidos.",
+          "order": 5,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         }
       ]
     },
@@ -195,32 +468,92 @@
         {
           "slug": "lesson-1",
           "title": "Qué información nunca debes publicar en redes sociales",
-          "order": 1
+          "description": "Aprende qué datos personales exponen demasiado y cómo los atacantes los usan contra ti.",
+          "order": 1,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "care",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-2",
           "title": "Configuración de privacidad en Instagram y Facebook",
-          "order": 2
+          "description": "Guía paso a paso para ajustar la privacidad en las redes sociales más usadas y controlar quién ve qué.",
+          "order": 2,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "care",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-3",
           "title": "Cuentas falsas e ingeniería social",
-          "order": 3
+          "description": "Aprende a detectar perfiles falsos y cómo los estafadores usan la confianza para manipularte.",
+          "order": 3,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "care",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-4",
           "title": "Estafas comunes en redes sociales",
-          "order": 4
+          "description": "Conoce las estafas más frecuentes en redes sociales para no caer en ellas.",
+          "order": 4,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "care",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-5",
           "title": "Niños y redes sociales — conversaciones importantes",
-          "order": 5
+          "description": "Guía para padres sobre cómo hablar con sus hijos de los riesgos en redes sociales y protegerlos.",
+          "order": 5,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "care",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-6",
           "title": "Cómo limpiar tu huella digital",
-          "order": 6
+          "description": "Aprende a reducir tu presencia online y eliminar datos personales que no quieres que estén disponibles.",
+          "order": 6,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "care",
+            "curiosity"
+          ],
+          "assumes": []
         }
       ]
     },
@@ -234,32 +567,92 @@
         {
           "slug": "lesson-1",
           "title": "Por qué un gestor de contraseñas cambia tu vida digital",
-          "order": 1
+          "description": "Descubre cómo un gestor de contraseñas resuelve el problema de contraseñas de una vez por todas.",
+          "order": 1,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-2",
           "title": "Cómo elegir un gestor de contraseñas",
-          "order": 2
+          "description": "Compara las opciones disponibles y elige el gestor que mejor se adapta a tu situación.",
+          "order": 2,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-3",
           "title": "Primeros pasos con tu gestor de contraseñas",
-          "order": 3
+          "description": "Guía práctica para instalar, configurar y empezar a usar tu gestor de contraseñas desde cero.",
+          "order": 3,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-4",
           "title": "Importar y organizar tus contraseñas existentes",
-          "order": 4
+          "description": "Aprende a migrar tus contraseñas actuales al gestor de forma segura y ordenada.",
+          "order": 4,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-5",
           "title": "Usar el gestor en el móvil",
-          "order": 5
+          "description": "Configura y usa tu gestor de contraseñas en el teléfono para tener acceso seguro desde cualquier lugar.",
+          "order": 5,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-6",
           "title": "Qué pasa si el gestor es hackeado",
-          "order": 6
+          "description": "Entiende por qué una brecha en el gestor de contraseñas no significa que tus contraseñas estén comprometidas.",
+          "order": 6,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         }
       ]
     },
@@ -273,30 +666,80 @@
         {
           "slug": "lesson-1",
           "title": "Actualizaciones de seguridad — por qué no puedes ignorarlas",
-          "order": 1
+          "description": "Entiende por qué las actualizaciones de sistema y apps son críticas para tu seguridad y por qué no debes retrasarlas.",
+          "order": 1,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-2",
           "title": "Antivirus — qué hace y cuáles son confiables",
-          "order": 2
+          "description": "Desmitifica el antivirus: qué protección real ofrece, cuándo necesitas uno y cuáles son de confianza.",
+          "order": 2,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-3",
           "title": "Bloqueo de pantalla y cifrado del dispositivo",
-          "order": 3
+          "description": "Aprende por qué el bloqueo de pantalla y el cifrado son tu primera línea de defensa si pierdes el dispositivo.",
+          "order": 3,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-4",
           "title": "Permisos de aplicaciones — qué les das acceso",
-          "order": 4
+          "description": "Aprende a controlar qué datos de tu teléfono pueden acceder las aplicaciones y por qué importa.",
+          "order": 4,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         },
         {
           "slug": "lesson-5",
           "title": "Qué hacer si te roban o pierdes el teléfono",
-          "order": 5
+          "description": "Plan de acción paso a paso para proteger tus datos y cuentas si tu teléfono desaparece.",
+          "order": 5,
+          "locale": "es",
+          "last_reviewed": "2026-04-19",
+          "author": "256javy",
+          "steward": "256javy",
+          "audience": [
+            "obligation",
+            "curiosity"
+          ],
+          "assumes": []
         }
       ]
     }
   ],
-  "generatedAt": "2026-04-16T02:45:17.467Z"
+  "generatedAt": "2026-04-19T20:59:21.712Z"
 }

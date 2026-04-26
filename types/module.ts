@@ -13,7 +13,6 @@ export interface ModuleMeta {
   icon: string;
   difficulty: Difficulty;
   estimatedMinutes: number;
-  xpTotal: number;
   prerequisites: string[];
   lessons: ModuleLesson[];
 }

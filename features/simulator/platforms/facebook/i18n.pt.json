@@ -1,0 +1,130 @@
+{
+  "cta": {
+    "next": "Avançar",
+    "signIn": "Entrar",
+    "skip": "Pular",
+    "create": "Cadastrar-me",
+    "save": "Salvar",
+    "verify": "Verificar",
+    "done": "Pronto",
+    "activate": "Ativar",
+    "disable": "Desativar",
+    "forgot": "Esqueceu a senha?"
+  },
+  "fields": {
+    "firstName": { "label": "Nome", "placeholder": "Seu nome" },
+    "lastName": { "label": "Sobrenome", "placeholder": "Seu sobrenome" },
+    "email": { "label": "E-mail", "placeholder": "voce@exemplo.com" },
+    "password": {
+      "label": "Senha",
+      "placeholder": "Crie uma senha",
+      "help": "Mínimo de 8 caracteres. Misture letras, números e símbolos."
+    },
+    "passwordConfirm": { "label": "Confirme a senha", "placeholder": "Digite novamente" },
+    "currentPassword": { "label": "Senha atual", "placeholder": "Sua senha atual" },
+    "birthdate": { "label": "Data de nascimento" },
+    "gender": {
+      "label": "Gênero",
+      "female": "Mulher",
+      "male": "Homem",
+      "other": "Personalizado",
+      "prefer_not": "Prefiro não dizer"
+    },
+    "mfa": { "label": "Código do autenticador", "placeholder": "123456" },
+    "recoveryCode": { "label": "Código de verificação", "placeholder": "123456" }
+  },
+  "create": {
+    "name": {
+      "title": "Criar uma conta nova",
+      "subtitle": "É rápido e fácil.",
+      "tip": "Use seu nome real só se quiser que pessoas que te conhecem possam te encontrar."
+    },
+    "contact": {
+      "title": "Qual é o seu e-mail?",
+      "subtitle": "Vamos usá-lo para entrar e recuperar a conta.",
+      "tip": "Escolha um e-mail só seu. Se perder esse e-mail, perde a conta."
+    },
+    "password": {
+      "title": "Crie uma senha",
+      "subtitle": "Que seja difícil de adivinhar e não use em nenhum outro lugar.",
+      "tip": "Uma senha única por conta evita que um vazamento em outro site afete também esta."
+    },
+    "birthday": {
+      "title": "Quando você nasceu?",
+      "subtitle": "Por que pedimos sua data de nascimento.",
+      "tip": "Uma data real ajuda a recuperar a conta se ela for roubada, mas não a deixe pública no seu perfil."
+    },
+    "gender": {
+      "title": "Qual é o seu gênero?",
+      "subtitle": "Você pode mudar quem vê isso depois.",
+      "tip": "Compartilhe dados pessoais só com serviços de confiança e revise sempre quem pode vê-los."
+    }
+  },
+  "login": {
+    "email": {
+      "title": "Entrar no Facebook",
+      "subtitle": "Digite seu e-mail para continuar.",
+      "tip": "Confira a URL antes de digitar seu e-mail: facebook.com, sem letras estranhas nem traços extras."
+    },
+    "password": {
+      "title": "Bem-vindo de volta",
+      "subtitle": "Digite sua senha.",
+      "tip": "O Facebook nunca pede sua senha por mensagem ou e-mail. Se alguém pedir, é phishing."
+    },
+    "mfa": {
+      "title": "Verificação em duas etapas",
+      "subtitle": "Digite o código do seu app autenticador.",
+      "tip": "O código muda a cada 30 segundos e só existe no seu celular. Nunca compartilhe com ninguém."
+    },
+    "verify": {
+      "title": "Você entrou!",
+      "subtitle": "Sua sessão está ativa neste dispositivo.",
+      "tip": "Se entrou em um aparelho emprestado, encerre a sessão antes de sair."
+    }
+  },
+  "change": {
+    "current": {
+      "title": "Confirme que é você",
+      "subtitle": "Digite sua senha atual para continuar.",
+      "tip": "Se não lembra a senha atual, volte e use «Esqueceu a senha?» em vez de adivinhar."
+    },
+    "new": {
+      "title": "Crie uma senha nova",
+      "subtitle": "Escolha algo único que ainda não usou.",
+      "tip": "Troque a senha assim que suspeitar que outra pessoa a conhece."
+    }
+  },
+  "recover": {
+    "email": {
+      "title": "Recuperar sua conta",
+      "subtitle": "Digite o e-mail vinculado à conta.",
+      "tip": "O Facebook também permite recuperar a conta com amigos de confiança, se você configurou isso antes."
+    },
+    "code": {
+      "title": "Digite o código",
+      "subtitle": "Enviamos um código de 6 dígitos ao seu e-mail.",
+      "tip": "Se receber um código sem ter pedido, alguém está tentando entrar. Troque a senha."
+    }
+  },
+  "totp": {
+    "enable": {
+      "scan": {
+        "title": "Ative a verificação em duas etapas",
+        "subtitle": "Escaneie o código com seu app autenticador.",
+        "body": "Abra seu app autenticador e escaneie o código. Se não conseguir, copie a chave manualmente.",
+        "secretLabel": "Chave de configuração",
+        "tip": "A verificação em duas etapas é a melhor proteção contra roubo de conta."
+      },
+      "verify": {
+        "title": "Confirme o código",
+        "subtitle": "Digite o código de 6 dígitos exibido pelo app.",
+        "tip": "Se o app mostra um código diferente a cada vez, está funcionando direito."
+      }
+    },
+    "disable": {
+      "title": "Desativar verificação em duas etapas",
+      "subtitle": "Sua conta ficará menos protegida. Confirme com sua senha.",
+      "tip": "Só desative se for trocar de método. Sem 2FA, uma senha vazada basta para perder a conta."
+    }
+  }
+}

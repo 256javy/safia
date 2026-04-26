@@ -55,7 +55,6 @@ export default function ModulesPreview() {
                   <span className={`px-2 py-0.5 rounded-full font-medium ${difficultyColors[difficulty] ?? ""}`}>
                     {difficulty}
                   </span>
-                  <span className="text-xp font-semibold ml-auto">+{t(`${key}.xp`)} XP</span>
                 </div>
               </motion.article>
             );

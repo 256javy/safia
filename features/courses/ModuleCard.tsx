@@ -67,7 +67,6 @@ export function ModuleCard({ module }: ModuleCardProps) {
 
       <div className="flex items-center gap-4 text-xs text-text-muted">
         <span>⏱ {module.estimatedMinutes} min</span>
-        <span>⭐ {module.xpTotal} XP</span>
         <span>
           📖 {completedLessons}/{module.lessons.length} {t("lessons")}
         </span>
@@ -76,10 +75,9 @@ export function ModuleCard({ module }: ModuleCardProps) {
       {status === "in-progress" && (
         <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-bg-elevated">
           <div
-            className="h-full rounded-full"
+            className="h-full rounded-full bg-accent"
             style={{
               width: `${(completedLessons / module.lessons.length) * 100}%`,
-              background: "var(--gradient-xp-bar)",
             }}
           />
         </div>

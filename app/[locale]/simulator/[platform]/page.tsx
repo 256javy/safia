@@ -1,27 +1,26 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { PLATFORMS } from "@/features/simulator/platforms";
-import { SimulatorClient } from "./client";
+import { PLATFORM_IDS } from "@/features/simulator/platforms/registry";
+import type { Platform } from "@/stores/accounts-store";
+import { PlatformHubClient } from "./client";
 
 type Props = {
   params: Promise<{ platform: string; locale: string }>;
 };
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { platform } = await params;
-  if (!(platform in PLATFORMS)) return {};
+  if (!PLATFORM_IDS.includes(platform as Platform)) return {};
   return {
-    title: `Simulator: ${platform} — Safia`,
+    title: `Simulador: ${platform} — Safia`,
     robots: { index: false, follow: false },
   };
 }
 
-export function generateStaticParams() {
-  return Object.keys(PLATFORMS).map((platform) => ({ platform }));
-}
-
-export default async function SimulatorPage({ params }: Props) {
+export default async function PlatformHubPage({ params }: Props) {
   const { platform } = await params;
-  if (!(platform in PLATFORMS)) notFound();
-  return <SimulatorClient platform={platform} />;
+  if (!PLATFORM_IDS.includes(platform as Platform)) notFound();
+  return <PlatformHubClient platform={platform as Platform} />;
 }

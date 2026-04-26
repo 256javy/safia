@@ -5,6 +5,15 @@ import { Link } from "@/lib/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useProgressStore } from "@/stores/progress-store";
 import { Quiz, type QuizQuestion } from "./Quiz";
+import { LastReviewed } from "./LastReviewed";
+import { FreshnessBanner } from "./FreshnessBanner";
+import { PrerequisitesBlock } from "./PrerequisitesBlock";
+
+interface Prereq {
+  slug: string;
+  title?: string;
+  moduleSlug?: string;
+}
 
 interface LessonViewerProps {
   moduleSlug: string;
@@ -15,6 +24,8 @@ interface LessonViewerProps {
   quiz?: QuizQuestion[];
   prevLesson?: { slug: string; title: string } | null;
   nextLesson?: { slug: string; title: string } | null;
+  lastReviewed?: string;
+  prereqs?: Prereq[];
 }
 
 export function LessonViewer({
@@ -26,19 +37,20 @@ export function LessonViewer({
   quiz,
   prevLesson,
   nextLesson,
+  lastReviewed,
+  prereqs = [],
 }: LessonViewerProps) {
   const t = useTranslations("courses");
-  const { completeLesson, updateStreak, modules } = useProgressStore();
+  const { completeLesson, modules } = useProgressStore();
 
   const isCompleted =
     modules[moduleSlug]?.lessons[lessonSlug]?.completed ?? false;
 
   function handleQuizComplete(score: number) {
-    // XP = score (0-100), already validated server-side on sync
     completeLesson(moduleSlug, lessonSlug, score);
-    updateStreak();
 
-    // Sync to server
+    // Sync completion to server for cross-device continuity (authenticated users
+    // only — guests live in localStorage). No XP, no streaks — see VISION §6/§7.
     fetch("/api/progress", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -49,14 +61,13 @@ export function LessonViewer({
             .map(([slug]) => slug)
             .concat(lessonSlug),
           quiz_scores: {
-            ...(Object.fromEntries(
+            ...Object.fromEntries(
               Object.entries(modules[moduleSlug]?.lessons ?? {}).map(
-                ([slug, l]) => [slug, l.score],
+                ([slug, l]) => [slug, l.lastScore],
               ),
-            )),
+            ),
             [lessonSlug]: score,
           },
-          xp_earned: 0, // Server recalculates
           started_at: new Date().toISOString(),
         },
       }),
@@ -90,8 +101,14 @@ export function LessonViewer({
         {lessonTitle}
       </h1>
 
+      {lastReviewed && <FreshnessBanner lastReviewed={lastReviewed} />}
+
+      <PrerequisitesBlock prereqs={prereqs} />
+
       {/* MDX content */}
       <article className="prose-safia">{content}</article>
+
+      {lastReviewed && <LastReviewed date={lastReviewed} />}
 
       {/* Quiz */}
       {quiz && quiz.length > 0 && !isCompleted && (

@@ -7,3 +7,4 @@ tsconfig.tsbuildinfo
 # Claude Code
 .claude/hooks/*.log
 .claude/settings.local.json
+.gstack/
