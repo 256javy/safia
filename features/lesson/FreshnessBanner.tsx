@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useNow, useTranslations } from "next-intl";
 
 interface Props {
   lastReviewed: string; // ISO YYYY-MM-DD
@@ -21,11 +21,12 @@ const ARCHIVED_AFTER_MS = 547 * 24 * 60 * 60 * 1000; // ~18 months
  */
 export function FreshnessBanner({ lastReviewed }: Props) {
   const t = useTranslations("lesson");
+  const now = useNow();
 
   const parsed = new Date(`${lastReviewed}T00:00:00Z`);
   if (Number.isNaN(parsed.getTime())) return null;
 
-  const age = Date.now() - parsed.getTime();
+  const age = now.getTime() - parsed.getTime();
   if (age < STALE_AFTER_MS) return null;
 
   const archived = age >= ARCHIVED_AFTER_MS;

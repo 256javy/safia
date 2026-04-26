@@ -41,6 +41,12 @@ interface DiscoveryResult {
   total_repos: number;
 }
 
+function getErrorCode(error: unknown): string | undefined {
+  return typeof error === "object" && error !== null && "code" in error && typeof error.code === "string"
+    ? error.code
+    : undefined;
+}
+
 // ── CLI parsing ────────────────────────────────────────────────────────────
 
 function printUsage(): void {
@@ -167,10 +173,10 @@ function getGitRemote(cwd: string): string | null {
       stdio: ["pipe", "pipe", "pipe"],
     }).trim();
     return remote || null;
-  } catch (err: any) {
+  } catch (err: unknown) {
     // Expected: no remote configured, repo not found, git not installed
-    if (err?.status !== undefined) return null; // non-zero exit from git
-    if (err?.code === 'ENOENT') return null;    // git binary not found
+    if (typeof err === "object" && err !== null && "status" in err && err.status !== undefined) return null;
+    if (getErrorCode(err) === "ENOENT") return null;    // git binary not found
     throw err;
   }
 }
@@ -186,8 +192,9 @@ function scanClaudeCode(since: Date): Session[] {
   let dirs: string[];
   try {
     dirs = readdirSync(projectsDir);
-  } catch (err: any) {
-    if (err?.code === 'ENOENT' || err?.code === 'EACCES') return [];
+  } catch (err: unknown) {
+    const code = getErrorCode(err);
+    if (code === "ENOENT" || code === "EACCES") return [];
     throw err;
   }
 
@@ -213,23 +220,25 @@ function scanClaudeCode(since: Date): Session[] {
     const hasRecentFile = jsonlFiles.some((f) => {
       try {
         return statSync(join(dirPath, f)).mtime >= since;
-      } catch (err: any) {
-        if (err?.code === 'ENOENT' || err?.code === 'EACCES') return false;
+      } catch (err: unknown) {
+        const code = getErrorCode(err);
+        if (code === "ENOENT" || code === "EACCES") return false;
         throw err;
       }
     });
     if (!hasRecentFile) continue;
 
     // Resolve cwd
-    let cwd = resolveClaudeCodeCwd(dirPath, dirName, jsonlFiles);
+    const cwd = resolveClaudeCodeCwd(dirPath, dirName, jsonlFiles);
     if (!cwd) continue;
 
     // Count only JSONL files modified within the window as sessions
     const recentFiles = jsonlFiles.filter((f) => {
       try {
         return statSync(join(dirPath, f)).mtime >= since;
-      } catch (err: any) {
-        if (err?.code === 'ENOENT' || err?.code === 'EACCES') return false;
+      } catch (err: unknown) {
+        const code = getErrorCode(err);
+        if (code === "ENOENT" || code === "EACCES") return false;
         throw err;
       }
     });
@@ -257,8 +266,9 @@ function resolveClaudeCodeCwd(
     .map((f) => {
       try {
         return { name: f, mtime: statSync(join(dirPath, f)).mtime.getTime() };
-      } catch (err: any) {
-        if (err?.code === 'ENOENT' || err?.code === 'EACCES') return null;
+      } catch (err: unknown) {
+        const code = getErrorCode(err);
+        if (code === "ENOENT" || code === "EACCES") return null;
         throw err;
       }
     })
@@ -368,7 +378,7 @@ function scanGemini(since: Date): Session[] {
 
   // Load projects.json for path mapping
   const projectsPath = join(homedir(), ".gemini", "projects.json");
-  let projectsMap: Record<string, string> = {}; // name → path
+  const projectsMap: Record<string, string> = {}; // name → path
   if (existsSync(projectsPath)) {
     try {
       const data = JSON.parse(readFileSync(projectsPath, { encoding: "utf-8" }));
@@ -388,8 +398,9 @@ function scanGemini(since: Date): Session[] {
   let projectDirs: string[];
   try {
     projectDirs = readdirSync(tmpDir);
-  } catch (err: any) {
-    if (err?.code === 'ENOENT' || err?.code === 'EACCES') return [];
+  } catch (err: unknown) {
+    const code = getErrorCode(err);
+    if (code === "ENOENT" || code === "EACCES") return [];
     throw err;
   }
 

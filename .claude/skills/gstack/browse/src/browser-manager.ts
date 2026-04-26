@@ -15,12 +15,24 @@
  *   restores state. Falls back to clean slate on any failure.
  */
 
+import * as fs from 'fs';
+import * as path from 'path';
 import { chromium, type Browser, type BrowserContext, type BrowserContextOptions, type Page, type Locator, type Cookie } from 'playwright';
 import { addConsoleEntry, addNetworkEntry, addDialogEntry, networkBuffer, type DialogEntry } from './buffers';
 import { validateNavigationUrl } from './url-validation';
 import { TabSession, type RefEntry } from './tab-session';
 
 export type { RefEntry };
+
+function getErrorCode(error: unknown): string | undefined {
+  return typeof error === 'object' && error !== null && 'code' in error && typeof error.code === 'string'
+    ? error.code
+    : undefined;
+}
+
+function getErrorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
 
 // Re-export TabSession for consumers
 export { TabSession };
@@ -131,8 +143,6 @@ export class BrowserManager {
    * Checks: repo root /extension, global install, dev install.
    */
   private findExtensionPath(): string | null {
-    const fs = require('fs');
-    const path = require('path');
     const candidates = [
       // Explicit override via env var (used by GStack Browser.app bundle)
       process.env.BROWSE_EXTENSIONS_DIR || '',
@@ -156,8 +166,9 @@ export class BrowserManager {
         if (fs.existsSync(path.join(candidate, 'manifest.json'))) {
           return candidate;
         }
-      } catch (err: any) {
-        if (err?.code !== 'ENOENT' && err?.code !== 'EACCES') throw err;
+      } catch (err: unknown) {
+        const code = getErrorCode(err);
+        if (code !== 'ENOENT' && code !== 'EACCES') throw err;
       }
     }
     return null;
@@ -264,15 +275,13 @@ export class BrowserManager {
       // Write to ~/.gstack/.auth.json (not the extension dir, which may be read-only
       // in .app bundles and breaks codesigning).
       if (authToken) {
-        const fs = require('fs');
-        const path = require('path');
         const gstackDir = path.join(process.env.HOME || '/tmp', '.gstack');
         fs.mkdirSync(gstackDir, { recursive: true });
         const authFile = path.join(gstackDir, '.auth.json');
         try {
           fs.writeFileSync(authFile, JSON.stringify({ token: authToken, port: this.serverPort || 34567 }), { mode: 0o600 });
-        } catch (err: any) {
-          console.warn(`[browse] Could not write .auth.json: ${err.message}`);
+        } catch (err: unknown) {
+          console.warn(`[browse] Could not write .auth.json: ${getErrorMessage(err)}`);
         }
       }
     }
@@ -281,8 +290,6 @@ export class BrowserManager {
     // Extensions REQUIRE launchPersistentContext (not launch + newContext).
     // Real Chrome (executablePath/channel) silently blocks --load-extension,
     // so we use Playwright's bundled Chromium which reliably loads extensions.
-    const fs = require('fs');
-    const path = require('path');
     const userDataDir = path.join(process.env.HOME || '/tmp', '.gstack', 'chromium-profile');
     fs.mkdirSync(userDataDir, { recursive: true });
 
@@ -322,14 +329,16 @@ export class BrowserManager {
           const destIcon = path.join(chromeResources, origIcon);
           try {
             fs.copyFileSync(iconSrc, destIcon);
-          } catch (err: any) {
-            if (err?.code !== 'ENOENT' && err?.code !== 'EACCES') throw err;
+          } catch (err: unknown) {
+            const code = getErrorCode(err);
+            if (code !== 'ENOENT' && code !== 'EACCES') throw err;
           }
         }
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       // Non-fatal: app name stays as Chrome for Testing (ENOENT/EACCES expected)
-      if (err?.code !== 'ENOENT' && err?.code !== 'EACCES') throw err;
+      const code = getErrorCode(err);
+      if (code !== 'ENOENT' && code !== 'EACCES') throw err;
     }
 
     // Build custom user agent: keep Chrome version for site compatibility,
@@ -385,9 +394,13 @@ export class BrowserManager {
             { name: 'Chrome PDF Viewer', filename: 'internal-pdf-viewer', description: '' },
             { name: 'Chromium PDF Viewer', filename: 'internal-pdf-viewer', description: '' },
           ];
-          (plugins as any).namedItem = (name: string) => plugins.find(p => p.name === name) || null;
-          (plugins as any).refresh = () => {};
-          return plugins;
+          const pluginArray = plugins as typeof plugins & {
+            namedItem: (name: string) => (typeof plugins)[number] | null;
+            refresh: () => void;
+          };
+          pluginArray.namedItem = (name: string) => plugins.find(p => p.name === name) || null;
+          pluginArray.refresh = () => {};
+          return pluginArray;
         },
       });
 
@@ -402,8 +415,8 @@ export class BrowserManager {
         for (const key of Object.keys(window)) {
           if (key.startsWith('cdc_') || key.startsWith('__webdriver')) {
             try {
-              delete (window as any)[key];
-            } catch (e: any) {
+              delete (window as Record<string, unknown>)[key];
+            } catch (e: unknown) {
               if (!(e instanceof TypeError)) throw e;
             }
           }
@@ -417,7 +430,10 @@ export class BrowserManager {
       // (automation browsers return 'denied' which is a fingerprint)
       const originalQuery = window.navigator.permissions?.query;
       if (originalQuery) {
-        (window.navigator.permissions as any).query = (params: any) => {
+        const permissions = window.navigator.permissions as PermissionStatus['__proto__'] & {
+          query: (params: PermissionDescriptor) => Promise<PermissionStatus>;
+        };
+        permissions.query = (params: PermissionDescriptor) => {
           if (params.name === 'notifications') {
             return Promise.resolve({ state: 'prompt', onchange: null } as PermissionStatus);
           }
@@ -646,7 +662,7 @@ export class BrowserManager {
     try {
       const u = new URL(activeUrl);
       activeOriginPath = u.origin + u.pathname;
-    } catch (err: any) {
+    } catch (err: unknown) {
       if (!(err instanceof TypeError)) throw err;
     }
 
@@ -665,7 +681,7 @@ export class BrowserManager {
             if (pu.origin + pu.pathname === activeOriginPath) {
               fuzzyId = id;
             }
-          } catch (err: any) {
+          } catch (err: unknown) {
             if (!(err instanceof TypeError)) throw err;
           }
         }
@@ -945,8 +961,8 @@ export class BrowserManager {
         // alone would restore the DOM but lose the replay metadata.
         try {
           await newSession.setTabContent(saved.loadedHtml, { waitUntil: saved.loadedHtmlWaitUntil });
-        } catch (err: any) {
-          console.warn(`[browse] Failed to replay loadedHtml for tab ${id}: ${err.message}`);
+        } catch (err: unknown) {
+          console.warn(`[browse] Failed to replay loadedHtml for tab ${id}: ${getErrorMessage(err)}`);
         }
       } else if (saved.url) {
         // Validate the saved URL before navigating — the state file is user-writable and
@@ -955,8 +971,8 @@ export class BrowserManager {
         let normalizedUrl: string;
         try {
           normalizedUrl = await validateNavigationUrl(saved.url);
-        } catch (err: any) {
-          console.warn(`[browse] Skipping invalid URL in state file: ${saved.url} — ${err.message}`);
+        } catch (err: unknown) {
+          console.warn(`[browse] Skipping invalid URL in state file: ${saved.url} — ${getErrorMessage(err)}`);
           continue;
         }
         await page.goto(normalizedUrl, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() => {});
@@ -1144,8 +1160,6 @@ export class BrowserManager {
     //    Uses launchPersistentContext so the extension auto-loads.
     let newContext: BrowserContext;
     try {
-      const fs = require('fs');
-      const path = require('path');
       const extensionPath = this.findExtensionPath();
       const launchArgs = ['--hide-crash-restore-bubble'];
       if (extensionPath) {

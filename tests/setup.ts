@@ -1,4 +1,5 @@
 import "@testing-library/jest-dom/vitest";
+import * as React from "react";
 import { vi } from "vitest";
 import { webcrypto } from "node:crypto";
 
@@ -63,7 +64,6 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("@/lib/i18n/navigation", () => {
-  const React = require("react");
   return {
     Link: ({ href, children, ...rest }: { href: string; children: React.ReactNode }) =>
       React.createElement("a", { href, ...rest }, children),
