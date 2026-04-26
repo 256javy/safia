@@ -1,9 +1,9 @@
 import { zxcvbn, zxcvbnOptions } from "@zxcvbn-ts/core";
-import zxcvbnCommonPackage from "@zxcvbn-ts/language-common";
+import { dictionary, adjacencyGraphs } from "@zxcvbn-ts/language-common";
 
 zxcvbnOptions.setOptions({
-  dictionary: { ...zxcvbnCommonPackage.dictionary },
-  graphs: zxcvbnCommonPackage.adjacencyGraphs,
+  dictionary: { ...dictionary },
+  graphs: adjacencyGraphs,
 });
 
 const SALT_BYTES = 16;
