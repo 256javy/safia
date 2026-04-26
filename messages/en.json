@@ -14,10 +14,8 @@
     "learnMore": "Learn more",
     "signIn": "Sign in",
     "nav": {
-      "courses": "Courses",
-      "simulator": "Simulators",
-      "roadmap": "Roadmap",
-      "profile": "Profile"
+      "accounts": "My accounts",
+      "simulator": "Simulators"
     }
   },
   "landing": {
@@ -156,11 +154,15 @@
     "completedDesc": "You completed the {platform} simulator.",
     "backToSimulators": "Back to simulators",
     "platforms": {
-      "google": "Google Workspace",
-      "facebook": "Facebook / Instagram",
-      "x": "X (Twitter)",
-      "tiktok": "TikTok",
-      "banking": "Online Banking"
+      "google": "Google",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "bank": "SecureBank"
+    },
+    "stub": {
+      "title": "Coming soon",
+      "subtitle": "This flow is being built in the next MVP phase.",
+      "back": "Back to my accounts"
     },
     "google": {
       "step1": {
@@ -387,6 +389,43 @@
       "ogDescription": "Certificate issued by Safia to {name} for completing {track}.",
       "revoked": "This certificate has been revoked. The achievement stays on record but is no longer current.",
       "privacyNote": "This page does not log your IP or install cookies. Dates are shown with month granularity out of respect for the holder."
+    }
+  },
+  "accounts": {
+    "title": "My accounts",
+    "emptyTitle": "Your accounts hub is empty",
+    "emptySubtitle": "Create your first practice account to get started.",
+    "countLabel": "{n, plural, one {# account} other {# accounts}}",
+    "newAccount": "Create account",
+    "createCta": "Create account",
+    "filterAll": "All",
+    "sortRecent": "Most recent",
+    "sortPlatform": "By platform",
+    "sortWeakest": "Weakest first",
+    "card": {
+      "lastLogin": "Last login {ago}",
+      "lastFailed": "Failed attempt {ago}",
+      "neverLoggedIn": "No logins yet",
+      "justNow": "just now",
+      "minutesAgo": "{count} min ago",
+      "hoursAgo": "{count} h ago",
+      "daysAgo": "{count} d ago",
+      "confirmDelete": "Delete this practice account?",
+      "cancel": "Cancel",
+      "confirm": "Delete",
+      "actions": {
+        "login": "Sign in",
+        "changePassword": "Change password",
+        "recover": "Recover access",
+        "enableTotp": "Enable 2FA",
+        "disableTotp": "Disable 2FA",
+        "delete": "Delete account"
+      }
+    },
+    "picker": {
+      "title": "Which platform?",
+      "subtitle": "Pick a platform to create a new practice account.",
+      "cancel": "Cancel"
     }
   }
 }

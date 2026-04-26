@@ -14,10 +14,8 @@
     "learnMore": "Saber más",
     "signIn": "Iniciar sesión",
     "nav": {
-      "courses": "Cursos",
-      "simulator": "Simuladores",
-      "roadmap": "Ruta",
-      "profile": "Perfil"
+      "accounts": "Mis cuentas",
+      "simulator": "Simuladores"
     }
   },
   "landing": {
@@ -156,11 +154,15 @@
     "completedDesc": "Has completado el simulador de {platform}.",
     "backToSimulators": "Volver a simuladores",
     "platforms": {
-      "google": "Google Workspace",
-      "facebook": "Facebook / Instagram",
-      "x": "X (Twitter)",
-      "tiktok": "TikTok",
-      "banking": "Banca en línea"
+      "google": "Google",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "bank": "SecureBank"
+    },
+    "stub": {
+      "title": "Próximamente",
+      "subtitle": "Este flujo se está construyendo en la siguiente fase del MVP.",
+      "back": "Volver a mis cuentas"
     },
     "google": {
       "step1": {
@@ -387,6 +389,43 @@
       "ogDescription": "Certificado emitido por Safia para {name} tras completar {track}.",
       "revoked": "Este certificado ha sido revocado. El logro queda registrado, pero ya no está vigente.",
       "privacyNote": "Esta página no registra tu IP ni instala cookies. La fecha se muestra con granularidad de mes por respeto a la privacidad del titular."
+    }
+  },
+  "accounts": {
+    "title": "Mis cuentas",
+    "emptyTitle": "Tu centro de cuentas está vacío",
+    "emptySubtitle": "Crea tu primera cuenta de práctica para empezar.",
+    "countLabel": "{n, plural, one {# cuenta} other {# cuentas}}",
+    "newAccount": "Crear cuenta",
+    "createCta": "Crear cuenta",
+    "filterAll": "Todas",
+    "sortRecent": "Más recientes",
+    "sortPlatform": "Por plataforma",
+    "sortWeakest": "Más débiles primero",
+    "card": {
+      "lastLogin": "Último acceso {ago}",
+      "lastFailed": "Intento fallido {ago}",
+      "neverLoggedIn": "Sin accesos aún",
+      "justNow": "ahora mismo",
+      "minutesAgo": "hace {count} min",
+      "hoursAgo": "hace {count} h",
+      "daysAgo": "hace {count} días",
+      "confirmDelete": "¿Eliminar esta cuenta de práctica?",
+      "cancel": "Cancelar",
+      "confirm": "Eliminar",
+      "actions": {
+        "login": "Iniciar sesión",
+        "changePassword": "Cambiar contraseña",
+        "recover": "Recuperar acceso",
+        "enableTotp": "Activar 2FA",
+        "disableTotp": "Desactivar 2FA",
+        "delete": "Borrar cuenta"
+      }
+    },
+    "picker": {
+      "title": "¿En qué plataforma?",
+      "subtitle": "Elige la plataforma para crear una nueva cuenta de práctica.",
+      "cancel": "Cancelar"
     }
   }
 }
